@@ -38169,7 +38169,6 @@ kro13_kk_gameObjects_CanyonChain.prototype = $extend(kro13_kk_gameObjects_Transf
 	}
 	,update: function(dt) {
 		if(this.timeToGenerateNext() && this.next == null) {
-			kro13_kk_guiObjects_popups_ConsolePopup.print("next");
 			this.next = this.generateNextCanyon();
 			this.next.transform.get_position().y = this.curr.getExitPoint().y;
 			this.transform.addChld(this.next.transform);
@@ -39664,6 +39663,11 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		this.transform.addChld(logo.transform);
 		var this3 = { x : Math.floor((this.btnPlay.get_size().x - logoMaterialConf.size.x) * 0.5), y : -300};
 		logo.set_position(this3);
+		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,true);
+		version.build();
+		version.transform.get_position().y -= 20;
+		this.transform.addChld(version.transform);
+		version.setText("v0.1");
 		kro13_kk_gameObjects_Transformable.prototype.build.call(this);
 	}
 	,blinkHelpStart: function() {
@@ -67569,7 +67573,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 874814;
+	this.version = 862279;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
