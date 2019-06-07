@@ -1346,6 +1346,13 @@ List.prototype = {
 			return this.h.item;
 		}
 	}
+	,last: function() {
+		if(this.q == null) {
+			return null;
+		} else {
+			return this.q.item;
+		}
+	}
 	,pop: function() {
 		if(this.h == null) {
 			return null;
@@ -9310,10 +9317,11 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 		this.set_x(x);
 		this.set_y(y);
 		if(this._mask == null) {
-			var _g = 0;
-			while(_g < entities.length) {
-				var e = entities[_g];
-				++_g;
+			var _g_head = entities.h;
+			while(_g_head != null) {
+				var val = _g_head.item;
+				_g_head = _g_head.next;
+				var e = val;
 				if(e.get_collidable() && e != this && x - this.originX + this.get_width() > e.get_x() - e.originX && y - this.originY + this.get_height() > e.get_y() - e.originY && x - this.originX < e.get_x() - e.originX + e.get_width() && y - this.originY < e.get_y() - e.originY + e.get_height()) {
 					if(e._mask == null || e._mask.collide(this.HITBOX)) {
 						this.set_x(this._x);
@@ -9323,10 +9331,11 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 				}
 			}
 		} else {
-			var _g1 = 0;
-			while(_g1 < entities.length) {
-				var e1 = entities[_g1];
-				++_g1;
+			var _g_head1 = entities.h;
+			while(_g_head1 != null) {
+				var val1 = _g_head1.item;
+				_g_head1 = _g_head1.next;
+				var e1 = val1;
 				if(e1.get_collidable() && e1 != this && x - this.originX + this.get_width() > e1.get_x() - e1.originX && y - this.originY + this.get_height() > e1.get_y() - e1.originY && x - this.originX < e1.get_x() - e1.originX + e1.get_width() && y - this.originY < e1.get_y() - e1.originY + e1.get_height()) {
 					if(this._mask.collide(e1._mask != null ? e1._mask : e1.HITBOX)) {
 						this.set_x(this._x);
@@ -9450,10 +9459,11 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 		this.set_y(y);
 		var n = array.length;
 		if(this._mask == null) {
-			var _g = 0;
-			while(_g < entities.length) {
-				var e = entities[_g];
-				++_g;
+			var _g_head = entities.h;
+			while(_g_head != null) {
+				var val = _g_head.item;
+				_g_head = _g_head.next;
+				var e = val;
 				e = e;
 				if(e.get_collidable() && e != this && x - this.originX + this.get_width() > e.get_x() - e.originX && y - this.originY + this.get_height() > e.get_y() - e.originY && x - this.originX < e.get_x() - e.originX + e.get_width() && y - this.originY < e.get_y() - e.originY + e.get_height()) {
 					if(e._mask == null || e._mask.collide(this.HITBOX)) {
@@ -9462,10 +9472,11 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 				}
 			}
 		} else {
-			var _g1 = 0;
-			while(_g1 < entities.length) {
-				var e1 = entities[_g1];
-				++_g1;
+			var _g_head1 = entities.h;
+			while(_g_head1 != null) {
+				var val1 = _g_head1.item;
+				_g_head1 = _g_head1.next;
+				var e1 = val1;
 				e1 = e1;
 				if(e1.get_collidable() && e1 != this && x - this.originX + this.get_width() > e1.get_x() - e1.originX && y - this.originY + this.get_height() > e1.get_y() - e1.originY && x - this.originX < e1.get_x() - e1.originX + e1.get_width() && y - this.originY < e1.get_y() - e1.originY + e1.get_height()) {
 					if(this._mask.collide(e1._mask != null ? e1._mask : e1.HITBOX)) {
@@ -13887,11 +13898,11 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			if(!(!this._layerDisplay.exists(layer) || this._layerDisplay.get(layer))) {
 				continue;
 			}
-			var _g21 = 0;
-			var _g3 = this._layers.h[layer];
-			while(_g21 < _g3.length) {
-				var e = _g3[_g21];
-				++_g21;
+			var _g2_head = this._layers.h[layer].h;
+			while(_g2_head != null) {
+				var val = _g2_head.item;
+				_g2_head = _g2_head.next;
+				var e = val;
 				if(e.get_visible()) {
 					e.render(e.camera == null ? this.camera : e.camera);
 				}
@@ -13900,11 +13911,11 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		if(haxepunk_HXP.cursor != null && haxepunk_HXP.cursor.get_visible() && this == haxepunk_HXP.engine._scene) {
 			haxepunk_HXP.cursor.render(this.camera);
 		}
-		var _g4 = 0;
+		var _g3 = 0;
 		var _g12 = this.postRender.callbacks;
-		while(_g4 < _g12.length) {
-			var callback1 = _g12[_g4];
-			++_g4;
+		while(_g3 < _g12.length) {
+			var callback1 = _g12[_g3];
+			++_g3;
 			callback1();
 		}
 	}
@@ -14033,7 +14044,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return false;
 		}
 		var list = this._layers.h[e._layer];
-		HxOverrides.remove(list,e);
+		list.remove(e);
 		list.push(e);
 		return true;
 	}
@@ -14042,8 +14053,8 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return false;
 		}
 		var list = this._layers.h[e._layer];
-		HxOverrides.remove(list,e);
-		list.push(e);
+		list.remove(e);
+		list.add(e);
 		return true;
 	}
 	,bringForward: function(e) {
@@ -14059,20 +14070,21 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		return true;
 	}
 	,isAtFront: function(e) {
-		return e == this._layers.h[e._layer][0];
+		return e == this._layers.h[e._layer].first();
 	}
 	,isAtBack: function(e) {
-		return e == this._layers.h[e._layer][this._layers.h[e._layer].length - 1];
+		return e == this._layers.h[e._layer].last();
 	}
 	,collideRect: function(type,rX,rY,rWidth,rHeight) {
 		var _this = this._types;
 		if(__map_reserved[type] != null ? _this.existsReserved(type) : _this.h.hasOwnProperty(type)) {
-			var _g = 0;
+			var _g_head;
 			var _this1 = this._types;
-			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-			while(_g < _g1.length) {
-				var e = _g1[_g];
-				++_g;
+			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+			while(_g_head != null) {
+				var val = _g_head.item;
+				_g_head = _g_head.next;
+				var e = val;
 				if(e.get_collidable() && e.collideRect(e.get_x(),e.get_y(),rX,rY,rWidth,rHeight)) {
 					return e;
 				}
@@ -14084,12 +14096,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var result = null;
 		var _this = this._types;
 		if(__map_reserved[type] != null ? _this.existsReserved(type) : _this.h.hasOwnProperty(type)) {
-			var _g = 0;
+			var _g_head;
 			var _this1 = this._types;
-			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-			while(_g < _g1.length) {
-				var e = _g1[_g];
-				++_g;
+			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+			while(_g_head != null) {
+				var val = _g_head.item;
+				_g_head = _g_head.next;
+				var e = val;
 				if(e.get_collidable() && e.collidePoint(e.get_x(),e.get_y(),pX,pY)) {
 					if(result == null) {
 						result = e;
@@ -14220,12 +14233,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var n = into.length;
 		var _this = this._types;
 		if(__map_reserved[type] != null ? _this.existsReserved(type) : _this.h.hasOwnProperty(type)) {
-			var _g = 0;
+			var _g_head;
 			var _this1 = this._types;
-			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-			while(_g < _g1.length) {
-				var e = _g1[_g];
-				++_g;
+			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+			while(_g_head != null) {
+				var val = _g_head.item;
+				_g_head = _g_head.next;
+				var e = val;
 				if(e.get_collidable() && e.collideRect(e.get_x(),e.get_y(),rX,rY,rWidth,rHeight)) {
 					into[n++] = e;
 				}
@@ -14239,12 +14253,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		}
 		var n = into.length;
 		radius *= radius;
-		var _g = 0;
+		var _g_head;
 		var _this1 = this._types;
-		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-		while(_g < _g1.length) {
-			var e = _g1[_g];
-			++_g;
+		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var e = val;
 			var x2 = e.get_x();
 			var y2 = e.get_y();
 			if((x2 - circleX) * (x2 - circleX) + (y2 - circleY) * (y2 - circleY) < radius) {
@@ -14261,12 +14276,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return;
 		}
 		var n = into.length;
-		var _g = 0;
+		var _g_head;
 		var _this1 = this._types;
-		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-		while(_g < _g1.length) {
-			var e = _g1[_g];
-			++_g;
+		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var e = val;
 			if(e.get_collidable()) {
 				if(cameraAdjust && e.camera != null) {
 					var _this2 = this.camera;
@@ -14292,12 +14308,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var nearDist = 179 * Math.pow(10,306);
 		var near = null;
 		var dist;
-		var _g = 0;
+		var _g_head;
 		var _this1 = this._types;
-		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-		while(_g < _g1.length) {
-			var e = _g1[_g];
-			++_g;
+		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var e = val;
 			dist = haxepunk_Scene.squareRects(x,y,width,height,e.get_x() - e.originX,e.get_y() - e.originY,e.get_width(),e.get_height());
 			if(dist < nearDist) {
 				nearDist = dist;
@@ -14322,12 +14339,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var dist;
 		var x = e.get_x() - e.originX;
 		var y = e.get_y() - e.originY;
-		var _g = 0;
+		var _g_head;
 		var _this1 = this._types;
-		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-		while(_g < _g1.length) {
-			var n = _g1[_g];
-			++_g;
+		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var n = val;
 			dist = (x - n.get_x()) * (x - n.get_x()) + (y - n.get_y()) * (y - n.get_y());
 			if(dist < nearDist) {
 				nearDist = dist;
@@ -14352,12 +14370,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var dist;
 		var x = e.get_x() - e.originX;
 		var y = e.get_y() - e.originY;
-		var _g = 0;
+		var _g_head;
 		var _this1 = this._types;
-		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-		while(_g < _g1.length) {
-			var n = _g1[_g];
-			++_g;
+		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var n = val;
 			dist = (x - n.get_x()) * (x - n.get_x()) + (y - n.get_y()) * (y - n.get_y());
 			if(dist < nearDist && js_Boot.__instanceof(e,classType)) {
 				nearDist = dist;
@@ -14378,12 +14397,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var near = null;
 		var dist;
 		if(useHitboxes) {
-			var _g = 0;
+			var _g_head;
 			var _this1 = this._types;
-			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-			while(_g < _g1.length) {
-				var n = _g1[_g];
-				++_g;
+			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+			while(_g_head != null) {
+				var val = _g_head.item;
+				_g_head = _g_head.next;
+				var n = val;
 				dist = haxepunk_Scene.squarePointRect(x,y,n.get_x() - n.originX,n.get_y() - n.originY,n.get_width(),n.get_height());
 				if(dist < nearDist) {
 					nearDist = dist;
@@ -14391,12 +14411,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 				}
 			}
 		} else {
-			var _g2 = 0;
+			var _g_head1;
 			var _this2 = this._types;
-			var _g11 = __map_reserved[type] != null ? _this2.getReserved(type) : _this2.h[type];
-			while(_g2 < _g11.length) {
-				var n1 = _g11[_g2];
-				++_g2;
+			_g_head1 = (__map_reserved[type] != null ? _this2.getReserved(type) : _this2.h[type]).h;
+			while(_g_head1 != null) {
+				var val1 = _g_head1.item;
+				_g_head1 = _g_head1.next;
+				var n1 = val1;
 				dist = (x - n1.get_x()) * (x - n1.get_x()) + (y - n1.get_y()) * (y - n1.get_y());
 				if(dist < nearDist) {
 					nearDist = dist;
@@ -14473,14 +14494,14 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 	}
 	,layerFirst: function(layer) {
 		if(this._layers.h.hasOwnProperty(layer)) {
-			return this._layers.h[layer][0];
+			return this._layers.h[layer].first();
 		} else {
 			return null;
 		}
 	}
 	,layerLast: function(layer) {
 		if(this._layers.h.hasOwnProperty(layer)) {
-			return this._layers.h[layer][this._layers.h[layer].length - 1];
+			return this._layers.h[layer].last();
 		} else {
 			return null;
 		}
@@ -14490,14 +14511,14 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		if(this._layerList.length == 0) {
 			return null;
 		}
-		return this._layers.h[this._layerList[this._layerList.length - 1]][this._layers.h[this._layerList[this._layerList.length - 1]].length - 1];
+		return this._layers.h[this._layerList[this._layerList.length - 1]].last();
 	}
 	,nearest: null
 	,get_nearest: function() {
 		if(this._layerList.length == 0) {
 			return null;
 		}
-		return this._layers.h[this._layerList[0]][0];
+		return this._layers.h[this._layerList[0]].first();
 	}
 	,layerFarthest: null
 	,get_layerFarthest: function() {
@@ -14530,12 +14551,13 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return;
 		}
 		var n = into.length;
-		var _g = 0;
+		var _g_head;
 		var _this1 = this._types;
-		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
-		while(_g < _g1.length) {
-			var e = _g1[_g];
-			++_g;
+		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var e = val;
 			into[n++] = e;
 		}
 	}
@@ -14721,7 +14743,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			if(haxepunk_Scene._pooledEntityLists.length > 0) {
 				list = haxepunk_Scene._pooledEntityLists.pop();
 			} else {
-				list = [];
+				list = new List();
 			}
 			this._layers.h[e._layer] = list;
 			if(this._layerList.length == 0) {
@@ -14730,11 +14752,11 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 				haxepunk_HXP.insertSortedKey(this._layerList,e._layer,$bind(this,this.layerSort));
 			}
 		}
-		list.push(e);
+		list.add(e);
 	}
 	,removeRender: function(e) {
 		var list = this._layers.h[e._layer];
-		HxOverrides.remove(list,e);
+		list.remove(e);
 		if(list.length == 0) {
 			HxOverrides.remove(this._layerList,e._layer);
 			this._layers.remove(e._layer);
@@ -14757,7 +14779,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			if(haxepunk_Scene._pooledEntityLists.length > 0) {
 				list = haxepunk_Scene._pooledEntityLists.pop();
 			} else {
-				list = [];
+				list = new List();
 			}
 			var key2 = e._type;
 			var _this2 = this._types;
@@ -14778,7 +14800,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var key1 = e._type;
 		var _this1 = this._types;
 		var list = __map_reserved[key1] != null ? _this1.getReserved(key1) : _this1.h[key1];
-		HxOverrides.remove(list,e);
+		list.remove(e);
 		if(list.length == 0) {
 			this._types.remove(e._type);
 			haxepunk_Scene._pooledEntityLists.push(list);
@@ -16815,11 +16837,11 @@ haxepunk_debug_Console.prototype = $extend(haxepunk_Scene.prototype,{
 				if(!(!scene._layerDisplay.exists(layer) || scene._layerDisplay.get(layer))) {
 					continue;
 				}
-				var _g2 = 0;
-				var _g3 = scene._layers.h[layer];
-				while(_g2 < _g3.length) {
-					var e = _g3[_g2];
-					++_g2;
+				var _g2_head = scene._layers.h[layer].h;
+				while(_g2_head != null) {
+					var val = _g2_head.item;
+					_g2_head = _g2_head.next;
+					var e = val;
 					e.debugDraw(e.camera == null ? scene.camera : e.camera,this.selected.indexOf(e) > -1);
 				}
 			}
@@ -34522,7 +34544,6 @@ kro13_hxp_scenes_HxpAbstractScene.prototype = $extend(kro13_kk_scenes_AbstractSc
 	}
 	,removeContainer: function(gameObject) {
 		this.renderSystem.removeContainer(gameObject);
-		this.renderSystem.fastRemove();
 	}
 	,start: function() {
 		this.renderSystem.start();
@@ -35204,7 +35225,7 @@ kro13_hxp_sound_HxpSoundManager.prototype = $extend(kro13_kk_sound_AbstractSound
 	,__class__: kro13_hxp_sound_HxpSoundManager
 });
 var kro13_kk_systems_AbstractComponentSystem = function() {
-	this.containers = [];
+	this.containers = new List();
 };
 $hxClasses["kro13.kk.systems.AbstractComponentSystem"] = kro13_kk_systems_AbstractComponentSystem;
 kro13_kk_systems_AbstractComponentSystem.__name__ = ["kro13","kk","systems","AbstractComponentSystem"];
@@ -35212,15 +35233,13 @@ kro13_kk_systems_AbstractComponentSystem.__interfaces__ = [kro13_kk_systems_ICom
 kro13_kk_systems_AbstractComponentSystem.prototype = {
 	containers: null
 	,addContainer: function(container) {
-		if(this.containers.indexOf(container) < 0) {
-			this.containers.push(container);
-		}
+		this.containers.add(container);
 	}
 	,removeContainer: function(container) {
-		HxOverrides.remove(this.containers,container);
+		this.containers.remove(container);
 	}
 	,clear: function() {
-		this.containers = [];
+		this.containers = new List();
 	}
 	,start: function() {
 	}
@@ -35344,11 +35363,11 @@ kro13_hxp_systems_HxpParticlesSystem.prototype = $extend(kro13_kk_systems_Abstra
 		var particles = null;
 		var transform = null;
 		this.emitDelta += delta;
-		var _g = 0;
-		var _g1 = this.containers;
-		while(_g < _g1.length) {
-			var transformable = _g1[_g];
-			++_g;
+		var _g_head = this.containers.h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var transformable = val;
 			if(this.entitiesManager.hasEntity(transformable.id) && this.emitDelta > 0.2) {
 				this.emitDelta = 0;
 				transform = transformable.transform;
@@ -35630,7 +35649,6 @@ kro13_hxp_systems_HxpRenderSystem.prototype = $extend(kro13_kk_systems_AbstractU
 	,hasEntity: null
 	,addContainer: function(container) {
 		if(js_Boot.__instanceof(container,kro13_kk_gameObjects_Renderable)) {
-			container.fastRemove = false;
 			kro13_kk_systems_AbstractUpdateSystem.prototype.addContainer.call(this,container);
 		}
 		var child = container.transform.iterator();
@@ -35640,7 +35658,7 @@ kro13_hxp_systems_HxpRenderSystem.prototype = $extend(kro13_kk_systems_AbstractU
 		}
 	}
 	,removeContainer: function(container) {
-		container.fastRemove = true;
+		kro13_kk_systems_AbstractUpdateSystem.prototype.removeContainer.call(this,container);
 		if(this.entitiesManager.hasEntity(container.id)) {
 			this.scene.remove(this.entitiesManager.getEntity(container.id));
 			this.entitiesManager.clearEntity(container.id);
@@ -35652,25 +35670,12 @@ kro13_hxp_systems_HxpRenderSystem.prototype = $extend(kro13_kk_systems_AbstractU
 			this.removeContainer(ch1.owner);
 		}
 	}
-	,fastRemove: function() {
-		var newContainers = [];
-		var _g = 0;
-		var _g1 = this.containers;
-		while(_g < _g1.length) {
-			var c = _g1[_g];
-			++_g;
-			if(!c.fastRemove) {
-				newContainers.push(c);
-			}
-		}
-		this.containers = newContainers;
-	}
 	,clear: function() {
-		var _g = 0;
-		var _g1 = this.containers;
-		while(_g < _g1.length) {
-			var renderable = _g1[_g];
-			++_g;
+		var _g_head = this.containers.h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var renderable = val;
 			if(this.entitiesManager.hasEntity(renderable.id)) {
 				this.scene.remove(this.entitiesManager.getEntity(renderable.id));
 				this.entitiesManager.clearEntity(renderable.id);
@@ -35683,11 +35688,11 @@ kro13_hxp_systems_HxpRenderSystem.prototype = $extend(kro13_kk_systems_AbstractU
 		this.update();
 	}
 	,update: function() {
-		var _g = 0;
-		var _g1 = this.containers;
-		while(_g < _g1.length) {
-			var transformable = _g1[_g];
-			++_g;
+		var _g_head = this.containers.h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var transformable = val;
 			var transform = transformable.transform;
 			var absPosition = transform.getAbsPosition();
 			var l = absPosition.x - transform.origin.x;
@@ -35794,11 +35799,11 @@ kro13_hxp_systems_HxpTextEmitterSystem.prototype = $extend(kro13_kk_systems_Abst
 		var text;
 		var textEmitter = null;
 		var transform = null;
-		var _g = 0;
-		var _g1 = this.containers;
-		while(_g < _g1.length) {
-			var container = _g1[_g];
-			++_g;
+		var _g_head = this.containers.h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var container = val;
 			textEmitter = container.getComponent_kro13_kk_components_TextEmitter(7);
 			text = textEmitter.pop();
 			if(text != null) {
@@ -35992,26 +35997,121 @@ kro13_hxp_systems_HxpZIndexSystem.prototype = $extend(kro13_kk_systems_AbstractU
 			}
 			var entities = this.scene.getLayer(9);
 			if(entities != null) {
-				entities.sort($bind(this,this.sortByY));
+				var comp = $bind(this,this.sortByY);
+				var n = entities.length;
+				var swapped = true;
+				while(n > 1) {
+					swapped = false;
+					var curr = entities.h;
+					var newn = 0;
+					var _g11 = 1;
+					var _g3 = n;
+					while(_g11 < _g3) {
+						var i = _g11++;
+						if(comp(curr.item,curr.next.item) == 1) {
+							kro13_kk_utils_ListUtils.swapItems(curr,curr.next);
+							swapped = true;
+							newn = i;
+						}
+						curr = curr.next;
+					}
+					n = newn;
+				}
 			}
 			var entities1 = this.scene.getLayer(2);
 			if(entities1 != null) {
-				entities1.sort($bind(this,this.sortByY));
+				var comp1 = $bind(this,this.sortByY);
+				var n1 = entities1.length;
+				var swapped1 = true;
+				while(n1 > 1) {
+					swapped1 = false;
+					var curr1 = entities1.h;
+					var newn1 = 0;
+					var _g12 = 1;
+					var _g4 = n1;
+					while(_g12 < _g4) {
+						var i1 = _g12++;
+						if(comp1(curr1.item,curr1.next.item) == 1) {
+							kro13_kk_utils_ListUtils.swapItems(curr1,curr1.next);
+							swapped1 = true;
+							newn1 = i1;
+						}
+						curr1 = curr1.next;
+					}
+					n1 = newn1;
+				}
 			}
 			var entities2 = this.scene.getLayer(8);
 			if(entities2 != null) {
-				entities2.sort($bind(this,this.sortByY));
+				var comp2 = $bind(this,this.sortByY);
+				var n2 = entities2.length;
+				var swapped2 = true;
+				while(n2 > 1) {
+					swapped2 = false;
+					var curr2 = entities2.h;
+					var newn2 = 0;
+					var _g13 = 1;
+					var _g5 = n2;
+					while(_g13 < _g5) {
+						var i2 = _g13++;
+						if(comp2(curr2.item,curr2.next.item) == 1) {
+							kro13_kk_utils_ListUtils.swapItems(curr2,curr2.next);
+							swapped2 = true;
+							newn2 = i2;
+						}
+						curr2 = curr2.next;
+					}
+					n2 = newn2;
+				}
 			}
 			var entities3 = this.scene.getLayer(1);
 			if(entities3 != null) {
-				entities3.sort($bind(this,this.sortByY));
+				var comp3 = $bind(this,this.sortByY);
+				var n3 = entities3.length;
+				var swapped3 = true;
+				while(n3 > 1) {
+					swapped3 = false;
+					var curr3 = entities3.h;
+					var newn3 = 0;
+					var _g14 = 1;
+					var _g6 = n3;
+					while(_g14 < _g6) {
+						var i3 = _g14++;
+						if(comp3(curr3.item,curr3.next.item) == 1) {
+							kro13_kk_utils_ListUtils.swapItems(curr3,curr3.next);
+							swapped3 = true;
+							newn3 = i3;
+						}
+						curr3 = curr3.next;
+					}
+					n3 = newn3;
+				}
 			}
 		}
 	}
 	,sortInLayer: function(layer) {
 		var entities = this.scene.getLayer(layer);
 		if(entities != null) {
-			entities.sort($bind(this,this.sortByY));
+			var comp = $bind(this,this.sortByY);
+			var n = entities.length;
+			var swapped = true;
+			while(n > 1) {
+				swapped = false;
+				var curr = entities.h;
+				var newn = 0;
+				var _g1 = 1;
+				var _g = n;
+				while(_g1 < _g) {
+					var i = _g1++;
+					if(comp(curr.item,curr.next.item) == 1) {
+						kro13_kk_utils_ListUtils.swapItems(curr,curr.next);
+						swapped = true;
+						newn = i;
+					}
+					curr = curr.next;
+				}
+				n = newn;
+			}
 		}
 	}
 	,checkGroundSorting: function(transformable) {
@@ -36081,11 +36181,11 @@ kro13_hxp_systems_control_HxpGUIControlSystem.prototype = $extend(kro13_kk_syste
 	,update: function() {
 		if(this.wasPressed()) {
 			this.point = this.getPressPoint();
-			var _g = 0;
-			var _g1 = this.containers;
-			while(_g < _g1.length) {
-				var btn = _g1[_g];
-				++_g;
+			var _g_head = this.containers.h;
+			while(_g_head != null) {
+				var val = _g_head.item;
+				_g_head = _g_head.next;
+				var btn = val;
 				if(this.isButtonHit(btn.transform,this.point)) {
 					haxe_Log.trace("PRESS " + btn.name,{ fileName : "HxpGUIControlSystem.hx", lineNumber : 45, className : "kro13.hxp.systems.control.HxpGUIControlSystem", methodName : "update"});
 					var button = btn;
@@ -41735,11 +41835,11 @@ kro13_kk_systems_GameEventSystem.prototype = $extend(kro13_kk_systems_AbstractCo
 	}
 	,dispatchGameEvent: function(ge) {
 		var handler = null;
-		var _g = 0;
-		var _g1 = this.containers;
-		while(_g < _g1.length) {
-			var container = _g1[_g];
-			++_g;
+		var _g_head = this.containers.h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var container = val;
 			handler = container.getComponent_kro13_kk_components_GameEventHandler(6);
 			handler.sendEvent(ge);
 		}
@@ -41980,11 +42080,11 @@ kro13_kk_systems_SimpleUpdateSystem.prototype = $extend(kro13_kk_systems_Abstrac
 		var delta = window.performance.now() / 1000 - this.timestamp;
 		this.timestamp = window.performance.now() / 1000;
 		var updater = null;
-		var _g = 0;
-		var _g1 = this.containers;
-		while(_g < _g1.length) {
-			var c = _g1[_g];
-			++_g;
+		var _g_head = this.containers.h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var c = val;
 			updater = c.getComponent_kro13_kk_components_Updater(9);
 			updater.update(delta);
 		}
@@ -42442,6 +42542,67 @@ kro13_kk_utils__$IntVector2_IntVector2_$Impl_$.subtract = function(this1,other) 
 kro13_kk_utils__$IntVector2_IntVector2_$Impl_$.clone = function(this1) {
 	var this2 = { x : this1.x, y : this1.y};
 	return this2;
+};
+var kro13_kk_utils_ListUtils = function() { };
+$hxClasses["kro13.kk.utils.ListUtils"] = kro13_kk_utils_ListUtils;
+kro13_kk_utils_ListUtils.__name__ = ["kro13","kk","utils","ListUtils"];
+kro13_kk_utils_ListUtils.moveItemRight = function(list,item) {
+	var curr = list.h;
+	var prev = null;
+	if(curr == null) {
+		return false;
+	} else {
+		while(curr.next != null) {
+			if(curr.item == item) {
+				var next = curr.next;
+				if(list.q == next) {
+					list.q = curr;
+				}
+				if(list.h == curr) {
+					list.h = next;
+				}
+				if(prev != null) {
+					prev.next = next;
+				}
+				curr.next = next.next;
+				next.next = curr;
+				return true;
+			}
+			prev = curr;
+			curr = curr.next;
+		}
+	}
+	return false;
+};
+kro13_kk_utils_ListUtils.sort = function(list,comp,dir) {
+	if(dir == null) {
+		dir = 1;
+	}
+	var n = list.length;
+	var swapped = true;
+	while(n > 1) {
+		swapped = false;
+		var curr = list.h;
+		var newn = 0;
+		var _g1 = 1;
+		var _g = n;
+		while(_g1 < _g) {
+			var i = _g1++;
+			if(comp(curr.item,curr.next.item) == dir) {
+				kro13_kk_utils_ListUtils.swapItems(curr,curr.next);
+				swapped = true;
+				newn = i;
+			}
+			curr = curr.next;
+		}
+		n = newn;
+	}
+};
+kro13_kk_utils_ListUtils.swapItems = function(n1,n2) {
+	var buffer = null;
+	buffer = n1.item;
+	n1.item = n2.item;
+	n2.item = buffer;
 };
 var kro13_kk_utils_Locale = function() { };
 $hxClasses["kro13.kk.utils.Locale"] = kro13_kk_utils_Locale;
@@ -67408,7 +67569,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 550162;
+	this.version = 864724;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
