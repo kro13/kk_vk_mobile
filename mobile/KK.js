@@ -36643,6 +36643,7 @@ kro13_kk_IUpdatable.prototype = {
 	,__class__: kro13_kk_IUpdatable
 };
 var kro13_kk_KKGame = function() {
+	haxe_Log.trace("v 0.1",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
 	kro13_hxp_HxpEngine.call(this,0,0,60,false);
 	var vk = kro13_vk_VK.get_instance();
 	vk.addVisibilityHandler();
@@ -36660,7 +36661,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 	,dtSystem: null
 	,dataProvider: null
 	,init: function() {
-		haxe_Log.trace("KK: init",{ fileName : "KKGame.hx", lineNumber : 57, className : "kro13.kk.KKGame", methodName : "init"});
+		haxe_Log.trace("KK: init",{ fileName : "KKGame.hx", lineNumber : 58, className : "kro13.kk.KKGame", methodName : "init"});
 		this.createDTSystem();
 		this.initResourceManager();
 		this.initTextProperties();
@@ -36675,7 +36676,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.dataProvider.getRemoteProfile($bind(this,this.onRemoteProfileGot));
 	}
 	,onRemoteProfileGot: function(remoteProfile) {
-		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 99, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
+		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 100, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
 		this.dataProvider.local.getProfile().userName = remoteProfile.userName;
 		this.dataProvider.local.getProfile().remoteId = remoteProfile.remoteId;
 		this.dataProvider.local.getProfile().totalScore = remoteProfile.totalScore;
@@ -36693,7 +36694,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 			var chromeIdx = ua.indexOf("chrome");
 			if(chromeIdx >= 0) {
 				var wvVer = Std.parseInt(ua.substring(ua.indexOf("/",chromeIdx) + 1,ua.indexOf(".",chromeIdx)));
-				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 125, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
+				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 126, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
 			}
 		}
 	}
@@ -36702,7 +36703,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		haxepunk_HXP.screen.scaleMode.integer = false;
 	}
 	,showPreloader: function() {
-		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 143, className : "kro13.kk.KKGame", methodName : "showPreloader"});
+		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 144, className : "kro13.kk.KKGame", methodName : "showPreloader"});
 		this.preloaderScene = new kro13_hxp_scenes_HxpPreloaderScene();
 		this.preloaderScene.init();
 		this.preloaderScene.build();
@@ -36753,10 +36754,10 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.START_NEW(true));
 	}
 	,onActivate: function(e) {
-		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 216, className : "kro13.kk.KKGame", methodName : "onActivate"});
+		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 217, className : "kro13.kk.KKGame", methodName : "onActivate"});
 	}
 	,onDeactivate: function(e) {
-		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 221, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
+		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 222, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.MAIN_MENU);
 	}
@@ -39663,11 +39664,11 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		this.transform.addChld(logo.transform);
 		var this3 = { x : Math.floor((this.btnPlay.get_size().x - logoMaterialConf.size.x) * 0.5), y : -300};
 		logo.set_position(this3);
-		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,true);
+		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,false);
 		version.build();
-		version.transform.get_position().y -= 20;
+		version.transform.get_position().y -= 50;
 		this.transform.addChld(version.transform);
-		version.setText("v0.1");
+		version.setText("v 0.1");
 		kro13_kk_gameObjects_Transformable.prototype.build.call(this);
 	}
 	,blinkHelpStart: function() {
@@ -67573,7 +67574,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 862279;
+	this.version = 268921;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -112728,6 +112729,7 @@ kro13_kk_Constants.SOCIAL_URL = "https://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.SOCIAL_URL_MOBILE = "vk://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.PROFILE_VER = "0.0";
 kro13_kk_Constants.FREE_RESTARTS_COUNT = 3;
+kro13_kk_Constants.VERSION = "v 0.1";
 kro13_kk_data_DataUtils.adjectives = ["bold","courageous","daring","epic","fearless","gallant","grand","gutsy","noble","valiant","classic","elevated","dauntless","doughty","exaggerated","fire-eating","grandiose","gritty","gutty","high-flown","impavid","inflated","intrepid","lion-hearted","mythological","stouthearted","unafraid","undaunted","valorous","almighty","backbreaking","colossal","courageous","forceful","gargantuan","gigantic","hard","heroic","huge","impressive","laborious","mighty","strenuous","tough","vigorous","altruistic","benevolent","bighearted","chivalrous","considerate","free","gracious","greathearted","heroic","liberal","lofty","magnanimous","noble","princely","unselfish"];
 kro13_kk_data_DataUtils.nouns = ["alligator","crocodile","alpaca","ant","antelope","ape","armadillo","donkey","burro","baboon","badger","bat","bear","beaver","bee","beetle","buffalo","butterfly","camel","carabao","caribou","cat","cattle","cheetah","chimpanzee","chinchilla","cicada","clam","cockroach","cod","coyote","crab","cricket","crow","raven","deer","dinosaur","dog","dolphin","porpoise","duck","eagle","eel","elephant","elk","ferret","fish","fly","fox","frog","toad","gerbil","giraffe","gnat","gnu","wildebeest","goat","goldfish","goose","gorilla","grasshopper","guinea pig","hamster","hare","hedgehog","herring","hippopotamus","hornet","horse","hound","hyena","impala","insect","jackal","jellyfish","kangaroo","wallaby","koala","leopard","lion","lizard","llama","locust","louse","macaw","mallard","mammoth","manatee","marten","mink","minnow","mole","monkey","moose","mosquito","mouse","rat","mule","muskrat","otter","ox","oyster","panda","pig","hog","swine","platypus","porcupine","prairie dog","pug","rabbit","raccoon","reindeer","rhinoceros","salmon","sardine","scorpion","seal","sea lion","serval","shark","sheep","skunk","snail","snake","spider","squirrel","swan","termite","tiger","trout","turtle","walrus","wasp","weasel","whale","wolf","wombat","woodchuck","worm","yak","yellowjacket","zebra"];
 kro13_kk_guiObjects_popups_ConsolePopup.log = "";
