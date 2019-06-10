@@ -36643,7 +36643,7 @@ kro13_kk_IUpdatable.prototype = {
 	,__class__: kro13_kk_IUpdatable
 };
 var kro13_kk_KKGame = function() {
-	haxe_Log.trace("v 0.1.2",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
+	haxe_Log.trace("v 0.1.3",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
 	kro13_hxp_HxpEngine.call(this,0,0,60,false);
 	var vk = kro13_vk_VK.get_instance();
 	vk.addVisibilityHandler();
@@ -39668,7 +39668,7 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		version.build();
 		version.transform.get_position().y -= 50;
 		this.transform.addChld(version.transform);
-		version.setText("v 0.1.2");
+		version.setText("v 0.1.3");
 		kro13_kk_gameObjects_Transformable.prototype.build.call(this);
 	}
 	,blinkHelpStart: function() {
@@ -67576,7 +67576,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 171866;
+	this.version = 959538;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -112731,7 +112731,7 @@ kro13_kk_Constants.SOCIAL_URL = "https://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.SOCIAL_URL_MOBILE = "vk://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.PROFILE_VER = "0.0";
 kro13_kk_Constants.FREE_RESTARTS_COUNT = 3;
-kro13_kk_Constants.VERSION = "v 0.1.2";
+kro13_kk_Constants.VERSION = "v 0.1.3";
 kro13_kk_data_DataUtils.adjectives = ["bold","courageous","daring","epic","fearless","gallant","grand","gutsy","noble","valiant","classic","elevated","dauntless","doughty","exaggerated","fire-eating","grandiose","gritty","gutty","high-flown","impavid","inflated","intrepid","lion-hearted","mythological","stouthearted","unafraid","undaunted","valorous","almighty","backbreaking","colossal","courageous","forceful","gargantuan","gigantic","hard","heroic","huge","impressive","laborious","mighty","strenuous","tough","vigorous","altruistic","benevolent","bighearted","chivalrous","considerate","free","gracious","greathearted","heroic","liberal","lofty","magnanimous","noble","princely","unselfish"];
 kro13_kk_data_DataUtils.nouns = ["alligator","crocodile","alpaca","ant","antelope","ape","armadillo","donkey","burro","baboon","badger","bat","bear","beaver","bee","beetle","buffalo","butterfly","camel","carabao","caribou","cat","cattle","cheetah","chimpanzee","chinchilla","cicada","clam","cockroach","cod","coyote","crab","cricket","crow","raven","deer","dinosaur","dog","dolphin","porpoise","duck","eagle","eel","elephant","elk","ferret","fish","fly","fox","frog","toad","gerbil","giraffe","gnat","gnu","wildebeest","goat","goldfish","goose","gorilla","grasshopper","guinea pig","hamster","hare","hedgehog","herring","hippopotamus","hornet","horse","hound","hyena","impala","insect","jackal","jellyfish","kangaroo","wallaby","koala","leopard","lion","lizard","llama","locust","louse","macaw","mallard","mammoth","manatee","marten","mink","minnow","mole","monkey","moose","mosquito","mouse","rat","mule","muskrat","otter","ox","oyster","panda","pig","hog","swine","platypus","porcupine","prairie dog","pug","rabbit","raccoon","reindeer","rhinoceros","salmon","sardine","scorpion","seal","sea lion","serval","shark","sheep","skunk","snail","snake","spider","squirrel","swan","termite","tiger","trout","turtle","walrus","wasp","weasel","whale","wolf","wombat","woodchuck","worm","yak","yellowjacket","zebra"];
 kro13_kk_guiObjects_popups_ConsolePopup.log = "";
