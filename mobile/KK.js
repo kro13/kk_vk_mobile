@@ -40042,7 +40042,6 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PLAY);
 	}
 	,onStartNewConfirm: function() {
-		kro13_vk_VK.get_instance().showLeaderboardBox(this.dataProvider.getScoreData().currentScore);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.START_NEW(false));
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.MAIN_MENU);
@@ -42919,7 +42918,7 @@ kro13_vk_VK.prototype = {
 		VK.api("users.get",{ user_ids : this.viewerId, test_mode : 0, v : "5.95"},tmp);
 	}
 	,showLeaderboardBox: function(userResult) {
-		VK.callMethod("showLeaderboardBox",{ user_result : 13});
+		VK.callMethod("showLeaderboardBox",userResult);
 	}
 	,getLeaderboard: function(onSuccess) {
 		var f = $bind(this,this.onGetLeaderboard);
@@ -67577,7 +67576,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 101108;
+	this.version = 171866;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
