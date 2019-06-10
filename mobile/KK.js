@@ -40043,6 +40043,9 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 	}
 	,onStartNewConfirm: function() {
 		kro13_vk_VK.get_instance().showLeaderboardBox(this.dataProvider.getScoreData().currentScore);
+		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.START_NEW(false));
+		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
+		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.MAIN_MENU);
 	}
 	,__class__: kro13_kk_guiObjects_QuickMenu
 });
@@ -67574,7 +67577,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 157486;
+	this.version = 768947;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
