@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "107", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
+	var config = { build : "108", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -40028,7 +40028,6 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 	}
 	,onStartNew: function() {
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
-		haxe_Log.trace("" + this.dataProvider.getScoreData().currentScore + "  " + this.dataProvider.getProfile().totalScore,{ fileName : "QuickMenu.hx", lineNumber : 216, className : "kro13.kk.guiObjects.QuickMenu", methodName : "onStartNew"});
 		if(this.dataProvider.getScoreData().currentScore > this.dataProvider.getProfile().totalScore) {
 			this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.CONFIRM(kro13_kk_utils_Locale.get(null,2,["" + this.dataProvider.getScoreData().currentScore]),$bind(this,this.onStartNewConfirm)));
 		} else {
@@ -40043,9 +40042,7 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PLAY);
 	}
 	,onStartNewConfirm: function() {
-		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.START_NEW(false));
-		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
-		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.MAIN_MENU);
+		kro13_vk_VK.get_instance().showLeaderboardBox(this.dataProvider.getScoreData().currentScore);
 	}
 	,__class__: kro13_kk_guiObjects_QuickMenu
 });
@@ -42917,6 +42914,9 @@ kro13_vk_VK.prototype = {
 			f(a1,a2);
 		};
 		VK.api("users.get",{ user_ids : this.viewerId, test_mode : 0, v : "5.95"},tmp);
+	}
+	,showLeaderboardBox: function(userResult) {
+		VK.callMethod("showLeaderboardBox",{ user_result : userResult});
 	}
 	,getLeaderboard: function(onSuccess) {
 		var f = $bind(this,this.onGetLeaderboard);
@@ -67574,7 +67574,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 999300;
+	this.version = 157486;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
