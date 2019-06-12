@@ -17,7 +17,7 @@ board
   orig: 20, 40
   offset: 0, 0
   index: -1
-btn_back
+btn_add_evac
   rotate: false
   xy: 373, 0
   size: 50, 50
@@ -31,100 +31,107 @@ btn_cancel
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_forth
+btn_evac
   rotate: false
   xy: 52, 622
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_gear
+btn_finish
   rotate: false
   xy: 104, 622
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_help
+btn_gear
   rotate: false
   xy: 156, 622
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_menu
+btn_help
   rotate: false
   xy: 208, 622
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_minus
+btn_invite
   rotate: false
   xy: 260, 622
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_music
+btn_menu
   rotate: false
   xy: 312, 622
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_mute
+btn_minus
   rotate: false
   xy: 364, 622
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_ok
+btn_music
   rotate: false
   xy: 0, 674
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_pause
+btn_mute
   rotate: false
   xy: 52, 674
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_play
+btn_ok
   rotate: false
   xy: 104, 674
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_plus
+btn_play
   rotate: false
   xy: 156, 674
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_reset
+btn_plus
   rotate: false
   xy: 208, 674
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_sound
+btn_rescue
   rotate: false
   xy: 260, 674
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-btn_stats
+btn_social
   rotate: false
   xy: 312, 674
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+btn_stats
+  rotate: false
+  xy: 364, 674
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
