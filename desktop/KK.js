@@ -37334,13 +37334,13 @@ kro13_kk_data_DataUtils.generateUserName = function() {
 	return "" + kro13_kk_data_DataUtils.adjectives[adjInd] + " " + kro13_kk_data_DataUtils.nouns[nounInd];
 };
 kro13_kk_data_DataUtils.getDefaultProfile = function() {
-	return { version : "0.0", remoteId : "", userName : "", totalScore : 0, canyonChain : [], misc : { isHelpSeen : false, soundState : 0, sensitivity : 1.0}, restarts : 3};
+	return { version : "0.0", remoteId : "", userName : "", totalScore : 0, canyonChain : [], misc : { isHelpSeen : false, soundState : 1, sensitivity : 1.0}, restarts : 3};
 };
 kro13_kk_data_DataUtils.getDefaultRemoteProfile = function() {
 	return { remoteId : "", userName : "", totalScore : 0};
 };
 kro13_kk_data_DataUtils.getDefaultMisc = function() {
-	return { isHelpSeen : false, soundState : 0, sensitivity : 1.0};
+	return { isHelpSeen : false, soundState : 1, sensitivity : 1.0};
 };
 kro13_kk_data_DataUtils.getBlankScoreData = function() {
 	return { currentScore : 0, speedBonus : 0, speedRatio : 0, bonusCounter : 0, totalRotation : 0, totalTracks : 0, restartUpdatesCount : 1};
@@ -37895,7 +37895,7 @@ kro13_kk_data_Storage.loadProfile = function() {
 		if(Reflect.fields(kro13_kk_data_Storage.profileSO.data).length == 0 || kro13_kk_data_Storage.profileSO.data.version != "0.0") {
 			haxe_Log.trace("create new pofile",{ fileName : "Storage.hx", lineNumber : 19, className : "kro13.kk.data.Storage", methodName : "loadProfile"});
 			kro13_kk_data_Storage.profileSO.clear();
-			var defProfile = { version : "0.0", remoteId : "", userName : "", totalScore : 0, canyonChain : [], misc : { isHelpSeen : false, soundState : 0, sensitivity : 1.0}, restarts : 3};
+			var defProfile = { version : "0.0", remoteId : "", userName : "", totalScore : 0, canyonChain : [], misc : { isHelpSeen : false, soundState : 1, sensitivity : 1.0}, restarts : 3};
 			var _g = 0;
 			var _g1 = Reflect.fields(defProfile);
 			while(_g < _g1.length) {
@@ -67428,7 +67428,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 695773;
+	this.version = 895389;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
