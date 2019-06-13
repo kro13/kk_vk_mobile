@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "108", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
+	var config = { build : "109", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -1346,13 +1346,6 @@ List.prototype = {
 			return this.h.item;
 		}
 	}
-	,last: function() {
-		if(this.q == null) {
-			return null;
-		} else {
-			return this.q.item;
-		}
-	}
 	,pop: function() {
 		if(this.h == null) {
 			return null;
@@ -1443,7 +1436,7 @@ ManifestResources.init = function(config) {
 	var data;
 	var manifest;
 	var library;
-	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R25R6tgoR0y17:images%2Fkk.atlasR2i3003R3R23R5R26R6tgoR0y15:images%2Fkk.pngR2i60493R3R4R5R27R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R28R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R29R6tgoR0y22:fonts%2Fzeroes_one.fntR2i90354R3R23R5R30R6tgoR2i61416R3R18R19y29:__ASSET__fonts_zeroes_one_ttfR5y22:fonts%2Fzeroes_one.ttfR6tgoR0y24:fonts%2Fzeroes_one_0.pngR2i6923R3R4R5R33R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR35hR6tgh\",\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y17:images%2Fback.pngR2i32750R3R4R5R25R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R26R6tgoR0y17:images%2Fkk.atlasR2i2886R3R23R5R27R6tgoR0y15:images%2Fkk.pngR2i25021R3R4R5R28R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R29R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R30R6tgoR0y22:fonts%2Fzeroes_one.fntR2i90354R3R23R5R31R6tgoR2i61416R3R18R19y29:__ASSET__fonts_zeroes_one_ttfR5y22:fonts%2Fzeroes_one.ttfR6tgoR0y24:fonts%2Fzeroes_one_0.pngR2i6923R3R4R5R34R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR36hR6tgh\",\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	manifest = lime_utils_AssetManifest.parse(data,rootPath);
 	library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -9317,11 +9310,10 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 		this.set_x(x);
 		this.set_y(y);
 		if(this._mask == null) {
-			var _g_head = entities.h;
-			while(_g_head != null) {
-				var val = _g_head.item;
-				_g_head = _g_head.next;
-				var e = val;
+			var _g = 0;
+			while(_g < entities.length) {
+				var e = entities[_g];
+				++_g;
 				if(e.get_collidable() && e != this && x - this.originX + this.get_width() > e.get_x() - e.originX && y - this.originY + this.get_height() > e.get_y() - e.originY && x - this.originX < e.get_x() - e.originX + e.get_width() && y - this.originY < e.get_y() - e.originY + e.get_height()) {
 					if(e._mask == null || e._mask.collide(this.HITBOX)) {
 						this.set_x(this._x);
@@ -9331,11 +9323,10 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 				}
 			}
 		} else {
-			var _g_head1 = entities.h;
-			while(_g_head1 != null) {
-				var val1 = _g_head1.item;
-				_g_head1 = _g_head1.next;
-				var e1 = val1;
+			var _g1 = 0;
+			while(_g1 < entities.length) {
+				var e1 = entities[_g1];
+				++_g1;
 				if(e1.get_collidable() && e1 != this && x - this.originX + this.get_width() > e1.get_x() - e1.originX && y - this.originY + this.get_height() > e1.get_y() - e1.originY && x - this.originX < e1.get_x() - e1.originX + e1.get_width() && y - this.originY < e1.get_y() - e1.originY + e1.get_height()) {
 					if(this._mask.collide(e1._mask != null ? e1._mask : e1.HITBOX)) {
 						this.set_x(this._x);
@@ -9459,11 +9450,10 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 		this.set_y(y);
 		var n = array.length;
 		if(this._mask == null) {
-			var _g_head = entities.h;
-			while(_g_head != null) {
-				var val = _g_head.item;
-				_g_head = _g_head.next;
-				var e = val;
+			var _g = 0;
+			while(_g < entities.length) {
+				var e = entities[_g];
+				++_g;
 				e = e;
 				if(e.get_collidable() && e != this && x - this.originX + this.get_width() > e.get_x() - e.originX && y - this.originY + this.get_height() > e.get_y() - e.originY && x - this.originX < e.get_x() - e.originX + e.get_width() && y - this.originY < e.get_y() - e.originY + e.get_height()) {
 					if(e._mask == null || e._mask.collide(this.HITBOX)) {
@@ -9472,11 +9462,10 @@ haxepunk_Entity.prototype = $extend(haxepunk_Tweener.prototype,{
 				}
 			}
 		} else {
-			var _g_head1 = entities.h;
-			while(_g_head1 != null) {
-				var val1 = _g_head1.item;
-				_g_head1 = _g_head1.next;
-				var e1 = val1;
+			var _g1 = 0;
+			while(_g1 < entities.length) {
+				var e1 = entities[_g1];
+				++_g1;
 				e1 = e1;
 				if(e1.get_collidable() && e1 != this && x - this.originX + this.get_width() > e1.get_x() - e1.originX && y - this.originY + this.get_height() > e1.get_y() - e1.originY && x - this.originX < e1.get_x() - e1.originX + e1.get_width() && y - this.originY < e1.get_y() - e1.originY + e1.get_height()) {
 					if(this._mask.collide(e1._mask != null ? e1._mask : e1.HITBOX)) {
@@ -13898,11 +13887,11 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			if(!(!this._layerDisplay.exists(layer) || this._layerDisplay.get(layer))) {
 				continue;
 			}
-			var _g2_head = this._layers.h[layer].h;
-			while(_g2_head != null) {
-				var val = _g2_head.item;
-				_g2_head = _g2_head.next;
-				var e = val;
+			var _g21 = 0;
+			var _g3 = this._layers.h[layer];
+			while(_g21 < _g3.length) {
+				var e = _g3[_g21];
+				++_g21;
 				if(e.get_visible()) {
 					e.render(e.camera == null ? this.camera : e.camera);
 				}
@@ -13911,11 +13900,11 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		if(haxepunk_HXP.cursor != null && haxepunk_HXP.cursor.get_visible() && this == haxepunk_HXP.engine._scene) {
 			haxepunk_HXP.cursor.render(this.camera);
 		}
-		var _g3 = 0;
+		var _g4 = 0;
 		var _g12 = this.postRender.callbacks;
-		while(_g3 < _g12.length) {
-			var callback1 = _g12[_g3];
-			++_g3;
+		while(_g4 < _g12.length) {
+			var callback1 = _g12[_g4];
+			++_g4;
 			callback1();
 		}
 	}
@@ -14044,7 +14033,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return false;
 		}
 		var list = this._layers.h[e._layer];
-		list.remove(e);
+		HxOverrides.remove(list,e);
 		list.push(e);
 		return true;
 	}
@@ -14053,8 +14042,8 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return false;
 		}
 		var list = this._layers.h[e._layer];
-		list.remove(e);
-		list.add(e);
+		HxOverrides.remove(list,e);
+		list.push(e);
 		return true;
 	}
 	,bringForward: function(e) {
@@ -14070,21 +14059,20 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		return true;
 	}
 	,isAtFront: function(e) {
-		return e == this._layers.h[e._layer].first();
+		return e == this._layers.h[e._layer][0];
 	}
 	,isAtBack: function(e) {
-		return e == this._layers.h[e._layer].last();
+		return e == this._layers.h[e._layer][this._layers.h[e._layer].length - 1];
 	}
 	,collideRect: function(type,rX,rY,rWidth,rHeight) {
 		var _this = this._types;
 		if(__map_reserved[type] != null ? _this.existsReserved(type) : _this.h.hasOwnProperty(type)) {
-			var _g_head;
+			var _g = 0;
 			var _this1 = this._types;
-			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-			while(_g_head != null) {
-				var val = _g_head.item;
-				_g_head = _g_head.next;
-				var e = val;
+			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+			while(_g < _g1.length) {
+				var e = _g1[_g];
+				++_g;
 				if(e.get_collidable() && e.collideRect(e.get_x(),e.get_y(),rX,rY,rWidth,rHeight)) {
 					return e;
 				}
@@ -14096,13 +14084,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var result = null;
 		var _this = this._types;
 		if(__map_reserved[type] != null ? _this.existsReserved(type) : _this.h.hasOwnProperty(type)) {
-			var _g_head;
+			var _g = 0;
 			var _this1 = this._types;
-			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-			while(_g_head != null) {
-				var val = _g_head.item;
-				_g_head = _g_head.next;
-				var e = val;
+			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+			while(_g < _g1.length) {
+				var e = _g1[_g];
+				++_g;
 				if(e.get_collidable() && e.collidePoint(e.get_x(),e.get_y(),pX,pY)) {
 					if(result == null) {
 						result = e;
@@ -14233,13 +14220,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var n = into.length;
 		var _this = this._types;
 		if(__map_reserved[type] != null ? _this.existsReserved(type) : _this.h.hasOwnProperty(type)) {
-			var _g_head;
+			var _g = 0;
 			var _this1 = this._types;
-			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-			while(_g_head != null) {
-				var val = _g_head.item;
-				_g_head = _g_head.next;
-				var e = val;
+			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+			while(_g < _g1.length) {
+				var e = _g1[_g];
+				++_g;
 				if(e.get_collidable() && e.collideRect(e.get_x(),e.get_y(),rX,rY,rWidth,rHeight)) {
 					into[n++] = e;
 				}
@@ -14253,13 +14239,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		}
 		var n = into.length;
 		radius *= radius;
-		var _g_head;
+		var _g = 0;
 		var _this1 = this._types;
-		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-		while(_g_head != null) {
-			var val = _g_head.item;
-			_g_head = _g_head.next;
-			var e = val;
+		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+		while(_g < _g1.length) {
+			var e = _g1[_g];
+			++_g;
 			var x2 = e.get_x();
 			var y2 = e.get_y();
 			if((x2 - circleX) * (x2 - circleX) + (y2 - circleY) * (y2 - circleY) < radius) {
@@ -14276,13 +14261,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return;
 		}
 		var n = into.length;
-		var _g_head;
+		var _g = 0;
 		var _this1 = this._types;
-		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-		while(_g_head != null) {
-			var val = _g_head.item;
-			_g_head = _g_head.next;
-			var e = val;
+		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+		while(_g < _g1.length) {
+			var e = _g1[_g];
+			++_g;
 			if(e.get_collidable()) {
 				if(cameraAdjust && e.camera != null) {
 					var _this2 = this.camera;
@@ -14308,13 +14292,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var nearDist = 179 * Math.pow(10,306);
 		var near = null;
 		var dist;
-		var _g_head;
+		var _g = 0;
 		var _this1 = this._types;
-		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-		while(_g_head != null) {
-			var val = _g_head.item;
-			_g_head = _g_head.next;
-			var e = val;
+		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+		while(_g < _g1.length) {
+			var e = _g1[_g];
+			++_g;
 			dist = haxepunk_Scene.squareRects(x,y,width,height,e.get_x() - e.originX,e.get_y() - e.originY,e.get_width(),e.get_height());
 			if(dist < nearDist) {
 				nearDist = dist;
@@ -14339,13 +14322,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var dist;
 		var x = e.get_x() - e.originX;
 		var y = e.get_y() - e.originY;
-		var _g_head;
+		var _g = 0;
 		var _this1 = this._types;
-		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-		while(_g_head != null) {
-			var val = _g_head.item;
-			_g_head = _g_head.next;
-			var n = val;
+		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+		while(_g < _g1.length) {
+			var n = _g1[_g];
+			++_g;
 			dist = (x - n.get_x()) * (x - n.get_x()) + (y - n.get_y()) * (y - n.get_y());
 			if(dist < nearDist) {
 				nearDist = dist;
@@ -14370,13 +14352,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var dist;
 		var x = e.get_x() - e.originX;
 		var y = e.get_y() - e.originY;
-		var _g_head;
+		var _g = 0;
 		var _this1 = this._types;
-		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-		while(_g_head != null) {
-			var val = _g_head.item;
-			_g_head = _g_head.next;
-			var n = val;
+		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+		while(_g < _g1.length) {
+			var n = _g1[_g];
+			++_g;
 			dist = (x - n.get_x()) * (x - n.get_x()) + (y - n.get_y()) * (y - n.get_y());
 			if(dist < nearDist && js_Boot.__instanceof(e,classType)) {
 				nearDist = dist;
@@ -14397,13 +14378,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var near = null;
 		var dist;
 		if(useHitboxes) {
-			var _g_head;
+			var _g = 0;
 			var _this1 = this._types;
-			_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-			while(_g_head != null) {
-				var val = _g_head.item;
-				_g_head = _g_head.next;
-				var n = val;
+			var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+			while(_g < _g1.length) {
+				var n = _g1[_g];
+				++_g;
 				dist = haxepunk_Scene.squarePointRect(x,y,n.get_x() - n.originX,n.get_y() - n.originY,n.get_width(),n.get_height());
 				if(dist < nearDist) {
 					nearDist = dist;
@@ -14411,13 +14391,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 				}
 			}
 		} else {
-			var _g_head1;
+			var _g2 = 0;
 			var _this2 = this._types;
-			_g_head1 = (__map_reserved[type] != null ? _this2.getReserved(type) : _this2.h[type]).h;
-			while(_g_head1 != null) {
-				var val1 = _g_head1.item;
-				_g_head1 = _g_head1.next;
-				var n1 = val1;
+			var _g11 = __map_reserved[type] != null ? _this2.getReserved(type) : _this2.h[type];
+			while(_g2 < _g11.length) {
+				var n1 = _g11[_g2];
+				++_g2;
 				dist = (x - n1.get_x()) * (x - n1.get_x()) + (y - n1.get_y()) * (y - n1.get_y());
 				if(dist < nearDist) {
 					nearDist = dist;
@@ -14494,14 +14473,14 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 	}
 	,layerFirst: function(layer) {
 		if(this._layers.h.hasOwnProperty(layer)) {
-			return this._layers.h[layer].first();
+			return this._layers.h[layer][0];
 		} else {
 			return null;
 		}
 	}
 	,layerLast: function(layer) {
 		if(this._layers.h.hasOwnProperty(layer)) {
-			return this._layers.h[layer].last();
+			return this._layers.h[layer][this._layers.h[layer].length - 1];
 		} else {
 			return null;
 		}
@@ -14511,14 +14490,14 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		if(this._layerList.length == 0) {
 			return null;
 		}
-		return this._layers.h[this._layerList[this._layerList.length - 1]].last();
+		return this._layers.h[this._layerList[this._layerList.length - 1]][this._layers.h[this._layerList[this._layerList.length - 1]].length - 1];
 	}
 	,nearest: null
 	,get_nearest: function() {
 		if(this._layerList.length == 0) {
 			return null;
 		}
-		return this._layers.h[this._layerList[0]].first();
+		return this._layers.h[this._layerList[0]][0];
 	}
 	,layerFarthest: null
 	,get_layerFarthest: function() {
@@ -14551,13 +14530,12 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			return;
 		}
 		var n = into.length;
-		var _g_head;
+		var _g = 0;
 		var _this1 = this._types;
-		_g_head = (__map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type]).h;
-		while(_g_head != null) {
-			var val = _g_head.item;
-			_g_head = _g_head.next;
-			var e = val;
+		var _g1 = __map_reserved[type] != null ? _this1.getReserved(type) : _this1.h[type];
+		while(_g < _g1.length) {
+			var e = _g1[_g];
+			++_g;
 			into[n++] = e;
 		}
 	}
@@ -14743,7 +14721,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			if(haxepunk_Scene._pooledEntityLists.length > 0) {
 				list = haxepunk_Scene._pooledEntityLists.pop();
 			} else {
-				list = new List();
+				list = [];
 			}
 			this._layers.h[e._layer] = list;
 			if(this._layerList.length == 0) {
@@ -14752,11 +14730,11 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 				haxepunk_HXP.insertSortedKey(this._layerList,e._layer,$bind(this,this.layerSort));
 			}
 		}
-		list.add(e);
+		list.push(e);
 	}
 	,removeRender: function(e) {
 		var list = this._layers.h[e._layer];
-		list.remove(e);
+		HxOverrides.remove(list,e);
 		if(list.length == 0) {
 			HxOverrides.remove(this._layerList,e._layer);
 			this._layers.remove(e._layer);
@@ -14779,7 +14757,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 			if(haxepunk_Scene._pooledEntityLists.length > 0) {
 				list = haxepunk_Scene._pooledEntityLists.pop();
 			} else {
-				list = new List();
+				list = [];
 			}
 			var key2 = e._type;
 			var _this2 = this._types;
@@ -14800,7 +14778,7 @@ haxepunk_Scene.prototype = $extend(haxepunk_Tweener.prototype,{
 		var key1 = e._type;
 		var _this1 = this._types;
 		var list = __map_reserved[key1] != null ? _this1.getReserved(key1) : _this1.h[key1];
-		list.remove(e);
+		HxOverrides.remove(list,e);
 		if(list.length == 0) {
 			this._types.remove(e._type);
 			haxepunk_Scene._pooledEntityLists.push(list);
@@ -16837,11 +16815,11 @@ haxepunk_debug_Console.prototype = $extend(haxepunk_Scene.prototype,{
 				if(!(!scene._layerDisplay.exists(layer) || scene._layerDisplay.get(layer))) {
 					continue;
 				}
-				var _g2_head = scene._layers.h[layer].h;
-				while(_g2_head != null) {
-					var val = _g2_head.item;
-					_g2_head = _g2_head.next;
-					var e = val;
+				var _g2 = 0;
+				var _g3 = scene._layers.h[layer];
+				while(_g2 < _g3.length) {
+					var e = _g3[_g2];
+					++_g2;
 					e.debugDraw(e.camera == null ? scene.camera : e.camera,this.selected.indexOf(e) > -1);
 				}
 			}
@@ -34591,6 +34569,7 @@ var kro13_hxp_scenes_HxpGUIScene = function(gameEventSystem,dataProvider) {
 	this.isPlaying = true;
 	this.isFinish = false;
 	kro13_hxp_scenes_HxpAbstractScene.call(this);
+	this.name = "GUI Scene";
 	this.scene.camera = new haxepunk_cameras_StaticCamera();
 	this.scene.bgAlpha = 0;
 	this.gameEventSystem = gameEventSystem;
@@ -34633,7 +34612,6 @@ kro13_hxp_scenes_HxpGUIScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSce
 		this.addComponent(eventHandler);
 		eventHandler.addHandler($bind(this,this.onEvent));
 		this.gameEventSystem.addContainer(this);
-		this.renderSystem = new kro13_hxp_systems_HxpRenderSystem(this.scene,haxepunk_HXP.engine.preUpdate,this.visibiltyBuffer);
 		this.transformSystem = new kro13_hxp_systems_HxpTransformSystem(haxepunk_HXP.engine.preUpdate,this.visibiltyBuffer);
 		this.guiControlSystem = new kro13_hxp_systems_control_HxpGUIControlSystem(haxepunk_HXP.engine.preUpdate);
 		this.updateSystem = new kro13_kk_systems_SimpleUpdateSystem(haxepunk_HXP.engine.preUpdate);
@@ -34727,7 +34705,6 @@ kro13_hxp_scenes_HxpGUIScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSce
 		consoleButton.action = $bind(this,this.onConsole);
 		var this3 = { x : haxepunk_HXP.width - 50, y : 0};
 		consoleButton.set_position(this3);
-		this.addContainer(consoleButton);
 		this.guiControlSystem.addContainer(consoleButton);
 		this.consolePopup = factory.buildConsole();
 		this.updateSystem.addContainer(this.consolePopup);
@@ -34892,6 +34869,7 @@ kro13_hxp_scenes_HxpGUIScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSce
 });
 var kro13_hxp_scenes_HxpGameScene = function(gameEventSystem,dataProvider) {
 	kro13_hxp_scenes_HxpAbstractScene.call(this);
+	this.name = "Game Scene";
 	this.gameEventSystem = gameEventSystem;
 	this.dataProvider = dataProvider;
 	if(kro13_howler_HowlerSoundManager.instance == null) {
@@ -35101,7 +35079,8 @@ kro13_hxp_scenes_HxpGameScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSc
 });
 var kro13_hxp_scenes_HxpPreloaderScene = function() {
 	kro13_hxp_scenes_HxpAbstractScene.call(this);
-	this.scene.camera = new haxepunk_cameras_UICamera();
+	this.scene.camera = new haxepunk_cameras_StaticCamera();
+	this.scene.bgAlpha = 0;
 };
 $hxClasses["kro13.hxp.scenes.HxpPreloaderScene"] = kro13_hxp_scenes_HxpPreloaderScene;
 kro13_hxp_scenes_HxpPreloaderScene.__name__ = ["kro13","hxp","scenes","HxpPreloaderScene"];
@@ -35233,13 +35212,22 @@ kro13_kk_systems_AbstractComponentSystem.__interfaces__ = [kro13_kk_systems_ICom
 kro13_kk_systems_AbstractComponentSystem.prototype = {
 	containers: null
 	,addContainer: function(container) {
+		var _g_head = this.containers.h;
+		while(_g_head != null) {
+			var val = _g_head.item;
+			_g_head = _g_head.next;
+			var c = val;
+			if(c == container) {
+				return;
+			}
+		}
 		this.containers.add(container);
 	}
 	,removeContainer: function(container) {
 		this.containers.remove(container);
 	}
 	,clear: function() {
-		this.containers = new List();
+		this.containers.clear();
 	}
 	,start: function() {
 	}
@@ -35649,6 +35637,7 @@ kro13_hxp_systems_HxpRenderSystem.prototype = $extend(kro13_kk_systems_AbstractU
 	,hasEntity: null
 	,addContainer: function(container) {
 		if(js_Boot.__instanceof(container,kro13_kk_gameObjects_Renderable)) {
+			container.fastRemove = false;
 			kro13_kk_systems_AbstractUpdateSystem.prototype.addContainer.call(this,container);
 		}
 		var child = container.transform.iterator();
@@ -35997,121 +35986,26 @@ kro13_hxp_systems_HxpZIndexSystem.prototype = $extend(kro13_kk_systems_AbstractU
 			}
 			var entities = this.scene.getLayer(9);
 			if(entities != null) {
-				var comp = $bind(this,this.sortByY);
-				var n = entities.length;
-				var swapped = true;
-				while(n > 1) {
-					swapped = false;
-					var curr = entities.h;
-					var newn = 0;
-					var _g11 = 1;
-					var _g3 = n;
-					while(_g11 < _g3) {
-						var i = _g11++;
-						if(comp(curr.item,curr.next.item) == 1) {
-							kro13_kk_utils_ListUtils.swapItems(curr,curr.next);
-							swapped = true;
-							newn = i;
-						}
-						curr = curr.next;
-					}
-					n = newn;
-				}
+				entities.sort($bind(this,this.sortByY));
 			}
 			var entities1 = this.scene.getLayer(2);
 			if(entities1 != null) {
-				var comp1 = $bind(this,this.sortByY);
-				var n1 = entities1.length;
-				var swapped1 = true;
-				while(n1 > 1) {
-					swapped1 = false;
-					var curr1 = entities1.h;
-					var newn1 = 0;
-					var _g12 = 1;
-					var _g4 = n1;
-					while(_g12 < _g4) {
-						var i1 = _g12++;
-						if(comp1(curr1.item,curr1.next.item) == 1) {
-							kro13_kk_utils_ListUtils.swapItems(curr1,curr1.next);
-							swapped1 = true;
-							newn1 = i1;
-						}
-						curr1 = curr1.next;
-					}
-					n1 = newn1;
-				}
+				entities1.sort($bind(this,this.sortByY));
 			}
 			var entities2 = this.scene.getLayer(8);
 			if(entities2 != null) {
-				var comp2 = $bind(this,this.sortByY);
-				var n2 = entities2.length;
-				var swapped2 = true;
-				while(n2 > 1) {
-					swapped2 = false;
-					var curr2 = entities2.h;
-					var newn2 = 0;
-					var _g13 = 1;
-					var _g5 = n2;
-					while(_g13 < _g5) {
-						var i2 = _g13++;
-						if(comp2(curr2.item,curr2.next.item) == 1) {
-							kro13_kk_utils_ListUtils.swapItems(curr2,curr2.next);
-							swapped2 = true;
-							newn2 = i2;
-						}
-						curr2 = curr2.next;
-					}
-					n2 = newn2;
-				}
+				entities2.sort($bind(this,this.sortByY));
 			}
 			var entities3 = this.scene.getLayer(1);
 			if(entities3 != null) {
-				var comp3 = $bind(this,this.sortByY);
-				var n3 = entities3.length;
-				var swapped3 = true;
-				while(n3 > 1) {
-					swapped3 = false;
-					var curr3 = entities3.h;
-					var newn3 = 0;
-					var _g14 = 1;
-					var _g6 = n3;
-					while(_g14 < _g6) {
-						var i3 = _g14++;
-						if(comp3(curr3.item,curr3.next.item) == 1) {
-							kro13_kk_utils_ListUtils.swapItems(curr3,curr3.next);
-							swapped3 = true;
-							newn3 = i3;
-						}
-						curr3 = curr3.next;
-					}
-					n3 = newn3;
-				}
+				entities3.sort($bind(this,this.sortByY));
 			}
 		}
 	}
 	,sortInLayer: function(layer) {
 		var entities = this.scene.getLayer(layer);
 		if(entities != null) {
-			var comp = $bind(this,this.sortByY);
-			var n = entities.length;
-			var swapped = true;
-			while(n > 1) {
-				swapped = false;
-				var curr = entities.h;
-				var newn = 0;
-				var _g1 = 1;
-				var _g = n;
-				while(_g1 < _g) {
-					var i = _g1++;
-					if(comp(curr.item,curr.next.item) == 1) {
-						kro13_kk_utils_ListUtils.swapItems(curr,curr.next);
-						swapped = true;
-						newn = i;
-					}
-					curr = curr.next;
-				}
-				n = newn;
-			}
+			entities.sort($bind(this,this.sortByY));
 		}
 	}
 	,checkGroundSorting: function(transformable) {
@@ -36663,12 +36557,13 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 	,init: function() {
 		haxe_Log.trace("KK: init",{ fileName : "KKGame.hx", lineNumber : 58, className : "kro13.kk.KKGame", methodName : "init"});
 		this.createDTSystem();
+		this.createBackScene();
+		this.showPreloader();
 		this.initResourceManager();
 		this.initTextProperties();
 		this.createGameEventSystem();
 		this.createDataProvider();
 		this.setScale();
-		this.createBackScene();
 		this.getRemoteProfile();
 		this.checkWebViewVersion();
 	}
@@ -36676,7 +36571,8 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.dataProvider.getRemoteProfile($bind(this,this.onRemoteProfileGot));
 	}
 	,onRemoteProfileGot: function(remoteProfile) {
-		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 100, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
+		this.hidePreloader();
+		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 104, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
 		this.dataProvider.local.getProfile().userName = remoteProfile.userName;
 		this.dataProvider.local.getProfile().remoteId = remoteProfile.remoteId;
 		this.dataProvider.local.getProfile().totalScore = remoteProfile.totalScore;
@@ -36694,7 +36590,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 			var chromeIdx = ua.indexOf("chrome");
 			if(chromeIdx >= 0) {
 				var wvVer = Std.parseInt(ua.substring(ua.indexOf("/",chromeIdx) + 1,ua.indexOf(".",chromeIdx)));
-				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 126, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
+				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 130, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
 			}
 		}
 	}
@@ -36703,7 +36599,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		haxepunk_HXP.screen.scaleMode.integer = false;
 	}
 	,showPreloader: function() {
-		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 144, className : "kro13.kk.KKGame", methodName : "showPreloader"});
+		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 148, className : "kro13.kk.KKGame", methodName : "showPreloader"});
 		this.preloaderScene = new kro13_hxp_scenes_HxpPreloaderScene();
 		this.preloaderScene.init();
 		this.preloaderScene.build();
@@ -36754,10 +36650,10 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.START_NEW(true));
 	}
 	,onActivate: function(e) {
-		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 217, className : "kro13.kk.KKGame", methodName : "onActivate"});
+		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 221, className : "kro13.kk.KKGame", methodName : "onActivate"});
 	}
 	,onDeactivate: function(e) {
-		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 222, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
+		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 226, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.MAIN_MENU);
 	}
@@ -38012,11 +37908,9 @@ kro13_kk_data_Storage.loadProfile = function() {
 		if (e instanceof js__$Boot_HaxeError) e = e.val;
 		throw new js__$Boot_HaxeError("KK: unable to create profile! Error: " + Std.string(e));
 	}
-	haxe_Log.trace("load " + Std.string(kro13_kk_data_Storage.profileSO.data),{ fileName : "Storage.hx", lineNumber : 33, className : "kro13.kk.data.Storage", methodName : "loadProfile"});
 	return kro13_kk_data_Storage.profileSO.data;
 };
 kro13_kk_data_Storage.saveProfile = function(profile) {
-	haxe_Log.trace("save " + Std.string(profile),{ fileName : "Storage.hx", lineNumber : 39, className : "kro13.kk.data.Storage", methodName : "saveProfile"});
 	var status = kro13_kk_data_Storage.profileSO.flush();
 	if(status == 1) {
 		throw new js__$Boot_HaxeError("KK: not enough disk space to save profile!");
@@ -38170,6 +38064,7 @@ kro13_kk_gameObjects_CanyonChain.prototype = $extend(kro13_kk_gameObjects_Transf
 	}
 	,update: function(dt) {
 		if(this.timeToGenerateNext() && this.next == null) {
+			kro13_kk_guiObjects_popups_ConsolePopup.print("next");
 			this.next = this.generateNextCanyon();
 			this.next.transform.get_position().y = this.curr.getExitPoint().y;
 			this.transform.addChld(this.next.transform);
@@ -39051,6 +38946,12 @@ kro13_kk_guiObjects_Button.prototype = $extend(kro13_kk_guiObjects_Layable.proto
 	,stopBlink: function() {
 		this.animPlayer.stop();
 	}
+	,enlarge: function() {
+		this.btnBlink.enlarge();
+	}
+	,shrnk: function() {
+		this.btnBlink.shrink();
+	}
 	,__class__: kro13_kk_guiObjects_Button
 });
 var kro13_kk_guiObjects_ButtonWithScore = function(color,borderColor) {
@@ -39529,6 +39430,8 @@ kro13_kk_guiObjects_HUD.prototype = $extend(kro13_kk_guiObjects_popups_Popup.pro
 	scoreText: null
 	,dataProvider: null
 	,restartsText: null
+	,restartsIcon: null
+	,addEvacIcon: null
 	,hPadding: null
 	,build: function() {
 		kro13_kk_guiObjects_popups_Popup.prototype.build.call(this);
@@ -39538,53 +39441,67 @@ kro13_kk_guiObjects_HUD.prototype = $extend(kro13_kk_guiObjects_popups_Popup.pro
 		this.scoreText.setText(this.buildScore());
 		var scoreSize = kro13_kk_utils_TextUtils.getTextRect(this.scoreText);
 		var tmp = this.scoreText;
-		var this1 = { x : this.hPadding, y : (this.get_size().y - scoreSize.y) * 0.5};
+		var this1 = { x : 100, y : (this.get_size().y - scoreSize.y) * 0.5};
 		tmp.set_position(this1);
+		this.addEvacIcon = new kro13_kk_gameObjects_Renderable();
+		var this2 = { x : 100, y : 100};
+		var addEvacIconMaterial = { size : this2, source : "images/btn_add_evac.png"};
+		this.addEvacIcon.renderer.material = kro13_kk_components_renderer_materials_EMaterial.IMAGE(addEvacIconMaterial);
+		var this3 = { x : 0, y : 0};
+		this.addEvacIcon.set_position(this3);
+		this.transform.addChld(this.addEvacIcon.transform);
 		this.restartsText = new kro13_kk_guiObjects_TextField(11250647,46);
 		this.transform.addChld(this.restartsText.transform);
 		this.restartsText.build();
 		this.restartsText.setText(this.buildRestarts());
 		var restartsSize = kro13_kk_utils_TextUtils.getTextRect(this.restartsText);
 		var tmp1 = this.restartsText;
-		var this2 = { x : this.get_size().x - (restartsSize.x + this.hPadding), y : (this.get_size().y - restartsSize.y) * 0.5};
-		tmp1.set_position(this2);
+		var this4 = { x : this.get_size().x - (restartsSize.x + this.hPadding), y : (this.get_size().y - restartsSize.y) * 0.5};
+		tmp1.set_position(this4);
+		this.restartsIcon = new kro13_kk_gameObjects_Renderable();
+		var this5 = { x : 100, y : 100};
+		var restartsIconMaterial = { size : this5, source : "images/btn_evac.png"};
+		this.restartsIcon.renderer.material = kro13_kk_components_renderer_materials_EMaterial.IMAGE(restartsIconMaterial);
+		var tmp2 = this.restartsIcon;
+		var this6 = { x : this.restartsText.get_position().x - 80, y : 0};
+		tmp2.set_position(this6);
+		this.transform.addChld(this.restartsIcon.transform);
 	}
 	,update: function(dt) {
 		this.scoreText.setText(this.buildScore());
 		this.restartsText.setText(this.buildRestarts());
 		var restartsSize = kro13_kk_utils_TextUtils.getTextRect(this.restartsText);
-		var tmp = this.restartsText;
-		var this1 = { x : this.get_size().x - (restartsSize.x + this.hPadding), y : (this.get_size().y - restartsSize.y) * 0.5};
-		tmp.set_position(this1);
+		var tmp = this.get_size().x;
+		var tmp1 = restartsSize.x + this.hPadding;
+		this.restartsText.get_position().x = tmp - tmp1;
+		this.restartsIcon.get_position().x = this.restartsText.get_position().x - 80;
 	}
 	,buildScore: function() {
 		var currScore = this.dataProvider.getScoreData().currentScore;
 		if(currScore >= 0) {
-			return "" + kro13_kk_utils_Locale.get(null,7) + ": <green>" + currScore + "</green>/" + this.dataProvider.getNextRestartScore();
+			return "<green>" + currScore + "</green>/" + this.dataProvider.getNextRestartScore();
 		} else {
-			return "" + kro13_kk_utils_Locale.get(null,7) + ": <red>" + currScore + "</red>/" + this.dataProvider.getNextRestartScore();
+			return "<red>" + currScore + "</red>/" + this.dataProvider.getNextRestartScore();
 		}
 	}
 	,buildRestarts: function() {
-		return "Попытки <guiObjects>x" + this.dataProvider.getProfile().restarts + "</guiObjects>";
+		return "x" + this.dataProvider.getProfile().restarts;
 	}
 	,__class__: kro13_kk_guiObjects_HUD
 });
 var kro13_kk_guiObjects_KKPreloader = function() {
-	kro13_kk_gameObjects_Renderable.call(this);
+	kro13_kk_gameObjects_Transformable.call(this);
 	this.name = "KKPreloader";
 	this.animPlayer = new kro13_kk_components_AnimPlayer();
 	this.addComponent(this.animPlayer);
 };
 $hxClasses["kro13.kk.guiObjects.KKPreloader"] = kro13_kk_guiObjects_KKPreloader;
 kro13_kk_guiObjects_KKPreloader.__name__ = ["kro13","kk","guiObjects","KKPreloader"];
-kro13_kk_guiObjects_KKPreloader.__super__ = kro13_kk_gameObjects_Renderable;
-kro13_kk_guiObjects_KKPreloader.prototype = $extend(kro13_kk_gameObjects_Renderable.prototype,{
+kro13_kk_guiObjects_KKPreloader.__super__ = kro13_kk_gameObjects_Transformable;
+kro13_kk_guiObjects_KKPreloader.prototype = $extend(kro13_kk_gameObjects_Transformable.prototype,{
 	animPlayer: null
 	,icon: null
 	,build: function() {
-		var materialConfig = { size : this.get_size(), color : 16777215};
-		this.renderer.material = kro13_kk_components_renderer_materials_EMaterial.RECTANGLE(materialConfig);
 		this.icon = new kro13_kk_gameObjects_Renderable();
 		this.icon.name = "KKPreloader Icon";
 		var this1 = { x : 1, y : 2};
@@ -39643,8 +39560,10 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		buttons.push(this.btnPlay);
 		this.btnStats = factory.buildMainMenuButton($bind(this,this.onStats),"images/btn_stats.png",kro13_kk_utils_Locale.get(null,20),"Btn Stats");
 		buttons.push(this.btnStats);
-		this.btnSocial = factory.buildMainMenuButton($bind(this,this.onSocial),"",kro13_kk_utils_Locale.get(null,27),"Btn Social");
+		this.btnSocial = factory.buildMainMenuButton($bind(this,this.onSocial),"images/btn_social.png",kro13_kk_utils_Locale.get(null,27),"Btn Social");
 		buttons.push(this.btnSocial);
+		var btnInvite = factory.buildMainMenuButton($bind(this,this.onInvite),"images/btn_invite.png",kro13_kk_utils_Locale.get(null,30),"Btn Invite");
+		buttons.push(btnInvite);
 		this.btnSettings = factory.buildMainMenuButton($bind(this,this.onSettings),"images/btn_gear.png",kro13_kk_utils_Locale.get(null,25),"Btn Settings");
 		buttons.push(this.btnSettings);
 		this.btnHelp = factory.buildMainMenuButton($bind(this,this.onHelp),"images/btn_help.png",kro13_kk_utils_Locale.get(null,23),"Btn Help");
@@ -39666,9 +39585,12 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		logo.set_position(this3);
 		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,false);
 		version.build();
-		version.transform.get_position().y -= 50;
-		this.transform.addChld(version.transform);
 		version.setText("v 0.1.3");
+		var tmp = logo.get_position().x + logoMaterialConf.size.x;
+		version.transform.get_position().x = tmp - kro13_kk_utils_TextUtils.getTextRect(version).x;
+		var tmp1 = logo.get_position().y + logoMaterialConf.size.y;
+		version.transform.get_position().y = tmp1 + 10;
+		this.transform.addChld(version.transform);
 		kro13_kk_gameObjects_Transformable.prototype.build.call(this);
 	}
 	,blinkHelpStart: function() {
@@ -39702,6 +39624,9 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		url = "vk://vk.com/kanyonkarvergroup";
 		var socialRequest = new openfl_net_URLRequest(url);
 		openfl_Lib.getURL(socialRequest,"_blank");
+	}
+	,onInvite: function() {
+		kro13_vk_VK.get_instance().showInviteBox();
 	}
 	,onSound: function() {
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.CHANGE_SOUND);
@@ -39805,10 +39730,6 @@ kro13_kk_guiObjects_PlayerHUD.prototype = $extend(kro13_kk_guiObjects_PlayerHUDB
 	,build: function() {
 		kro13_kk_guiObjects_PlayerHUDBase.prototype.build.call(this);
 		this.buttons = [];
-		this.btnRestart = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton($bind(this,this.onRestart),"images/btn_back.png","Btn Restart");
-		this.buttons.push(this.btnRestart);
-		this.btnStartNew = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton($bind(this,this.onStartNew),"images/btn_forth.png","Btn Start New");
-		this.buttons.push(this.btnStartNew);
 		var buttonsWidth = 100 * this.buttons.length + 50 * (this.buttons.length - 1);
 		var _g1 = 0;
 		var _g = this.buttons.length;
@@ -39924,11 +39845,10 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 		this.btnMenu = this.factory.buildSquareButton($bind(this,this.onMenu),"images/btn_menu.png","Btn Menu");
 		this.btnMenu.action = $bind(this,this.onMenu);
 		buttons.push(this.btnMenu);
-		this.btnRestart = this.factory.buildSquareButton($bind(this,this.onRestart),"images/btn_back.png","Btn Restart");
+		this.btnRestart = this.factory.buildSquareButton($bind(this,this.onRestart),"images/btn_evac.png","Btn Restart");
 		buttons.push(this.btnRestart);
-		this.btnStartNew = this.factory.buildSquareButton($bind(this,this.onStartNew),"images/btn_forth.png","Btn Start New");
+		this.btnStartNew = this.factory.buildSquareButton($bind(this,this.onStartNew),"images/btn_finish.png","Btn Start New");
 		buttons.push(this.btnStartNew);
-		this.btnPlayPause = this.factory.buildSquareButton($bind(this,this.onPlayPause),"images/btn_play.png","Btn Play");
 		var _g1 = 0;
 		var _g = buttons.length;
 		while(_g1 < _g) {
@@ -39943,20 +39863,23 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 		this.btnMenu.transform.set_visible(true);
 		this.btnRestart.transform.set_visible(true);
 		this.btnStartNew.transform.set_visible(true);
-		this.btnPlayPause.transform.set_visible(true);
 	}
 	,collapse: function() {
 		this.btnMenu.transform.set_visible(false);
 		this.btnRestart.transform.set_visible(false);
 		this.btnStartNew.transform.set_visible(false);
-		this.btnPlayPause.transform.set_visible(false);
 	}
 	,isStuck: null
 	,startStuckHelp: function() {
-		this.animPlayer.play(this.quickMenuHelp);
+		if(this.dataProvider.getProfile().restarts > 0) {
+			this.btnRestart.startBlink();
+		} else {
+			this.btnStartNew.startBlink();
+		}
 	}
 	,stopStuckHelp: function() {
-		this.animPlayer.stop();
+		this.btnStartNew.stopBlink();
+		this.btnRestart.stopBlink();
 	}
 	,onEvent: function(e) {
 		switch(e[1]) {
@@ -39968,7 +39891,6 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 			break;
 		case 2:
 			if(!this.isPlaying) {
-				this.btnPlayPause.setIcon("images/btn_pause.png");
 				this.isPlaying = true;
 			}
 			if(this.isStuck) {
@@ -39977,7 +39899,6 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 			break;
 		case 3:
 			if(this.isPlaying) {
-				this.btnPlayPause.setIcon("images/btn_play.png");
 				this.isPlaying = false;
 			}
 			this.stopStuckHelp();
@@ -40009,12 +39930,10 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 		}
 	}
 	,onPlay: function() {
-		this.btnPlayPause.setIcon("images/btn_pause.png");
 		this.isPlaying = true;
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PLAY);
 	}
 	,onPause: function() {
-		this.btnPlayPause.setIcon("images/btn_play.png");
 		this.isPlaying = false;
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
 	}
@@ -40726,10 +40645,10 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		var this14 = { x : this.get_size().x - this.demo4.get_size().x - 100, y : 0};
 		demoText4.set_size(this14);
 		demoText4.build();
-		demoText4.setText("Если закончил кататься или заехал так, что не выехать, воспользуйся кнопками перемотки. Вперед - сохранить счет, назад - начать трассу заново.\nМчи!");
+		demoText4.setText("Если заехал так, что не выехать, или закончил кататься - воспользуйся кнопкой эвакуации, или кнопкой финиш.\nМчи!");
 		this.transform.addChld(demoText4.transform);
-		var btnBack = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_back.png","Btn Restart");
-		var btnForth = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_forth.png","Btn Start New");
+		var btnBack = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_evac.png","Btn Restart");
+		var btnForth = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_finish.png","Btn Start New");
 		btnBack.get_position().x = this.demo4.get_position().x - 25;
 		btnBack.get_position().y = this.demo4.get_position().y + 125;
 		btnForth.get_position().x = btnBack.get_position().x + 150;
@@ -41229,7 +41148,6 @@ kro13_kk_maps_CanyonMap.prototype = {
 		var bRNext = this.rightWall.getFirstBlock();
 		var bRRNext = this.rightWallWall.getFirstBlock();
 		var shift = bPrev.position.x + Math.round((bPrev.size.x - bNext.size.x) * 0.5);
-		haxe_Log.trace("shift " + shift,{ fileName : "CanyonMap.hx", lineNumber : 57, className : "kro13.kk.maps.CanyonMap", methodName : "linkTo"});
 		var _g = 0;
 		var _g1 = this.ground.blocks;
 		while(_g < _g1.length) {
@@ -41335,7 +41253,7 @@ kro13_kk_maps_CanyonMap.prototype = {
 		}
 	}
 	,printPoints: function(points) {
-		haxe_Log.trace("" + points.xLL + " " + points.xL + " " + points.x + " " + points.xR + " " + points.xRR + " " + points.xwRR,{ fileName : "CanyonMap.hx", lineNumber : 186, className : "kro13.kk.maps.CanyonMap", methodName : "printPoints"});
+		haxe_Log.trace("" + points.xLL + " " + points.xL + " " + points.x + " " + points.xR + " " + points.xRR + " " + points.xwRR,{ fileName : "CanyonMap.hx", lineNumber : 185, className : "kro13.kk.maps.CanyonMap", methodName : "printPoints"});
 	}
 	,calculateBlockPoints: function(prevPoints,nextPoints) {
 		var xLL = prevPoints.xLL;
@@ -42547,67 +42465,6 @@ kro13_kk_utils__$IntVector2_IntVector2_$Impl_$.clone = function(this1) {
 	var this2 = { x : this1.x, y : this1.y};
 	return this2;
 };
-var kro13_kk_utils_ListUtils = function() { };
-$hxClasses["kro13.kk.utils.ListUtils"] = kro13_kk_utils_ListUtils;
-kro13_kk_utils_ListUtils.__name__ = ["kro13","kk","utils","ListUtils"];
-kro13_kk_utils_ListUtils.moveItemRight = function(list,item) {
-	var curr = list.h;
-	var prev = null;
-	if(curr == null) {
-		return false;
-	} else {
-		while(curr.next != null) {
-			if(curr.item == item) {
-				var next = curr.next;
-				if(list.q == next) {
-					list.q = curr;
-				}
-				if(list.h == curr) {
-					list.h = next;
-				}
-				if(prev != null) {
-					prev.next = next;
-				}
-				curr.next = next.next;
-				next.next = curr;
-				return true;
-			}
-			prev = curr;
-			curr = curr.next;
-		}
-	}
-	return false;
-};
-kro13_kk_utils_ListUtils.sort = function(list,comp,dir) {
-	if(dir == null) {
-		dir = 1;
-	}
-	var n = list.length;
-	var swapped = true;
-	while(n > 1) {
-		swapped = false;
-		var curr = list.h;
-		var newn = 0;
-		var _g1 = 1;
-		var _g = n;
-		while(_g1 < _g) {
-			var i = _g1++;
-			if(comp(curr.item,curr.next.item) == dir) {
-				kro13_kk_utils_ListUtils.swapItems(curr,curr.next);
-				swapped = true;
-				newn = i;
-			}
-			curr = curr.next;
-		}
-		n = newn;
-	}
-};
-kro13_kk_utils_ListUtils.swapItems = function(n1,n2) {
-	var buffer = null;
-	buffer = n1.item;
-	n1.item = n2.item;
-	n2.item = buffer;
-};
 var kro13_kk_utils_Locale = function() { };
 $hxClasses["kro13.kk.utils.Locale"] = kro13_kk_utils_Locale;
 kro13_kk_utils_Locale.__name__ = ["kro13","kk","utils","Locale"];
@@ -42709,9 +42566,11 @@ kro13_kk_utils_Locale.get = function(locale,id,args) {
 		case 27:
 			return "Сообщество";
 		case 28:
-			return "Использовать попытку?";
+			return "Вызвать эвакуатор?";
 		case 29:
-			return "Поптыки закончились.";
+			return "Похоже, пора заканчивать...";
+		case 30:
+			return "Пригласить друга";
 		default:
 			return "Not localized";
 		}
@@ -42886,7 +42745,6 @@ kro13_vk_VK.prototype = {
 		this.viewerId = url.searchParams.get("viewer_id");
 		this.language = url.searchParams.get("language");
 		this.platform = url.searchParams.get("platform");
-		haxe_Log.trace("viewerId " + this.viewerId,{ fileName : "VK.hx", lineNumber : 42, className : "kro13.vk.VK", methodName : "init"});
 		try {
 			if(this.platform != "web") {
 				var f = $bind(this,this.onSDKInitSuccess);
@@ -42919,6 +42777,9 @@ kro13_vk_VK.prototype = {
 	}
 	,showLeaderboardBox: function(userResult) {
 		VK.callMethod("showLeaderboardBox",userResult);
+	}
+	,showInviteBox: function() {
+		VK.callMethod("showInviteBox");
 	}
 	,getLeaderboard: function(onSuccess) {
 		var f = $bind(this,this.onGetLeaderboard);
@@ -42987,7 +42848,6 @@ kro13_vk_VKRemoteDataProvider.__interfaces__ = [kro13_kk_data_IRemoteDataProvide
 kro13_vk_VKRemoteDataProvider.prototype = {
 	parse: null
 	,getProfile: function(remoteId,userName,onSuccess,onError) {
-		haxe_Log.trace("get profile vk " + remoteId,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 18, className : "kro13.vk.VKRemoteDataProvider", methodName : "getProfile"});
 		var f = $bind(this,this.onInitSuccess);
 		var a1 = onSuccess;
 		var a2 = onError;
@@ -42997,7 +42857,6 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 		kro13_vk_VK.get_instance().init(tmp);
 	}
 	,updateProfile: function(profile,onSuccess,onError) {
-		haxe_Log.trace("update profile " + profile.remoteId,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 24, className : "kro13.vk.VKRemoteDataProvider", methodName : "updateProfile"});
 		this.parse.updateProfileVK(profile,onSuccess,onError);
 	}
 	,getTopScores: function(count,onSuccess,onError) {
@@ -43029,7 +42888,6 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	}
 	,onUserNameGot: function(onSuccess,onError,userName) {
 		var userId = kro13_vk_VK.get_instance().getUserId();
-		haxe_Log.trace("get remote profile " + userId + " " + userName,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 57, className : "kro13.vk.VKRemoteDataProvider", methodName : "onUserNameGot"});
 		this.parse.getRemoteProfileVK(userId,userName,onSuccess,onError);
 	}
 	,__class__: kro13_vk_VKRemoteDataProvider
@@ -67576,7 +67434,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 959538;
+	this.version = 432245;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -112769,6 +112627,7 @@ kro13_kk_utils_Locale.SKIP_FREE = 26;
 kro13_kk_utils_Locale.BTN_SOCIAL = 27;
 kro13_kk_utils_Locale.RESTART = 28;
 kro13_kk_utils_Locale.NO_RESTART = 29;
+kro13_kk_utils_Locale.BTN_INVITE = 30;
 kro13_vk_VK.API_VER = "5.95";
 lime__$backend_html5_HTML5HTTPRequest.activeRequests = 0;
 lime__$backend_html5_HTML5HTTPRequest.requestLimit = 4;
