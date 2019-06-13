@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "108", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1400, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 2100, x : null, y : null}]};
+	var config = { build : "109", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1400, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 2100, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -1436,7 +1436,7 @@ ManifestResources.init = function(config) {
 	var data;
 	var manifest;
 	var library;
-	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R25R6tgoR0y17:images%2Fkk.atlasR2i3115R3R23R5R26R6tgoR0y15:images%2Fkk.pngR2i59199R3R4R5R27R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R28R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R29R6tgoR0y22:fonts%2Fzeroes_one.fntR2i90354R3R23R5R30R6tgoR2i61416R3R18R19y29:__ASSET__fonts_zeroes_one_ttfR5y22:fonts%2Fzeroes_one.ttfR6tgoR0y24:fonts%2Fzeroes_one_0.pngR2i6923R3R4R5R33R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR35hR6tgh\",\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y17:images%2Fback.pngR2i32750R3R4R5R25R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R26R6tgoR0y17:images%2Fkk.atlasR2i2886R3R23R5R27R6tgoR0y15:images%2Fkk.pngR2i25021R3R4R5R28R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R29R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R30R6tgoR0y22:fonts%2Fzeroes_one.fntR2i90354R3R23R5R31R6tgoR2i61416R3R18R19y29:__ASSET__fonts_zeroes_one_ttfR5y22:fonts%2Fzeroes_one.ttfR6tgoR0y24:fonts%2Fzeroes_one_0.pngR2i6923R3R4R5R34R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR36hR6tgh\",\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	manifest = lime_utils_AssetManifest.parse(data,rootPath);
 	library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -35080,7 +35080,8 @@ kro13_hxp_scenes_HxpGameScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSc
 });
 var kro13_hxp_scenes_HxpPreloaderScene = function() {
 	kro13_hxp_scenes_HxpAbstractScene.call(this);
-	this.scene.camera = new haxepunk_cameras_UICamera();
+	this.scene.camera = new haxepunk_cameras_StaticCamera();
+	this.scene.bgAlpha = 0;
 };
 $hxClasses["kro13.hxp.scenes.HxpPreloaderScene"] = kro13_hxp_scenes_HxpPreloaderScene;
 kro13_hxp_scenes_HxpPreloaderScene.__name__ = ["kro13","hxp","scenes","HxpPreloaderScene"];
@@ -36557,12 +36558,13 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 	,init: function() {
 		haxe_Log.trace("KK: init",{ fileName : "KKGame.hx", lineNumber : 58, className : "kro13.kk.KKGame", methodName : "init"});
 		this.createDTSystem();
+		this.createBackScene();
+		this.showPreloader();
 		this.initResourceManager();
 		this.initTextProperties();
 		this.createGameEventSystem();
 		this.createDataProvider();
 		this.setScale();
-		this.createBackScene();
 		this.getRemoteProfile();
 		this.checkWebViewVersion();
 	}
@@ -36570,7 +36572,8 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.dataProvider.getRemoteProfile($bind(this,this.onRemoteProfileGot));
 	}
 	,onRemoteProfileGot: function(remoteProfile) {
-		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 100, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
+		this.hidePreloader();
+		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 104, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
 		this.dataProvider.local.getProfile().userName = remoteProfile.userName;
 		this.dataProvider.local.getProfile().remoteId = remoteProfile.remoteId;
 		this.dataProvider.local.getProfile().totalScore = remoteProfile.totalScore;
@@ -36588,7 +36591,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 			var chromeIdx = ua.indexOf("chrome");
 			if(chromeIdx >= 0) {
 				var wvVer = Std.parseInt(ua.substring(ua.indexOf("/",chromeIdx) + 1,ua.indexOf(".",chromeIdx)));
-				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 126, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
+				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 130, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
 			}
 		}
 	}
@@ -36597,7 +36600,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		haxepunk_HXP.screen.scaleMode.integer = false;
 	}
 	,showPreloader: function() {
-		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 144, className : "kro13.kk.KKGame", methodName : "showPreloader"});
+		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 148, className : "kro13.kk.KKGame", methodName : "showPreloader"});
 		this.preloaderScene = new kro13_hxp_scenes_HxpPreloaderScene();
 		this.preloaderScene.init();
 		this.preloaderScene.build();
@@ -36648,10 +36651,10 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.START_NEW(true));
 	}
 	,onActivate: function(e) {
-		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 217, className : "kro13.kk.KKGame", methodName : "onActivate"});
+		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 221, className : "kro13.kk.KKGame", methodName : "onActivate"});
 	}
 	,onDeactivate: function(e) {
-		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 222, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
+		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 226, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.MAIN_MENU);
 	}
@@ -37906,11 +37909,9 @@ kro13_kk_data_Storage.loadProfile = function() {
 		if (e instanceof js__$Boot_HaxeError) e = e.val;
 		throw new js__$Boot_HaxeError("KK: unable to create profile! Error: " + Std.string(e));
 	}
-	haxe_Log.trace("load " + Std.string(kro13_kk_data_Storage.profileSO.data),{ fileName : "Storage.hx", lineNumber : 33, className : "kro13.kk.data.Storage", methodName : "loadProfile"});
 	return kro13_kk_data_Storage.profileSO.data;
 };
 kro13_kk_data_Storage.saveProfile = function(profile) {
-	haxe_Log.trace("save " + Std.string(profile),{ fileName : "Storage.hx", lineNumber : 39, className : "kro13.kk.data.Storage", methodName : "saveProfile"});
 	var status = kro13_kk_data_Storage.profileSO.flush();
 	if(status == 1) {
 		throw new js__$Boot_HaxeError("KK: not enough disk space to save profile!");
@@ -39490,20 +39491,18 @@ kro13_kk_guiObjects_HUD.prototype = $extend(kro13_kk_guiObjects_popups_Popup.pro
 	,__class__: kro13_kk_guiObjects_HUD
 });
 var kro13_kk_guiObjects_KKPreloader = function() {
-	kro13_kk_gameObjects_Renderable.call(this);
+	kro13_kk_gameObjects_Transformable.call(this);
 	this.name = "KKPreloader";
 	this.animPlayer = new kro13_kk_components_AnimPlayer();
 	this.addComponent(this.animPlayer);
 };
 $hxClasses["kro13.kk.guiObjects.KKPreloader"] = kro13_kk_guiObjects_KKPreloader;
 kro13_kk_guiObjects_KKPreloader.__name__ = ["kro13","kk","guiObjects","KKPreloader"];
-kro13_kk_guiObjects_KKPreloader.__super__ = kro13_kk_gameObjects_Renderable;
-kro13_kk_guiObjects_KKPreloader.prototype = $extend(kro13_kk_gameObjects_Renderable.prototype,{
+kro13_kk_guiObjects_KKPreloader.__super__ = kro13_kk_gameObjects_Transformable;
+kro13_kk_guiObjects_KKPreloader.prototype = $extend(kro13_kk_gameObjects_Transformable.prototype,{
 	animPlayer: null
 	,icon: null
 	,build: function() {
-		var materialConfig = { size : this.get_size(), color : 16777215};
-		this.renderer.material = kro13_kk_components_renderer_materials_EMaterial.RECTANGLE(materialConfig);
 		this.icon = new kro13_kk_gameObjects_Renderable();
 		this.icon.name = "KKPreloader Icon";
 		var this1 = { x : 1, y : 2};
@@ -40644,7 +40643,7 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		var this14 = { x : this.get_size().x - this.demo4.get_size().x - 100, y : 0};
 		demoText4.set_size(this14);
 		demoText4.build();
-		demoText4.setText("Если заехал так, что не выехать, или закончил кататься - воспользуйся кнопкаой эвакуации, или кнопкой финиш.\nМчи!");
+		demoText4.setText("Если заехал так, что не выехать, или закончил кататься - воспользуйся кнопкой эвакуации, или кнопкой финиш.\nМчи!");
 		this.transform.addChld(demoText4.transform);
 		var btnBack = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_evac.png","Btn Restart");
 		var btnForth = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_finish.png","Btn Start New");
@@ -41147,7 +41146,6 @@ kro13_kk_maps_CanyonMap.prototype = {
 		var bRNext = this.rightWall.getFirstBlock();
 		var bRRNext = this.rightWallWall.getFirstBlock();
 		var shift = bPrev.position.x + Math.round((bPrev.size.x - bNext.size.x) * 0.5);
-		haxe_Log.trace("shift " + shift,{ fileName : "CanyonMap.hx", lineNumber : 57, className : "kro13.kk.maps.CanyonMap", methodName : "linkTo"});
 		var _g = 0;
 		var _g1 = this.ground.blocks;
 		while(_g < _g1.length) {
@@ -41253,7 +41251,7 @@ kro13_kk_maps_CanyonMap.prototype = {
 		}
 	}
 	,printPoints: function(points) {
-		haxe_Log.trace("" + points.xLL + " " + points.xL + " " + points.x + " " + points.xR + " " + points.xRR + " " + points.xwRR,{ fileName : "CanyonMap.hx", lineNumber : 186, className : "kro13.kk.maps.CanyonMap", methodName : "printPoints"});
+		haxe_Log.trace("" + points.xLL + " " + points.xL + " " + points.x + " " + points.xR + " " + points.xRR + " " + points.xwRR,{ fileName : "CanyonMap.hx", lineNumber : 185, className : "kro13.kk.maps.CanyonMap", methodName : "printPoints"});
 	}
 	,calculateBlockPoints: function(prevPoints,nextPoints) {
 		var xLL = prevPoints.xLL;
@@ -42745,7 +42743,6 @@ kro13_vk_VK.prototype = {
 		this.viewerId = url.searchParams.get("viewer_id");
 		this.language = url.searchParams.get("language");
 		this.platform = url.searchParams.get("platform");
-		haxe_Log.trace("viewerId " + this.viewerId,{ fileName : "VK.hx", lineNumber : 42, className : "kro13.vk.VK", methodName : "init"});
 		try {
 			var f = $bind(this,this.onSDKInitSuccess);
 			var a1 = onSuccess;
@@ -42773,10 +42770,10 @@ kro13_vk_VK.prototype = {
 		VK.api("users.get",{ user_ids : this.viewerId, test_mode : 0, v : "5.95"},tmp);
 	}
 	,showLeaderboardBox: function(userResult) {
-		haxe_Log.trace("not implemented!",{ fileName : "VK.hx", lineNumber : 83, className : "kro13.vk.VK", methodName : "showLeaderboardBox"});
+		haxe_Log.trace("not implemented!",{ fileName : "VK.hx", lineNumber : 82, className : "kro13.vk.VK", methodName : "showLeaderboardBox"});
 	}
 	,showInviteBox: function() {
-		haxe_Log.trace("not implemented!",{ fileName : "VK.hx", lineNumber : 92, className : "kro13.vk.VK", methodName : "showInviteBox"});
+		haxe_Log.trace("not implemented!",{ fileName : "VK.hx", lineNumber : 91, className : "kro13.vk.VK", methodName : "showInviteBox"});
 	}
 	,getLeaderboard: function(onSuccess) {
 		var f = $bind(this,this.onGetLeaderboard);
@@ -42845,7 +42842,6 @@ kro13_vk_VKRemoteDataProvider.__interfaces__ = [kro13_kk_data_IRemoteDataProvide
 kro13_vk_VKRemoteDataProvider.prototype = {
 	parse: null
 	,getProfile: function(remoteId,userName,onSuccess,onError) {
-		haxe_Log.trace("get profile vk " + remoteId,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 18, className : "kro13.vk.VKRemoteDataProvider", methodName : "getProfile"});
 		var f = $bind(this,this.onInitSuccess);
 		var a1 = onSuccess;
 		var a2 = onError;
@@ -42855,7 +42851,6 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 		kro13_vk_VK.get_instance().init(tmp);
 	}
 	,updateProfile: function(profile,onSuccess,onError) {
-		haxe_Log.trace("update profile " + profile.remoteId,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 24, className : "kro13.vk.VKRemoteDataProvider", methodName : "updateProfile"});
 		this.parse.updateProfileVK(profile,onSuccess,onError);
 	}
 	,getTopScores: function(count,onSuccess,onError) {
@@ -42887,7 +42882,6 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	}
 	,onUserNameGot: function(onSuccess,onError,userName) {
 		var userId = kro13_vk_VK.get_instance().getUserId();
-		haxe_Log.trace("get remote profile " + userId + " " + userName,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 57, className : "kro13.vk.VKRemoteDataProvider", methodName : "onUserNameGot"});
 		this.parse.getRemoteProfileVK(userId,userName,onSuccess,onError);
 	}
 	,__class__: kro13_vk_VKRemoteDataProvider
@@ -67434,7 +67428,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 464974;
+	this.version = 695773;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
