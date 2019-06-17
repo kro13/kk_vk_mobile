@@ -42806,7 +42806,7 @@ kro13_vk_VK.prototype = {
 		var tmp = function(a2) {
 			f(a1,a2);
 		};
-		VK.api("apps.getLeaderboard",{ type : "score", global : 1, extended : 1, test_mode : 0, v : "5.95"},tmp);
+		VK.api("apps.getLeaderboard",{ type : "score", global : global, extended : 1, test_mode : 0, v : "5.95"},tmp);
 	}
 	,onSDKInitSuccess: function(callback) {
 		if(callback != null) {
@@ -42831,7 +42831,7 @@ kro13_vk_VK.prototype = {
 		while(_g < items.length) {
 			var i = items[_g];
 			++_g;
-			var prof = { userName : "Таинственный Тип", totalScore : i.score, remoteId : ""};
+			var prof = { userName : "Таинственный Тип", totalScore : Std.parseInt(i.score), remoteId : ""};
 			var _g1 = 0;
 			while(_g1 < profiles.length) {
 				var p = profiles[_g1];
@@ -42881,7 +42881,9 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	,getTopScores: function(count,global,onSuccess,onError) {
 		var _gthis = this;
 		kro13_vk_VK.get_instance().getLeaderboard(global ? 1 : 0,function(result) {
+			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 33, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
 			result.sort($bind(_gthis,_gthis.sortByScore));
+			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 35, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
 			if(onSuccess != null) {
 				var tmp = result.splice(0,count);
 				onSuccess(tmp);
@@ -67453,7 +67455,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 34069;
+	this.version = 603973;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
