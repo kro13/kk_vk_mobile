@@ -42825,7 +42825,7 @@ kro13_vk_VK.prototype = {
 		while(_g < items.length) {
 			var i = items[_g];
 			++_g;
-			var prof = { userName : "Таинственный Тип", totalScore : i.score, remoteId : ""};
+			var prof = { userName : "Таинственный Тип", totalScore : Std.parseInt(i.score), remoteId : ""};
 			var _g1 = 0;
 			while(_g1 < profiles.length) {
 				var p = profiles[_g1];
@@ -67449,7 +67449,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 37527;
+	this.version = 122095;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
