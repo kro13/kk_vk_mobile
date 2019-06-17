@@ -34564,6 +34564,7 @@ kro13_hxp_scenes_HxpBackScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSc
 	,__class__: kro13_hxp_scenes_HxpBackScene
 });
 var kro13_hxp_scenes_HxpGUIScene = function(gameEventSystem,dataProvider) {
+	this.statsGlobal = true;
 	this.isConsoleOn = false;
 	this.isMainMenu = true;
 	this.isPlaying = true;
@@ -34682,12 +34683,13 @@ kro13_hxp_scenes_HxpGUIScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSce
 			f1(a11,null);
 		};
 		this.popPause.buttons[0].action = tmp1;
+		this.popStats.buttons[0].action = $bind(this,this.toggleStats);
 		var f2 = $bind(this,this.hidePopup);
 		var a12 = this.popStats;
 		var tmp2 = function() {
 			f2(a12,null);
 		};
-		this.popStats.buttons[0].action = tmp2;
+		this.popStats.buttons[1].action = tmp2;
 		var f3 = $bind(this,this.hidePopup);
 		var a13 = this.popHelp;
 		var a21 = $bind(this,this.stopHelp);
@@ -34769,7 +34771,7 @@ kro13_hxp_scenes_HxpGUIScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSce
 	,showStatsDialog: function() {
 		this.popStats.setStats(this.dataProvider.local.getProfile());
 		this.showPopup(this.popStats);
-		this.dataProvider.getTopScores($bind(this,this.onTopScoreGot));
+		this.dataProvider.getTopScores(this.statsGlobal,$bind(this,this.onTopScoreGot));
 		var tmp = haxepunk_HXP.height - this.popStats.get_size().y;
 		this.popStats.get_position().y = tmp * 0.5;
 	}
@@ -34822,6 +34824,17 @@ kro13_hxp_scenes_HxpGUIScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSce
 		this.removeContainer(this.mainMenu);
 		this.removeContainer(this.quickMenu);
 		this.removeContainer(this.playerHUD);
+	}
+	,statsGlobal: null
+	,toggleStats: function() {
+		this.statsGlobal = !this.statsGlobal;
+		this.popStats.setStats(this.dataProvider.local.getProfile());
+		this.dataProvider.getTopScores(this.statsGlobal,$bind(this,this.onTopScoreGot));
+		if(this.statsGlobal) {
+			this.popStats.buttons[0].setLabel("Показать друзей");
+		} else {
+			this.popStats.buttons[0].setLabel("Показать всех");
+		}
 	}
 	,hidePopup: function(popup,onHide) {
 		this.removeContainer(popup);
@@ -37262,8 +37275,11 @@ kro13_kk_data_DataProvider.prototype = {
 		};
 		this.remote.getProfile(this.local.getProfile().remoteId,this.local.getProfile().userName,tmp,$bind(this,this.onRemoteError));
 	}
-	,getTopScores: function(onSuccess) {
-		this.remote.getTopScores(10,onSuccess,$bind(this,this.onRemoteError));
+	,getTopScores: function(global,onSuccess) {
+		if(global == null) {
+			global = true;
+		}
+		this.remote.getTopScores(10,global,onSuccess,$bind(this,this.onRemoteError));
 	}
 	,updateProfile: function(onSuccess) {
 		this.local.getProfile().totalScore = this.local.getScoreData().currentScore;
@@ -37318,7 +37334,7 @@ kro13_kk_data__$DataProvider_RemoteDataProviderStub.prototype = {
 			onSuccess(profile.remoteId);
 		}
 	}
-	,getTopScores: function(count,onSuccess,onError) {
+	,getTopScores: function(count,global,onSuccess,onError) {
 		if(onSuccess != null) {
 			onSuccess([]);
 		}
@@ -39211,12 +39227,15 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 		return popup;
 	}
 	,buildStatsDialog: function() {
+		var this1 = { x : 400, y : 100};
+		var btnGlobal = this.buildBlankButton(this1);
+		btnGlobal.setLabel("Показать друзей");
 		var btnOk = this.buildSquareButton(null,"images/btn_ok.png");
-		var popup = new kro13_kk_guiObjects_popups_StatsPopup(btnOk,16777215,10066380);
-		var this1 = { x : this.popupWidth, y : 0};
-		popup.set_size(this1);
-		var this2 = { x : this.popupX, y : 0};
-		popup.set_position(this2);
+		var popup = new kro13_kk_guiObjects_popups_StatsPopup(btnGlobal,btnOk,16777215,10066380);
+		var this2 = { x : this.popupWidth, y : 0};
+		popup.set_size(this2);
+		var this3 = { x : this.popupX, y : 0};
+		popup.set_position(this3);
 		popup.build();
 		return popup;
 	}
@@ -40908,8 +40927,8 @@ kro13_kk_guiObjects_popups_SettingsPopup.prototype = $extend(kro13_kk_guiObjects
 	}
 	,__class__: kro13_kk_guiObjects_popups_SettingsPopup
 });
-var kro13_kk_guiObjects_popups_StatsPopup = function(btnOk,color,borderColor) {
-	kro13_kk_guiObjects_popups_DialogPopup.call(this,[btnOk],color,borderColor);
+var kro13_kk_guiObjects_popups_StatsPopup = function(btnGlobal,btnOk,color,borderColor) {
+	kro13_kk_guiObjects_popups_DialogPopup.call(this,[btnGlobal,btnOk],color,borderColor);
 };
 $hxClasses["kro13.kk.guiObjects.popups.StatsPopup"] = kro13_kk_guiObjects_popups_StatsPopup;
 kro13_kk_guiObjects_popups_StatsPopup.__name__ = ["kro13","kk","guiObjects","popups","StatsPopup"];
@@ -42775,13 +42794,13 @@ kro13_vk_VK.prototype = {
 	,showInviteBox: function() {
 		haxe_Log.trace("not implemented!",{ fileName : "VK.hx", lineNumber : 91, className : "kro13.vk.VK", methodName : "showInviteBox"});
 	}
-	,getLeaderboard: function(onSuccess) {
+	,getLeaderboard: function(global,onSuccess) {
 		var f = $bind(this,this.onGetLeaderboard);
 		var a1 = onSuccess;
 		var tmp = function(a2) {
 			f(a1,a2);
 		};
-		VK.api("apps.getLeaderboard",{ type : "score", global : 1, extended : 1, test_mode : 0, v : "5.95"},tmp);
+		VK.api("apps.getLeaderboard",{ type : "score", global : global, extended : 1, test_mode : 0, v : "5.95"},tmp);
 	}
 	,onSDKInitSuccess: function(callback) {
 		if(callback != null) {
@@ -42853,9 +42872,9 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	,updateProfile: function(profile,onSuccess,onError) {
 		this.parse.updateProfileVK(profile,onSuccess,onError);
 	}
-	,getTopScores: function(count,onSuccess,onError) {
+	,getTopScores: function(count,global,onSuccess,onError) {
 		var _gthis = this;
-		kro13_vk_VK.get_instance().getLeaderboard(function(result) {
+		kro13_vk_VK.get_instance().getLeaderboard(global ? 1 : 0,function(result) {
 			result.sort($bind(_gthis,_gthis.sortByScore));
 			if(onSuccess != null) {
 				var tmp = result.splice(0,count);
@@ -67428,7 +67447,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 895389;
+	this.version = 31014;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
