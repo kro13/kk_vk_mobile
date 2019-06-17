@@ -42876,6 +42876,7 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 		var _gthis = this;
 		kro13_vk_VK.get_instance().getLeaderboard(global ? 1 : 0,function(result) {
 			result.sort($bind(_gthis,_gthis.sortByScore));
+			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 34, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
 			if(onSuccess != null) {
 				var tmp = result.splice(0,count);
 				onSuccess(tmp);
@@ -67447,7 +67448,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 31014;
+	this.version = 498358;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
