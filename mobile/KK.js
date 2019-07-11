@@ -36582,11 +36582,11 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.checkWebViewVersion();
 	}
 	,getRemoteProfile: function() {
-		this.onRemoteProfileGot({ remoteId : "", userName : "", totalScore : 0});
+		this.dataProvider.getRemoteProfile($bind(this,this.onRemoteProfileGot));
 	}
 	,onRemoteProfileGot: function(remoteProfile) {
 		this.hidePreloader();
-		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 105, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
+		haxe_Log.trace("got remote profile for " + remoteProfile.userName,{ fileName : "KKGame.hx", lineNumber : 104, className : "kro13.kk.KKGame", methodName : "onRemoteProfileGot"});
 		this.dataProvider.local.getProfile().userName = remoteProfile.userName;
 		this.dataProvider.local.getProfile().remoteId = remoteProfile.remoteId;
 		this.dataProvider.local.getProfile().totalScore = remoteProfile.totalScore;
@@ -36604,7 +36604,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 			var chromeIdx = ua.indexOf("chrome");
 			if(chromeIdx >= 0) {
 				var wvVer = Std.parseInt(ua.substring(ua.indexOf("/",chromeIdx) + 1,ua.indexOf(".",chromeIdx)));
-				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 131, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
+				haxe_Log.trace("Android WV version " + wvVer,{ fileName : "KKGame.hx", lineNumber : 130, className : "kro13.kk.KKGame", methodName : "checkWebViewVersion"});
 			}
 		}
 	}
@@ -36613,7 +36613,7 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		haxepunk_HXP.screen.scaleMode.integer = false;
 	}
 	,showPreloader: function() {
-		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 149, className : "kro13.kk.KKGame", methodName : "showPreloader"});
+		haxe_Log.trace("Show preloader",{ fileName : "KKGame.hx", lineNumber : 148, className : "kro13.kk.KKGame", methodName : "showPreloader"});
 		this.preloaderScene = new kro13_hxp_scenes_HxpPreloaderScene();
 		this.preloaderScene.init();
 		this.preloaderScene.build();
@@ -36664,10 +36664,10 @@ kro13_kk_KKGame.prototype = $extend(kro13_hxp_HxpEngine.prototype,{
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.START_NEW(true));
 	}
 	,onActivate: function(e) {
-		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 222, className : "kro13.kk.KKGame", methodName : "onActivate"});
+		haxe_Log.trace("Activate",{ fileName : "KKGame.hx", lineNumber : 221, className : "kro13.kk.KKGame", methodName : "onActivate"});
 	}
 	,onDeactivate: function(e) {
-		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 227, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
+		haxe_Log.trace("Deactivate",{ fileName : "KKGame.hx", lineNumber : 226, className : "kro13.kk.KKGame", methodName : "onDeactivate"});
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PAUSE);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.MAIN_MENU);
 	}
@@ -42816,9 +42816,9 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	,getTopScores: function(count,global,onSuccess,onError) {
 		var _gthis = this;
 		kro13_vk_VK.get_instance().getLeaderboard(global ? 1 : 0,function(result) {
-			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 33, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
+			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 34, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
 			result.sort($bind(_gthis,_gthis.sortByScore));
-			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 35, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
+			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 36, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
 			if(onSuccess != null) {
 				var tmp = result.splice(0,count);
 				onSuccess(tmp);
@@ -42844,7 +42844,7 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	}
 	,onUserNameGot: function(onSuccess,onError,userName) {
 		var userId = kro13_vk_VK.get_instance().getUserId();
-		this.parse.getRemoteProfileVK(userId,userName,onSuccess,onError);
+		onSuccess({ remoteId : "", userName : "", totalScore : 0});
 	}
 	,__class__: kro13_vk_VKRemoteDataProvider
 };
@@ -67390,7 +67390,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 515253;
+	this.version = 841531;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
