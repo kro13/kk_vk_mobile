@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "109", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
+	var config = { build : "111", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -35277,6 +35277,7 @@ var kro13_hxp_systems_HxpCameraSystem = function(camera,onUpdate,dataProvider) {
 	this.dataProvider = dataProvider;
 	var this1 = { x : 0, y : 0};
 	this.anchor = this1;
+	camera.scale = 1.3;
 };
 $hxClasses["kro13.hxp.systems.HxpCameraSystem"] = kro13_hxp_systems_HxpCameraSystem;
 kro13_hxp_systems_HxpCameraSystem.__name__ = ["kro13","hxp","systems","HxpCameraSystem"];
@@ -35302,7 +35303,7 @@ kro13_hxp_systems_HxpCameraSystem.prototype = $extend(kro13_kk_systems_AbstractU
 	}
 	,update: function() {
 		var this1 = this.player.body.velocity;
-		var scale = 0.95 * this.camera.scale + 0.05 * (1.5 - 0.5 * Math.sqrt(this1.x * this1.x + this1.y * this1.y) / this.maxSpeed) + 0.01 * (1 - kro13_kk_systems_DTSystem.multiplier);
+		var scale = 0.95 * this.camera.scale + 0.05 * (1.8 - 0.6 * Math.sqrt(this1.x * this1.x + this1.y * this1.y) / this.maxSpeed) + 0.03 * (1 - kro13_kk_systems_DTSystem.multiplier);
 		this.camera.scale = scale;
 	}
 	,anchorCamera: function() {
@@ -35813,7 +35814,7 @@ kro13_hxp_systems_HxpTextEmitterSystem.prototype = $extend(kro13_kk_systems_Abst
 				if(Std.parseInt(text) < 0) {
 					color = 16711680;
 				}
-				var options = { font : "fonts/upheaval_pro.fnt", size : 32, format : 1, wordWrap : true, color : color};
+				var options = { font : "fonts/upheaval_pro.fnt", size : 46, format : 1, wordWrap : true, color : color};
 				var bmText = new haxepunk_graphics_text_BitmapText(text,0,0,0,0,options);
 				var textEntity = [new haxepunk_Entity(null,null,bmText)];
 				var transform1 = container.transform;
@@ -37293,6 +37294,7 @@ kro13_kk_data_DataProvider.prototype = {
 	}
 	,onRemoteError: function(error) {
 		haxe_Log.trace(JSON.stringify(error),{ fileName : "DataProvider.hx", lineNumber : 61, className : "kro13.kk.data.DataProvider", methodName : "onRemoteError"});
+		js_Browser.alert(error);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.ERROR(0));
 	}
 	,__class__: kro13_kk_data_DataProvider
@@ -37315,7 +37317,7 @@ kro13_kk_data__$DataProvider_RemoteDataProviderStub.__interfaces__ = [kro13_kk_d
 kro13_kk_data__$DataProvider_RemoteDataProviderStub.prototype = {
 	local: null
 	,getProfile: function(remoteId,userName,onSuccess,onError) {
-		haxe_Log.trace("get profile stub " + remoteId,{ fileName : "DataProvider.hx", lineNumber : 77, className : "kro13.kk.data._DataProvider.RemoteDataProviderStub", methodName : "getProfile"});
+		haxe_Log.trace("get profile stub " + remoteId,{ fileName : "DataProvider.hx", lineNumber : 78, className : "kro13.kk.data._DataProvider.RemoteDataProviderStub", methodName : "getProfile"});
 		if(onSuccess != null) {
 			var remoteProf = { remoteId : "", userName : "", totalScore : 0};
 			if(remoteId == "") {
@@ -38922,10 +38924,11 @@ kro13_kk_guiObjects_Button.prototype = $extend(kro13_kk_guiObjects_Layable.proto
 				this.icon = new kro13_kk_gameObjects_Renderable();
 				this.transform.addChld(this.icon.transform);
 			}
-			var this1 = { x : 100, y : 100};
+			var this1 = { x : this.transform.get_size().y, y : this.transform.get_size().y};
 			this.iconMaterialConfig = { size : this1, source : iconSource};
-			var this2 = { x : 100, y : 100};
-			this.icon.set_size(this2);
+			var tmp = this.icon;
+			var this2 = { x : this.transform.get_size().y, y : this.transform.get_size().y};
+			tmp.set_size(this2);
 			this.icon.renderer.material = kro13_kk_components_renderer_materials_EMaterial.IMAGE(this.iconMaterialConfig);
 			this.icon.renderer.isValid = false;
 		}
@@ -39092,7 +39095,7 @@ kro13_kk_guiObjects_ExpandableMenu.prototype = $extend(kro13_kk_gameObjects_Tran
 		while(_g11 < _g2) {
 			var i1 = _g11++;
 			this.collapsedStateBtns[i1].transform.set_visible(true);
-			var this1 = { x : 0, y : this.hGap * i1 + this.factory.buttonHeight * i1};
+			var this1 = { x : 0, y : this.hGap * i1 + 50 * i1};
 			this.collapsedStateBtns[i1].set_position(this1);
 		}
 		this.isExpanded = false;
@@ -39109,7 +39112,7 @@ kro13_kk_guiObjects_ExpandableMenu.prototype = $extend(kro13_kk_gameObjects_Tran
 		while(_g11 < _g2) {
 			var i1 = _g11++;
 			this.expandedStateBtns[i1].transform.set_visible(true);
-			var this1 = { x : 0, y : this.hGap * i1 + this.factory.buttonHeight * i1};
+			var this1 = { x : 0, y : this.hGap * i1 + 50 * i1};
 			this.expandedStateBtns[i1].set_position(this1);
 		}
 		this.hintManager.showHint(this.btnMenu,"Play Game");
@@ -39195,12 +39198,8 @@ kro13_kk_guiObjects_ExpandableMenu.prototype = $extend(kro13_kk_gameObjects_Tran
 	,__class__: kro13_kk_guiObjects_ExpandableMenu
 });
 var kro13_kk_guiObjects_GUIObjectsFactory = function() {
-	this.buttonHeight = 0;
 	this.popupX = 0;
-	this.popupWidth = 0;
-	this.popupWidth = 680;
-	this.popupX = Math.floor((haxepunk_HXP.width - this.popupWidth) * 0.5);
-	this.buttonHeight = 100;
+	this.popupX = Math.floor((haxepunk_HXP.width - 900) * 0.5);
 	this.mainMenuY = (haxepunk_HXP.height - 1000) * 0.5;
 };
 $hxClasses["kro13.kk.guiObjects.GUIObjectsFactory"] = kro13_kk_guiObjects_GUIObjectsFactory;
@@ -39213,9 +39212,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.get_instance = function() {
 	return kro13_kk_guiObjects_GUIObjectsFactory.instance;
 };
 kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
-	popupWidth: null
-	,popupX: null
-	,buttonHeight: null
+	popupX: null
 	,mainMenuY: null
 	,buildFlexPopup: function(buttons,position,size) {
 		var popup = new kro13_kk_guiObjects_popups_FlexPopup(buttons,16777215,10066380);
@@ -39226,12 +39223,12 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 		return popup;
 	}
 	,buildStatsDialog: function() {
-		var this1 = { x : 400, y : 100};
+		var this1 = { x : 500, y : 120};
 		var btnGlobal = this.buildBlankButton(this1);
 		btnGlobal.setLabel("Показать друзей");
 		var btnOk = this.buildSquareButton(null,"images/btn_ok.png");
 		var popup = new kro13_kk_guiObjects_popups_StatsPopup(btnGlobal,btnOk,16777215,10066380);
-		var this2 = { x : this.popupWidth, y : 0};
+		var this2 = { x : 900, y : 0};
 		popup.set_size(this2);
 		var this3 = { x : this.popupX, y : 0};
 		popup.set_position(this3);
@@ -39241,7 +39238,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 	,buildPauseDialog: function() {
 		var btnOk = this.buildSquareButton(null,"images/btn_play.png");
 		var popup = new kro13_kk_guiObjects_popups_DialogPopup([btnOk],16777215,10066380);
-		var this1 = { x : this.popupWidth, y : 0};
+		var this1 = { x : 900, y : 0};
 		popup.set_size(this1);
 		var this2 = { x : this.popupX, y : 175};
 		popup.set_position(this2);
@@ -39252,7 +39249,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 	,buildErrorDialog: function() {
 		var btnOk = this.buildSquareButton(null,"images/btn_ok.png");
 		var popup = new kro13_kk_guiObjects_popups_DialogPopup([btnOk],16777215,10066380);
-		var this1 = { x : this.popupWidth, y : 0};
+		var this1 = { x : 900, y : 0};
 		popup.set_size(this1);
 		var this2 = { x : this.popupX, y : 0};
 		popup.set_position(this2);
@@ -39271,7 +39268,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 	}
 	,buildSettingsDilaog: function(dataProvider,gameEventSystem) {
 		var popup = new kro13_kk_guiObjects_popups_SettingsPopup(dataProvider,gameEventSystem,16777215,10066380);
-		var this1 = { x : this.popupWidth, y : 0};
+		var this1 = { x : 900, y : 0};
 		popup.set_size(this1);
 		var this2 = { x : this.popupX, y : 0};
 		popup.set_position(this2);
@@ -39282,7 +39279,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 		var btnOk = this.buildSquareButton(null,"images/btn_forth.png");
 		var btnCancel = this.buildSquareButton(null,"images/btn_back.png");
 		var popup = new kro13_kk_guiObjects_popups_DialogPopup([btnCancel,btnOk],16777215,10066380);
-		var this1 = { x : this.popupWidth, y : 0};
+		var this1 = { x : 900, y : 0};
 		popup.set_size(this1);
 		var this2 = { x : this.popupX, y : 0};
 		popup.set_position(this2);
@@ -39293,7 +39290,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 		var btnOk = this.buildSquareButton(null,"images/btn_ok.png");
 		var btnCancel = this.buildSquareButton(null,"images/btn_cancel.png");
 		var popup = new kro13_kk_guiObjects_popups_DialogPopup([btnCancel,btnOk],16777215,10066380);
-		var this1 = { x : this.popupWidth, y : 0};
+		var this1 = { x : 900, y : 0};
 		popup.set_size(this1);
 		var this2 = { x : this.popupX, y : 0};
 		popup.set_position(this2);
@@ -39315,7 +39312,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 	,buildTopHUD: function(dataProvider) {
 		var hud = new kro13_kk_guiObjects_HUD(dataProvider,16777215,10066380);
 		hud.name = "HUD";
-		var this1 = { x : haxepunk_HXP.width, y : 100};
+		var this1 = { x : haxepunk_HXP.width, y : 120};
 		hud.set_size(this1);
 		hud.build();
 		return hud;
@@ -39347,7 +39344,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 		}
 		var button = new kro13_kk_guiObjects_Button(16777215,10066380);
 		button.name = name;
-		var this1 = { x : this.popupWidth, y : 100};
+		var this1 = { x : 900, y : 120};
 		button.set_size(this1);
 		button.action = action;
 		button.setLabel(text);
@@ -39361,7 +39358,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 		}
 		var button = new kro13_kk_guiObjects_Button(16777215,10066380);
 		button.name = name;
-		var this1 = { x : 100, y : 100};
+		var this1 = { x : 120, y : 120};
 		button.set_size(this1);
 		button.action = action;
 		button.setIcon(icon);
@@ -39454,22 +39451,22 @@ kro13_kk_guiObjects_HUD.prototype = $extend(kro13_kk_guiObjects_popups_Popup.pro
 	,hPadding: null
 	,build: function() {
 		kro13_kk_guiObjects_popups_Popup.prototype.build.call(this);
-		this.scoreText = new kro13_kk_guiObjects_TextField(11250647,46);
+		this.scoreText = new kro13_kk_guiObjects_TextField(11250647,56);
 		this.transform.addChld(this.scoreText.transform);
 		this.scoreText.build();
 		this.scoreText.setText(this.buildScore());
 		var scoreSize = kro13_kk_utils_TextUtils.getTextRect(this.scoreText);
 		var tmp = this.scoreText;
-		var this1 = { x : 100, y : (this.get_size().y - scoreSize.y) * 0.5};
+		var this1 = { x : 110, y : (this.get_size().y - scoreSize.y) * 0.5};
 		tmp.set_position(this1);
 		this.addEvacIcon = new kro13_kk_gameObjects_Renderable();
-		var this2 = { x : 100, y : 100};
+		var this2 = { x : 120, y : 120};
 		var addEvacIconMaterial = { size : this2, source : "images/btn_add_evac.png"};
 		this.addEvacIcon.renderer.material = kro13_kk_components_renderer_materials_EMaterial.IMAGE(addEvacIconMaterial);
 		var this3 = { x : 0, y : 0};
 		this.addEvacIcon.set_position(this3);
 		this.transform.addChld(this.addEvacIcon.transform);
-		this.restartsText = new kro13_kk_guiObjects_TextField(11250647,46);
+		this.restartsText = new kro13_kk_guiObjects_TextField(11250647,56);
 		this.transform.addChld(this.restartsText.transform);
 		this.restartsText.build();
 		this.restartsText.setText(this.buildRestarts());
@@ -39478,11 +39475,11 @@ kro13_kk_guiObjects_HUD.prototype = $extend(kro13_kk_guiObjects_popups_Popup.pro
 		var this4 = { x : this.get_size().x - (restartsSize.x + this.hPadding), y : (this.get_size().y - restartsSize.y) * 0.5};
 		tmp1.set_position(this4);
 		this.restartsIcon = new kro13_kk_gameObjects_Renderable();
-		var this5 = { x : 100, y : 100};
+		var this5 = { x : 120, y : 120};
 		var restartsIconMaterial = { size : this5, source : "images/btn_evac.png"};
 		this.restartsIcon.renderer.material = kro13_kk_components_renderer_materials_EMaterial.IMAGE(restartsIconMaterial);
 		var tmp2 = this.restartsIcon;
-		var this6 = { x : this.restartsText.get_position().x - 80, y : 0};
+		var this6 = { x : this.restartsText.get_position().x - 120, y : 0};
 		tmp2.set_position(this6);
 		this.transform.addChld(this.restartsIcon.transform);
 	}
@@ -39493,7 +39490,8 @@ kro13_kk_guiObjects_HUD.prototype = $extend(kro13_kk_guiObjects_popups_Popup.pro
 		var tmp = this.get_size().x;
 		var tmp1 = restartsSize.x + this.hPadding;
 		this.restartsText.get_position().x = tmp - tmp1;
-		this.restartsIcon.get_position().x = this.restartsText.get_position().x - 80;
+		var tmp2 = this.restartsText.get_position().x - 120;
+		this.restartsIcon.get_position().x = tmp2 + 10;
 	}
 	,buildScore: function() {
 		var currScore = this.dataProvider.getScoreData().currentScore;
@@ -39570,10 +39568,7 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 	,build: function() {
 		var factory = kro13_kk_guiObjects_GUIObjectsFactory.get_instance();
 		var buttons = [];
-		var vPadding = 50;
-		var hPadding = 50;
-		var hGap = 50;
-		var width = factory.popupWidth;
+		var width = 900;
 		var height = 0;
 		this.btnPlay = factory.buildMainMenuButton($bind(this,this.onPlay),"images/btn_play.png",kro13_kk_utils_Locale.get(null,17),"Btn Play");
 		buttons.push(this.btnPlay);
@@ -39591,7 +39586,7 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		var _g = buttons.length;
 		while(_g1 < _g) {
 			var i = _g1++;
-			var this1 = { x : 0, y : hGap * i + factory.buttonHeight * i};
+			var this1 = { x : 0, y : 50 * i + 120 * i};
 			buttons[i].set_position(this1);
 			this.transform.addChld(buttons[i].transform);
 		}
@@ -39687,17 +39682,17 @@ kro13_kk_guiObjects_PlayerHUDBase.prototype = $extend(kro13_kk_gameObjects_Trans
 		this.speedBar = new kro13_kk_guiObjects_SpeedBar(this.dataProvider.getScoreData());
 		this.speedBar.build();
 		var tmp = this.speedBar;
-		var this1 = { x : -this.speedBar.get_size().x * 0.5, y : -200};
+		var this1 = { x : -this.speedBar.get_size().x * 0.5, y : -228};
 		tmp.set_position(this1);
 		this.transform.addChld(this.speedBar.transform);
-		this.bonusText = new kro13_kk_guiObjects_TextField(65280);
+		this.bonusText = new kro13_kk_guiObjects_TextField(65280,65);
 		var _this = this.bonusText.renderer;
 		_this.isLayerValid = false;
 		_this._layer = 8;
 		this.transform.addChld(this.bonusText.transform);
 		var tmp1 = this.bonusText;
 		var this2 = this.speedBar.get_position();
-		var this3 = { x : 2, y : -35};
+		var this3 = { x : 2, y : -70};
 		var other = this3;
 		var this4 = { x : this2.x, y : this2.y};
 		var this5 = this4;
@@ -39729,7 +39724,6 @@ kro13_kk_guiObjects_PlayerHUDBase.prototype = $extend(kro13_kk_gameObjects_Trans
 	,__class__: kro13_kk_guiObjects_PlayerHUDBase
 });
 var kro13_kk_guiObjects_PlayerHUD = function(dataProvider,gameEventSystem) {
-	this.isStuck = false;
 	kro13_kk_guiObjects_PlayerHUDBase.call(this,dataProvider);
 	this.gameEventSystem = gameEventSystem;
 	this.addComponent(new kro13_kk_components_GameEventHandler());
@@ -39741,25 +39735,7 @@ kro13_kk_guiObjects_PlayerHUD.__name__ = ["kro13","kk","guiObjects","PlayerHUD"]
 kro13_kk_guiObjects_PlayerHUD.__super__ = kro13_kk_guiObjects_PlayerHUDBase;
 kro13_kk_guiObjects_PlayerHUD.prototype = $extend(kro13_kk_guiObjects_PlayerHUDBase.prototype,{
 	gameEventSystem: null
-	,btnRestart: null
-	,btnStartNew: null
-	,buttons: null
 	,gameEvent: null
-	,isStuck: null
-	,build: function() {
-		kro13_kk_guiObjects_PlayerHUDBase.prototype.build.call(this);
-		this.buttons = [];
-		var buttonsWidth = 100 * this.buttons.length + 50 * (this.buttons.length - 1);
-		var _g1 = 0;
-		var _g = this.buttons.length;
-		while(_g1 < _g) {
-			var i = _g1++;
-			var this1 = { x : -buttonsWidth * 0.5 + 50 * i + 100 * i, y : 150};
-			this.buttons[i].set_position(this1);
-			this.transform.addChld(this.buttons[i].transform);
-			this.buttons[i].transform.set_visible(false);
-		}
-	}
 	,onRestart: function() {
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.RESTART);
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.PLAY);
@@ -39774,10 +39750,6 @@ kro13_kk_guiObjects_PlayerHUD.prototype = $extend(kro13_kk_guiObjects_PlayerHUDB
 	}
 	,onEvent: function(e) {
 		switch(e[1]) {
-		case 0:case 1:
-			this.isStuck = false;
-			this.doHideStuckHelp();
-			break;
 		case 14:
 			this.showRotation();
 			break;
@@ -39787,45 +39759,10 @@ kro13_kk_guiObjects_PlayerHUD.prototype = $extend(kro13_kk_guiObjects_PlayerHUDB
 		default:
 		}
 	}
-	,showStuckHelp: function() {
-		if(!this.isStuck) {
-			haxe_Timer.delay($bind(this,this.doShowSuckHelp),1000);
-			this.isStuck = true;
-		}
-	}
-	,hideStuckHelp: function() {
-		if(this.isStuck) {
-			haxe_Timer.delay($bind(this,this.doHideStuckHelp),1000);
-			this.isStuck = false;
-		}
-	}
-	,doShowSuckHelp: function() {
-		if(this.isStuck) {
-			var _g = 0;
-			var _g1 = this.buttons;
-			while(_g < _g1.length) {
-				var button = _g1[_g];
-				++_g;
-				button.transform.set_visible(true);
-			}
-		}
-	}
-	,doHideStuckHelp: function() {
-		if(!this.isStuck) {
-			var _g = 0;
-			var _g1 = this.buttons;
-			while(_g < _g1.length) {
-				var button = _g1[_g];
-				++_g;
-				button.transform.set_visible(false);
-			}
-		}
-	}
 	,__class__: kro13_kk_guiObjects_PlayerHUD
 });
 var kro13_kk_guiObjects_QuickMenu = function(dataProvider,gameEventSystem) {
 	this.isStuck = false;
-	this.vGap = 50;
 	this.isPlaying = false;
 	kro13_kk_gameObjects_Transformable.call(this);
 	this.name = "Quick Menu";
@@ -39850,7 +39787,6 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 	,btnStartNew: null
 	,btnPlayPause: null
 	,isPlaying: null
-	,vGap: null
 	,eventHandler: null
 	,factory: null
 	,gameEventSystem: null
@@ -39872,7 +39808,7 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 		var _g = buttons.length;
 		while(_g1 < _g) {
 			var i = _g1++;
-			var this1 = { x : 0, y : this.vGap * i + this.factory.buttonHeight * i};
+			var this1 = { x : 0, y : 50 * i + 120 * i};
 			buttons[i].set_position(this1);
 			this.transform.addChld(buttons[i].transform);
 		}
@@ -39987,9 +39923,9 @@ kro13_kk_guiObjects_QuickMenu.prototype = $extend(kro13_kk_gameObjects_Transform
 	,__class__: kro13_kk_guiObjects_QuickMenu
 });
 var kro13_kk_guiObjects_RotationDisplay = function(scoreData) {
-	var this1 = { x : 12, y : 12};
+	var this1 = { x : 16, y : 16};
 	this.tickSize = this1;
-	var this11 = { x : 18, y : 18};
+	var this11 = { x : 22, y : 22};
 	this.bigTickSize = this11;
 	this.ticksCount = 16;
 	kro13_kk_gameObjects_Transformable.call(this);
@@ -40039,7 +39975,7 @@ kro13_kk_guiObjects_RotationDisplay.prototype = $extend(kro13_kk_gameObjects_Tra
 		this.tickMaterial = kro13_kk_components_renderer_materials_EMaterial.GUI(this.tickMC);
 		this.fullTickMaterial = kro13_kk_components_renderer_materials_EMaterial.GUI(this.fullTickMC);
 		var phi = 2 * Math.PI / this.ticksCount;
-		var r = 150;
+		var r = 160;
 		var _g1 = 0;
 		var _g = this.ticksCount;
 		while(_g1 < _g) {
@@ -40152,9 +40088,9 @@ kro13_kk_guiObjects_SpeedBar.prototype = $extend(kro13_kk_gameObjects_Transforma
 	,build: function() {
 		var sizeX = 0;
 		this.tickFills = [];
-		var this1 = { x : 140, y : 24};
+		var this1 = { x : 200, y : 34};
 		var borderSize = this1;
-		sizeX += 140;
+		sizeX += 200;
 		var borderMaterialConfig = { size : borderSize, color : 16777215, borderColor : 10066380, borderWidth : 2};
 		var border = new kro13_kk_gameObjects_Renderable();
 		var _this = border.renderer;
@@ -40173,7 +40109,7 @@ kro13_kk_guiObjects_SpeedBar.prototype = $extend(kro13_kk_gameObjects_Transforma
 		this.speedFill.transform.set_position(this4);
 		this.speedFill.renderer.material = kro13_kk_components_renderer_materials_EMaterial.CLIP_RECTANGLE(this.speedFillMaterialConfig);
 		this.transform.addChld(this.speedFill.transform);
-		var this5 = { x : 2, y : 24};
+		var this5 = { x : 2, y : 34};
 		var speedTickMaterial = { size : this5, color : 10066380};
 		var speedTick = new kro13_kk_gameObjects_Renderable();
 		var _this2 = speedTick.renderer;
@@ -40183,7 +40119,7 @@ kro13_kk_guiObjects_SpeedBar.prototype = $extend(kro13_kk_gameObjects_Transforma
 		speedTick.transform.set_position(this6);
 		speedTick.renderer.material = kro13_kk_components_renderer_materials_EMaterial.RECTANGLE(speedTickMaterial);
 		this.transform.addChld(speedTick.transform);
-		var this7 = { x : 18, y : 24};
+		var this7 = { x : 18, y : 34};
 		var bonusTickSize = this7;
 		var bonusTickMaterialConfig = { size : bonusTickSize, color : 16777215, borderColor : 10066380, borderWidth : 2};
 		var this8 = { x : bonusTickSize.x - 4, y : bonusTickSize.y - 4};
@@ -40259,7 +40195,7 @@ var kro13_kk_guiObjects_TextField = function(color,fontSize,wordWrap,centerOrigi
 		wordWrap = false;
 	}
 	if(fontSize == null) {
-		fontSize = 36;
+		fontSize = 46;
 	}
 	kro13_kk_guiObjects_Layable.call(this);
 	var _this = this.renderer;
@@ -40582,18 +40518,19 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		text.build();
 		text.setText("Несколько полезных советов");
 		this.transform.addChld(text.transform);
+		var headerSize = kro13_kk_utils_TextUtils.getTextRect(text);
 		this.demo1 = new kro13_kk_guiObjects_popups__$HelpPopup_PlayerDemo(this.textEmitterSystem);
 		this.demo1.build();
-		var this3 = { x : 100, y : 150};
+		var this3 = { x : 100, y : 100 + headerSize.y};
 		this.demo1.set_position(this3);
 		this.transform.addChld(this.demo1.transform);
 		this.demo1.getPlayer().transform.get_position().y = 100;
 		this.demo1.getPlayer().transform.set_rotation(90);
 		this.demo1.fakeDP.getScoreData().speedRatio = 0;
 		this.demo1.fakeDP.getScoreData().bonusCounter = 0;
-		this.demo1.getHUD().transform.get_position().y = 156;
+		this.demo1.getHUD().transform.get_position().y += 114;
 		this.demo1.getHUD().update();
-		var demoText1 = new kro13_kk_guiObjects_TextField(11250647,null,true,false);
+		var demoText1 = new kro13_kk_guiObjects_TextField(11250647,36,true,false);
 		var this4 = { x : this.demo1.get_position().x + this.demo1.get_size().x, y : this.demo1.get_position().y};
 		demoText1.set_position(this4);
 		var this5 = { x : this.get_size().x - demoText1.get_position().x - 50, y : 0};
@@ -40614,9 +40551,9 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		this.demo2.fakeDP.getScoreData().speedRatio = 0.75;
 		this.demo2.fakeDP.getScoreData().bonusCounter = 5;
 		this.demo2.fakeDP.getScoreData().speedBonus = 2;
-		this.demo2.getHUD().transform.get_position().y = 156;
+		this.demo2.getHUD().transform.get_position().y += 114;
 		this.demo2.getHUD().update();
-		var demoText2 = new kro13_kk_guiObjects_TextField(11250647,null,true,false);
+		var demoText2 = new kro13_kk_guiObjects_TextField(11250647,36,true,false);
 		var this7 = { x : 50, y : this.demo2.get_position().y};
 		demoText2.set_position(this7);
 		var this8 = { x : this.get_size().x - this.demo2.get_size().x - 100, y : 0};
@@ -40639,7 +40576,7 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		this.demo3.getRotation().transform.set_visible(true);
 		this.demo3.getTramp().transform.set_visible(true);
 		this.demo3.getRotation().update();
-		var demoText3 = new kro13_kk_guiObjects_TextField(11250647,null,true,false);
+		var demoText3 = new kro13_kk_guiObjects_TextField(11250647,36,true,false);
 		var this10 = { x : this.demo3.get_position().x + this.demo3.get_size().x, y : this.demo3.get_position().y};
 		demoText3.set_position(this10);
 		var this11 = { x : this.get_size().x - demoText3.get_position().x - 50, y : 0};
@@ -40658,7 +40595,7 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		this.demo4.getSpeed().transform.set_visible(false);
 		this.demo4.getHUD().transform.get_position().y = 170;
 		this.demo4.getHUD().update();
-		var demoText4 = new kro13_kk_guiObjects_TextField(11250647,null,true,false);
+		var demoText4 = new kro13_kk_guiObjects_TextField(11250647,36,true,false);
 		var this13 = { x : 50, y : this.demo4.get_position().y};
 		demoText4.set_position(this13);
 		var this14 = { x : this.get_size().x - this.demo4.get_size().x - 100, y : 0};
@@ -40668,9 +40605,9 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		this.transform.addChld(demoText4.transform);
 		var btnBack = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_evac.png","Btn Restart");
 		var btnForth = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton(null,"images/btn_finish.png","Btn Start New");
-		btnBack.get_position().x = this.demo4.get_position().x - 25;
+		btnBack.get_position().x = this.demo4.get_position().x - 45;
 		btnBack.get_position().y = this.demo4.get_position().y + 125;
-		btnForth.get_position().x = btnBack.get_position().x + 150;
+		btnForth.get_position().x = btnBack.get_position().x + 170;
 		btnForth.get_position().y = btnBack.get_position().y;
 		this.transform.addChld(btnBack.transform);
 		this.transform.addChld(btnForth.transform);
@@ -40851,43 +40788,42 @@ kro13_kk_guiObjects_popups_SettingsPopup.prototype = $extend(kro13_kk_guiObjects
 	,gameEventSystem: null
 	,build: function() {
 		this.soundText = new kro13_kk_guiObjects_TextField(11250647,null,true,false);
-		var tmp = this.soundText;
-		var this1 = { x : this.get_size().x - 250, y : 0};
-		tmp.set_size(this1);
-		var this2 = { x : 50, y : 75};
+		var this1 = { x : 800, y : 0};
+		this.soundText.set_size(this1);
+		var this2 = { x : 50, y : 50};
 		this.soundText.set_position(this2);
 		this.soundText.build();
 		this.soundText.setText("Вкл/Выкл звук:");
 		this.transform.addChld(this.soundText.transform);
 		this.btnSound = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton($bind(this,this.onSound),"images/btn_sound.png","Btn Sound");
-		var tmp1 = this.btnSound;
-		var this3 = { x : this.get_size().x - 150, y : 50};
-		tmp1.set_position(this3);
+		var tmp = this.btnSound;
+		var this3 = { x : this.get_size().x - 170, y : 50};
+		tmp.set_position(this3);
 		this.transform.addChld(this.btnSound.transform);
 		this.sensText = new kro13_kk_guiObjects_TextField(11250647,null,true,false);
-		var tmp2 = this.sensText;
-		var this4 = { x : this.get_size().x - 100, y : 0};
-		tmp2.set_size(this4);
-		var this5 = { x : 50, y : 200};
+		var this4 = { x : 800, y : 0};
+		this.sensText.set_size(this4);
+		var this5 = { x : 50, y : 220};
 		this.sensText.set_position(this5);
 		this.sensText.build();
 		this.sensText.setText("Чувствительность контроля:");
 		this.transform.addChld(this.sensText.transform);
 		this.btnSensMinus = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton($bind(this,this.onSensMinus),"images/btn_minus.png","Btn Sens Minus");
-		var this6 = { x : 50, y : 250};
-		this.btnSensMinus.set_position(this6);
+		var tmp1 = this.btnSensMinus;
+		var this6 = { x : 50, y : this.sensText.get_position().y + 50 + 20};
+		tmp1.set_position(this6);
 		this.transform.addChld(this.btnSensMinus.transform);
 		this.btnSensPlus = kro13_kk_guiObjects_GUIObjectsFactory.get_instance().buildSquareButton($bind(this,this.onSensPlus),"images/btn_plus.png","Btn Sens Plus");
-		var tmp3 = this.btnSensPlus;
-		var this7 = { x : this.get_size().x - 150, y : 250};
-		tmp3.set_position(this7);
+		var tmp2 = this.btnSensPlus;
+		var this7 = { x : this.get_size().x - 170, y : this.sensText.get_position().y + 50 + 20};
+		tmp2.set_position(this7);
 		this.transform.addChld(this.btnSensPlus.transform);
 		this.sensValText = new kro13_kk_guiObjects_TextField(11250647,null,true,true);
 		var this8 = { x : 0, y : 0};
 		this.sensValText.set_size(this8);
-		var tmp4 = this.sensValText;
-		var this9 = { x : this.get_size().x * 0.5, y : 300};
-		tmp4.set_position(this9);
+		var tmp3 = this.sensValText;
+		var this9 = { x : this.get_size().x * 0.5, y : this.btnSensMinus.get_position().y + 50};
+		tmp3.set_position(this9);
 		this.sensValText.build();
 		this.sensValText.setText(this.getSensText());
 		this.transform.addChld(this.sensValText.transform);
@@ -40895,7 +40831,7 @@ kro13_kk_guiObjects_popups_SettingsPopup.prototype = $extend(kro13_kk_guiObjects
 		this.setSoundIcon();
 	}
 	,calculateContentSize: function() {
-		var this1 = { x : this.get_size().x, y : 400};
+		var this1 = { x : this.get_size().x, y : 410};
 		return this1;
 	}
 	,onSound: function() {
@@ -67455,7 +67391,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 554845;
+	this.version = 398133;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -112611,6 +112547,16 @@ kro13_kk_Constants.SOCIAL_URL_MOBILE = "vk://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.PROFILE_VER = "0.0";
 kro13_kk_Constants.FREE_RESTARTS_COUNT = 3;
 kro13_kk_Constants.VERSION = "v 0.1.3";
+kro13_kk_Constants.BUTTON_HEIGHT = 120;
+kro13_kk_Constants.POPUP_WIDTH = 900;
+kro13_kk_Constants.UI_GAP = 50;
+kro13_kk_Constants.SPEED_BAR_WIDTH = 200;
+kro13_kk_Constants.SPEED_BAR_HEIGHT = 34;
+kro13_kk_Constants.RD_BIG_TICK_SIZE = 22;
+kro13_kk_Constants.RD_SMALL_TICK_SIZE = 16;
+kro13_kk_Constants.RD_RADIUS = 160;
+kro13_kk_Constants.BASE_TEXT_SIZE = 46;
+kro13_kk_Constants.SMALL_TEXT_SIZE = 36;
 kro13_kk_data_DataUtils.adjectives = ["bold","courageous","daring","epic","fearless","gallant","grand","gutsy","noble","valiant","classic","elevated","dauntless","doughty","exaggerated","fire-eating","grandiose","gritty","gutty","high-flown","impavid","inflated","intrepid","lion-hearted","mythological","stouthearted","unafraid","undaunted","valorous","almighty","backbreaking","colossal","courageous","forceful","gargantuan","gigantic","hard","heroic","huge","impressive","laborious","mighty","strenuous","tough","vigorous","altruistic","benevolent","bighearted","chivalrous","considerate","free","gracious","greathearted","heroic","liberal","lofty","magnanimous","noble","princely","unselfish"];
 kro13_kk_data_DataUtils.nouns = ["alligator","crocodile","alpaca","ant","antelope","ape","armadillo","donkey","burro","baboon","badger","bat","bear","beaver","bee","beetle","buffalo","butterfly","camel","carabao","caribou","cat","cattle","cheetah","chimpanzee","chinchilla","cicada","clam","cockroach","cod","coyote","crab","cricket","crow","raven","deer","dinosaur","dog","dolphin","porpoise","duck","eagle","eel","elephant","elk","ferret","fish","fly","fox","frog","toad","gerbil","giraffe","gnat","gnu","wildebeest","goat","goldfish","goose","gorilla","grasshopper","guinea pig","hamster","hare","hedgehog","herring","hippopotamus","hornet","horse","hound","hyena","impala","insect","jackal","jellyfish","kangaroo","wallaby","koala","leopard","lion","lizard","llama","locust","louse","macaw","mallard","mammoth","manatee","marten","mink","minnow","mole","monkey","moose","mosquito","mouse","rat","mule","muskrat","otter","ox","oyster","panda","pig","hog","swine","platypus","porcupine","prairie dog","pug","rabbit","raccoon","reindeer","rhinoceros","salmon","sardine","scorpion","seal","sea lion","serval","shark","sheep","skunk","snail","snake","spider","squirrel","swan","termite","tiger","trout","turtle","walrus","wasp","weasel","whale","wolf","wombat","woodchuck","worm","yak","yellowjacket","zebra"];
 kro13_kk_guiObjects_popups_ConsolePopup.log = "";
