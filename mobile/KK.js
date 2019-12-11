@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "111", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
+	var config = { build : "114", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -1432,11 +1432,10 @@ ManifestResources.init = function(config) {
 	}
 	lime_utils_Assets.defaultRootPath = rootPath;
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$font_$monofonto_$ttf);
-	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$fonts_$zeroes_$one_$ttf);
 	var data;
 	var manifest;
 	var library;
-	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y17:images%2Fback.pngR2i32750R3R4R5R25R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R26R6tgoR0y17:images%2Fkk.atlasR2i2886R3R23R5R27R6tgoR0y15:images%2Fkk.pngR2i25021R3R4R5R28R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R29R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R30R6tgoR0y22:fonts%2Fzeroes_one.fntR2i90354R3R23R5R31R6tgoR2i61416R3R18R19y29:__ASSET__fonts_zeroes_one_ttfR5y22:fonts%2Fzeroes_one.ttfR6tgoR0y24:fonts%2Fzeroes_one_0.pngR2i6923R3R4R5R34R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR36hR6tgh\",\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y17:images%2Fback.pngR2i32750R3R4R5R25R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R26R6tgoR0y17:images%2Fkk.atlasR2i2886R3R23R5R27R6tgoR0y15:images%2Fkk.pngR2i25021R3R4R5R28R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R29R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R30R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR32hR6tgh\",\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	manifest = lime_utils_AssetManifest.parse(data,rootPath);
 	library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -1641,23 +1640,6 @@ _$_$ASSET_$_$font_$monofonto_$ttf.__super__ = lime_text_Font;
 _$_$ASSET_$_$font_$monofonto_$ttf.prototype = $extend(lime_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$font_$monofonto_$ttf
 });
-var _$_$ASSET_$_$fonts_$zeroes_$one_$ttf = $hx_exports["__ASSET__fonts_zeroes_one_ttf"] = function() {
-	this.ascender = 927;
-	this.descender = -273;
-	this.height = 1200;
-	this.numGlyphs = 369;
-	this.underlinePosition = -143;
-	this.underlineThickness = 20;
-	this.unitsPerEM = 1000;
-	this.name = "ZeroesOne-Regular";
-	lime_text_Font.call(this);
-};
-$hxClasses["__ASSET__fonts_zeroes_one_ttf"] = _$_$ASSET_$_$fonts_$zeroes_$one_$ttf;
-_$_$ASSET_$_$fonts_$zeroes_$one_$ttf.__name__ = ["__ASSET__fonts_zeroes_one_ttf"];
-_$_$ASSET_$_$fonts_$zeroes_$one_$ttf.__super__ = lime_text_Font;
-_$_$ASSET_$_$fonts_$zeroes_$one_$ttf.prototype = $extend(lime_text_Font.prototype,{
-	__class__: _$_$ASSET_$_$fonts_$zeroes_$one_$ttf
-});
 var openfl_text_Font = function(name) {
 	lime_text_Font.call(this,name);
 };
@@ -1742,16 +1724,6 @@ _$_$ASSET_$_$OPENFL_$_$font_$monofonto_$ttf.__name__ = ["__ASSET__OPENFL__font_m
 _$_$ASSET_$_$OPENFL_$_$font_$monofonto_$ttf.__super__ = openfl_text_Font;
 _$_$ASSET_$_$OPENFL_$_$font_$monofonto_$ttf.prototype = $extend(openfl_text_Font.prototype,{
 	__class__: _$_$ASSET_$_$OPENFL_$_$font_$monofonto_$ttf
-});
-var _$_$ASSET_$_$OPENFL_$_$fonts_$zeroes_$one_$ttf = $hx_exports["__ASSET__OPENFL__fonts_zeroes_one_ttf"] = function() {
-	this.__fromLimeFont(new _$_$ASSET_$_$fonts_$zeroes_$one_$ttf());
-	openfl_text_Font.call(this);
-};
-$hxClasses["__ASSET__OPENFL__fonts_zeroes_one_ttf"] = _$_$ASSET_$_$OPENFL_$_$fonts_$zeroes_$one_$ttf;
-_$_$ASSET_$_$OPENFL_$_$fonts_$zeroes_$one_$ttf.__name__ = ["__ASSET__OPENFL__fonts_zeroes_one_ttf"];
-_$_$ASSET_$_$OPENFL_$_$fonts_$zeroes_$one_$ttf.__super__ = openfl_text_Font;
-_$_$ASSET_$_$OPENFL_$_$fonts_$zeroes_$one_$ttf.prototype = $extend(openfl_text_Font.prototype,{
-	__class__: _$_$ASSET_$_$OPENFL_$_$fonts_$zeroes_$one_$ttf
 });
 Math.__name__ = ["Math"];
 var Reflect = function() { };
@@ -37294,6 +37266,7 @@ kro13_kk_data_DataProvider.prototype = {
 	}
 	,onRemoteError: function(error) {
 		haxe_Log.trace(JSON.stringify(error),{ fileName : "DataProvider.hx", lineNumber : 61, className : "kro13.kk.data.DataProvider", methodName : "onRemoteError"});
+		js_Browser.alert(JSON.stringify(error));
 		this.gameEventSystem.dispatchGameEvent(kro13_kk_EGameEvent.ERROR(0));
 	}
 	,__class__: kro13_kk_data_DataProvider
@@ -37316,7 +37289,7 @@ kro13_kk_data__$DataProvider_RemoteDataProviderStub.__interfaces__ = [kro13_kk_d
 kro13_kk_data__$DataProvider_RemoteDataProviderStub.prototype = {
 	local: null
 	,getProfile: function(remoteId,userName,onSuccess,onError) {
-		haxe_Log.trace("get profile stub " + remoteId,{ fileName : "DataProvider.hx", lineNumber : 77, className : "kro13.kk.data._DataProvider.RemoteDataProviderStub", methodName : "getProfile"});
+		haxe_Log.trace("get profile stub " + remoteId,{ fileName : "DataProvider.hx", lineNumber : 78, className : "kro13.kk.data._DataProvider.RemoteDataProviderStub", methodName : "getProfile"});
 		if(onSuccess != null) {
 			var remoteProf = { remoteId : "", userName : "", totalScore : 0};
 			if(remoteId == "") {
@@ -42700,21 +42673,19 @@ kro13_vk_VK.prototype = {
 		this.language = url.searchParams.get("language");
 		this.platform = url.searchParams.get("platform");
 		try {
-			if(this.platform != "web") {
-				var f = $bind(this,this.onSDKInitSuccess);
-				var a1 = onSuccess;
-				var f1 = $bind(this,this.onSDKInitFailed);
-				var a11 = onError;
-				VK.init(function() {
-					f(a1);
-				},function() {
-					f1(a11);
-				});
-			} else {
-				this.onSDKInitFailed(onError);
-			}
+			var f = $bind(this,this.onSDKInitSuccess);
+			var a1 = onSuccess;
+			var f1 = $bind(this,this.onSDKInitFailed);
+			var a11 = onError;
+			VK.init(function() {
+				f(a1);
+			},function() {
+				f1(a11);
+			});
 		} catch( e ) {
 			haxe_CallStack.lastException = e;
+			if (e instanceof js__$Boot_HaxeError) e = e.val;
+			js_Browser.alert("Error: " + Std.string(e));
 			this.onSDKInitFailed(onError);
 		}
 	}
@@ -42749,6 +42720,7 @@ kro13_vk_VK.prototype = {
 		}
 	}
 	,onSDKInitFailed: function(callback) {
+		js_Browser.alert("sdk init failed!");
 		if(callback != null) {
 			callback();
 		}
@@ -42844,7 +42816,7 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	}
 	,onUserNameGot: function(onSuccess,onError,userName) {
 		var userId = kro13_vk_VK.get_instance().getUserId();
-		onSuccess({ remoteId : "", userName : "", totalScore : 0});
+		this.parse.getRemoteProfileVK(userId,userName,onSuccess,onError);
 	}
 	,__class__: kro13_vk_VKRemoteDataProvider
 };
@@ -67390,7 +67362,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 841531;
+	this.version = 719600;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];

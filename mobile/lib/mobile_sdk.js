@@ -7,14 +7,31 @@ VK.init = function (successCallback, failedCallback, ver, query) {
     var success = VK.initQueryParams(query);
 
     VK._bridge = false;
+
     if (success) {
         if (window.AndroidBridge !== undefined) {
             VK._bridge = window.AndroidBridge;
+            alert(`android bridge ${VK._bridge.apiCall}`);
         }
 
         if (window.webkit && window.webkit.messageHandlers) {
             VK._bridge = window.webkit.messageHandlers;
 
+            VK._bridge.callMethod = function(functionName, args) {
+                this[functionName].postMessage(args);
+            };
+
+            VK._bridge.apiCall = function(method, query, callbackId) {
+                this.callMethod('VKWebAppApiCall', {
+                    method: method,
+                    query: query,
+                    callbackId: callbackId.toString()
+                });
+            }
+        }
+
+        if (VK._bridge.apiCall == undefined)
+        {
             VK._bridge.callMethod = function(functionName, args) {
                 this[functionName].postMessage(args);
             };
