@@ -42750,7 +42750,7 @@ kro13_vk_VK.prototype = {
 		callback("" + this.firstName + " " + this.lastName);
 	}
 	,onGetScore: function(callback,response) {
-		callback(response.score);
+		callback(response);
 	}
 	,onVisibilityChange: function(e) {
 		var hidden = window.document.hidden;
@@ -67369,7 +67369,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 710950;
+	this.version = 51648;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
