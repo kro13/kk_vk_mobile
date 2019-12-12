@@ -42700,7 +42700,12 @@ kro13_vk_VK.prototype = {
 		VK.api("apps.getLeaderboard",{ type : "score", global : global, extended : 1, test_mode : 0, v : "5.95"},tmp);
 	}
 	,getScore: function(userId,onSuccess) {
-		VK.api("apps.getScore",{ user_id : userId, test_mode : 0, v : "5.95"},onSuccess);
+		var f = $bind(this,this.onGetScore);
+		var a1 = onSuccess;
+		var tmp = function(a2) {
+			f(a1,a2);
+		};
+		VK.api("apps.getScore",{ user_id : userId, test_mode : 0, v : "5.95"},tmp);
 	}
 	,onSDKInitSuccess: function(callback) {
 		if(callback != null) {
@@ -42743,6 +42748,9 @@ kro13_vk_VK.prototype = {
 		this.firstName = response.response[0].first_name;
 		this.lastName = response.response[0].last_name;
 		callback("" + this.firstName + " " + this.lastName);
+	}
+	,onGetScore: function(callback,response) {
+		callback(response.score);
 	}
 	,onVisibilityChange: function(e) {
 		var hidden = window.document.hidden;
@@ -67361,7 +67369,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 452719;
+	this.version = 710950;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
