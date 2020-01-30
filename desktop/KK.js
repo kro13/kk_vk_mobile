@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "119", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
+	var config = { build : "119", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1400, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 2100, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -34597,6 +34597,7 @@ kro13_hxp_scenes_HxpGUIScene.prototype = $extend(kro13_hxp_scenes_HxpAbstractSce
 	,build: function() {
 		var factory = kro13_kk_guiObjects_GUIObjectsFactory.get_instance();
 		var buttonGap = 50;
+		buttonGap = 50;
 		this.playerHUD = factory.buildPlayerHUD(this.dataProvider.local,this.gameEventSystem);
 		var this1 = { x : Math.round(haxepunk_HXP.width * 0.5), y : Math.round(haxepunk_HXP.height * 0.33)};
 		this.playerHUD.set_position(this1);
@@ -36510,8 +36511,10 @@ kro13_kk_IUpdatable.prototype = {
 	,__class__: kro13_kk_IUpdatable
 };
 var kro13_kk_KKGame = function() {
-	haxe_Log.trace("v 0.13.1",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
+	haxe_Log.trace("v 0.13.2",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
 	kro13_hxp_HxpEngine.call(this,0,0,60,false);
+	var vk = kro13_vk_VK.get_instance();
+	vk.addVisibilityHandler();
 	openfl_Lib.get_current().addEventListener("deactivate",$bind(this,this.onDeactivate));
 	openfl_Lib.get_current().addEventListener("activate",$bind(this,this.onActivate));
 };
@@ -37215,7 +37218,7 @@ kro13_kk_components_renderer_materials_MaterialUtils.buildRectangle = function(s
 };
 var kro13_kk_data_DataProvider = function(gameEventSystem) {
 	this.local = new kro13_kk_data_LocalDataProvider();
-	this.remote = new kro13_kk_data__$DataProvider_RemoteDataProviderStub(this.local);
+	this.remote = new kro13_vk_VKRemoteDataProvider();
 	this.gameEventSystem = gameEventSystem;
 };
 $hxClasses["kro13.kk.data.DataProvider"] = kro13_kk_data_DataProvider;
@@ -39276,7 +39279,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 	}
 	,buildQuickMenu: function(dataProvider,gameEventSystem) {
 		var quickMenu = new kro13_kk_guiObjects_QuickMenu(dataProvider,gameEventSystem);
-		var this1 = { x : haxepunk_HXP.width - 150, y : (haxepunk_HXP.height - 700) * 0.5};
+		var this1 = { x : haxepunk_HXP.width - 150, y : (haxepunk_HXP.height - 800) * 0.5};
 		quickMenu.set_position(this1);
 		quickMenu.build();
 		return quickMenu;
@@ -39290,7 +39293,7 @@ kro13_kk_guiObjects_GUIObjectsFactory.prototype = {
 	}
 	,buildMainMenu: function(dataProvider,gameEventSystem) {
 		var mainMenu = new kro13_kk_guiObjects_MainMenu(dataProvider,gameEventSystem);
-		var this1 = { x : this.popupX, y : (haxepunk_HXP.height - 700) * 0.5};
+		var this1 = { x : this.popupX, y : (haxepunk_HXP.height - 800) * 0.5};
 		mainMenu.set_position(this1);
 		mainMenu.build();
 		return mainMenu;
@@ -39550,11 +39553,11 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		var logoMaterialConf = { size : this2, source : "images/logo.png"};
 		logo.renderer.material = kro13_kk_components_renderer_materials_EMaterial.IMAGE(logoMaterialConf);
 		this.transform.addChld(logo.transform);
-		var this3 = { x : Math.floor((this.btnPlay.get_size().x - logoMaterialConf.size.x) * 0.5), y : -300};
+		var this3 = { x : Math.floor((this.btnPlay.get_size().x - logoMaterialConf.size.x) * 0.5), y : -200};
 		logo.set_position(this3);
 		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,false);
 		version.build();
-		version.setText("v 0.13.1");
+		version.setText("v 0.13.2");
 		var tmp = logo.get_position().x + logoMaterialConf.size.x;
 		version.transform.get_position().x = tmp - kro13_kk_utils_TextUtils.getTextRect(version).x;
 		var tmp1 = logo.get_position().y + logoMaterialConf.size.y;
@@ -40490,7 +40493,7 @@ kro13_kk_guiObjects_popups_HelpPopup.prototype = $extend(kro13_kk_guiObjects_pop
 		var this5 = { x : this.get_size().x - demoText1.get_position().x - 50, y : 0};
 		demoText1.set_size(this5);
 		demoText1.build();
-		demoText1.setText("Двигай палец влево и вправо по экрану для поворота и контроля скорости.");
+		demoText1.setText("Зажми левую кнопку мыши и двигай курсор влево и вправо по экрану для поворота и контроля скорости.");
 		this.transform.addChld(demoText1.transform);
 		this.demo1Rotation = new kro13_kk_tween_RepeatTween(new kro13_kk_tween_SequenceTween([new kro13_kk_tween_FloatTween(90,0,2),new kro13_kk_tween_FloatTween(0,90,2)]));
 		this.demo1Speed = new kro13_kk_tween_RepeatTween(new kro13_kk_tween_SequenceTween([new kro13_kk_tween_FloatTween(0,1,2),new kro13_kk_tween_FloatTween(1,0,2)]));
@@ -42449,7 +42452,7 @@ kro13_kk_utils_Locale.get = function(locale,id,args) {
 		case 14:
 			return "Сбросить профиль?\nВнимание: ты потеряешь все свои очки!";
 		case 15:
-			return "<white><btn_help/></white>  показать помощь,\n\n<white><btn_reset/></white>  сбросить профиль,\n\n<white><btn_music/></white>  включить/выключить музыку,\n\n<white><btn_stats/></white>  показать статистику,\n\n<white><btn_forth/></white>  пропустить трассу,\n\n<white><btn_back/></white>  начать трассу заново, если застрял,\n\n<white><btn_play/></white>  играть/приостановить игру.\n\nДвигай палец по экрану влево и вправо, для поворота, контроля скорости и выполнения вращений при прыжках с трамплина.";
+			return "<white><btn_help/></white>  показать помощь,\n\n<white><btn_reset/></white>  сбросить профиль,\n\n<white><btn_music/></white>  включить/выключить музыку,\n\n<white><btn_stats/></white>  показать статистику,\n\n<white><btn_forth/></white>  пропустить трассу,\n\n<white><btn_back/></white>  начать трассу заново, если застрял,\n\n<white><btn_play/></white>  играть/приостановить игру.\n\nЗажми левую кнопку мыши и двигай курсор вправо и влево, для поворота, контроля скорости и выполнения вращений при прыжках с трамплина.";
 		case 16:
 			return "ВОООУ!!! Респект! Вот это я называю катание!\nЗакончить трассу?";
 		case 17:
@@ -42549,6 +42552,83 @@ kro13_kk_utils_TextUtils.getTextRect = function(text) {
 	}
 	var this1 = { x : x, y : bmText.textHeight};
 	return this1;
+};
+var kro13_parse_Parse = function() {
+	this.authenticated = false;
+};
+$hxClasses["kro13.parse.Parse"] = kro13_parse_Parse;
+kro13_parse_Parse.__name__ = ["kro13","parse","Parse"];
+kro13_parse_Parse.__properties__ = {get_instance:"get_instance"};
+kro13_parse_Parse.get_instance = function() {
+	if(kro13_parse_Parse.instance == null) {
+		kro13_parse_Parse.instance = new kro13_parse_Parse();
+	}
+	return kro13_parse_Parse.instance;
+};
+kro13_parse_Parse.prototype = {
+	authenticated: null
+	,init: function() {
+		Parse.serverURL = "https://parseapi.back4app.com";
+		Parse.initialize("4J6bwG1YSzVacs4VRT8XVYvdlzv0P5YVTkWJeTlL","faEHsxRk9Izl7zy5ETtwbkIHVQ4qWPkhsocqYROt");
+	}
+	,getRemoteProfile: function(remoteId,userName,onSuccess,onError) {
+		haxe_Log.trace("get remote profile " + remoteId + " " + userName,{ fileName : "Parse.hx", lineNumber : 27, className : "kro13.parse.Parse", methodName : "getRemoteProfile"});
+		Parse.Cloud.run("getProfile", {remoteId:remoteId, userName:userName})
+                            .then((result) => {
+                                //console.log("remote profile created");
+                                onSuccess(result);
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                                onError(error);
+                            });
+	}
+	,getRemoteProfileVK: function(remoteId,userName,onSuccess,onError) {
+		haxe_Log.trace("get remote profile " + remoteId + " " + userName,{ fileName : "Parse.hx", lineNumber : 41, className : "kro13.parse.Parse", methodName : "getRemoteProfileVK"});
+		Parse.Cloud.run("getProfileVK", {remoteId:remoteId, userName:userName})
+                            .then((result) => {
+                                //console.log("remote profile created");
+                                onSuccess(result);
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                                onError(error);
+                            });
+	}
+	,updateProfile: function(profile,onSuccess,onError) {
+		Parse.Cloud.run("updateProfile", profile)
+                            .then((result) => {
+                                //console.log("profile updated");
+                                onSuccess(result);
+                            })
+                            .catch((error) => {
+                                //console.log(JSON.stringify(error));
+                                onError(error);
+                            });
+	}
+	,updateProfileVK: function(profile,onSuccess,onError) {
+		Parse.Cloud.run("updateProfileVK", profile)
+                            .then((result) => {
+                                //console.log("profile updated");
+                                onSuccess(result);
+                            })
+                            .catch((error) => {
+                                console.log(JSON.stringify(error));
+                                onError(error);
+                            });
+	}
+	,getTopScores: function(count,onSuccess,onError) {
+		Parse.Cloud.run("getTopScores", {count:count})
+                            .then((results) => {
+                                //console.log("top score got");
+                                onSuccess(results);
+                            })
+                            .catch((error) => {
+                                //console.log(error);
+                                onError(error);
+                            });
+	}
+	,__class__: kro13_parse_Parse
 };
 var kro13_vk_VK = function() {
 };
@@ -42680,6 +42760,73 @@ kro13_vk_VK.prototype = {
 		}
 	}
 	,__class__: kro13_vk_VK
+};
+var kro13_vk_VKRemoteDataProvider = function() {
+	this.parse = kro13_parse_Parse.get_instance();
+	this.parse.init();
+};
+$hxClasses["kro13.vk.VKRemoteDataProvider"] = kro13_vk_VKRemoteDataProvider;
+kro13_vk_VKRemoteDataProvider.__name__ = ["kro13","vk","VKRemoteDataProvider"];
+kro13_vk_VKRemoteDataProvider.__interfaces__ = [kro13_kk_data_IRemoteDataProvider];
+kro13_vk_VKRemoteDataProvider.prototype = {
+	parse: null
+	,getProfile: function(remoteId,userName,onSuccess,onError) {
+		var f = $bind(this,this.onInitSuccess);
+		var a1 = onSuccess;
+		var a2 = onError;
+		var tmp = function() {
+			f(a1,a2);
+		};
+		kro13_vk_VK.get_instance().init(tmp);
+	}
+	,updateProfile: function(profile,onSuccess,onError) {
+		this.parse.updateProfileVK(profile,onSuccess,onError);
+	}
+	,getTopScores: function(count,global,onSuccess,onError) {
+		var _gthis = this;
+		kro13_vk_VK.get_instance().getLeaderboard(global ? 1 : 0,function(result) {
+			result.sort($bind(_gthis,_gthis.sortByScore));
+			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 36, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
+			if(onSuccess != null) {
+				var tmp = result.splice(0,count);
+				onSuccess(tmp);
+			}
+		});
+	}
+	,sortByScore: function(a,b) {
+		if(a.totalScore < b.totalScore) {
+			return 1;
+		} else if(a.totalScore > b.totalScore) {
+			return -1;
+		}
+		return 0;
+	}
+	,onInitSuccess: function(onSuccess,onError) {
+		var f = $bind(this,this.onUserNameGot);
+		var a1 = onSuccess;
+		var a2 = onError;
+		var tmp = function(a3) {
+			f(a1,a2,a3);
+		};
+		kro13_vk_VK.get_instance().getUserName(tmp);
+	}
+	,onUserNameGot: function(onSuccess,onError,userName) {
+		var userId = kro13_vk_VK.get_instance().getUserId();
+		var f = $bind(this,this.onScoreGot);
+		var a1 = onSuccess;
+		var a2 = onError;
+		var a3 = userName;
+		var tmp = function(a4) {
+			f(a1,a2,a3,a4);
+		};
+		kro13_vk_VK.get_instance().getScore(userId,tmp);
+	}
+	,onScoreGot: function(onSuccess,onError,userName,score) {
+		var profile = { remoteId : "", userName : userName, totalScore : score};
+		haxe_Log.trace(profile,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 75, className : "kro13.vk.VKRemoteDataProvider", methodName : "onScoreGot"});
+		onSuccess(profile);
+	}
+	,__class__: kro13_vk_VKRemoteDataProvider
 };
 var lime__$backend_html5_GameDeviceData = function() {
 	this.connected = true;
@@ -67223,7 +67370,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 618595;
+	this.version = 334251;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -111819,7 +111966,7 @@ while(_g11 < _g2) {
 }
 lime_system_CFFI.available = false;
 lime_system_CFFI.enabled = false;
-lime_utils_Log.level = 3;
+lime_utils_Log.level = 5;
 if(typeof console == "undefined") {
 	console = {}
 }
@@ -112337,7 +112484,7 @@ kro13_kk_Constants.SOCIAL_URL = "https://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.SOCIAL_URL_MOBILE = "vk://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.PROFILE_VER = "0.0";
 kro13_kk_Constants.FREE_RESTARTS_COUNT = 3;
-kro13_kk_Constants.VERSION = "v 0.13.1";
+kro13_kk_Constants.VERSION = "v 0.13.2";
 kro13_kk_Constants.BUTTON_HEIGHT = 120;
 kro13_kk_Constants.POPUP_WIDTH = 900;
 kro13_kk_Constants.UI_GAP = 50;
