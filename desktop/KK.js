@@ -36511,7 +36511,7 @@ kro13_kk_IUpdatable.prototype = {
 	,__class__: kro13_kk_IUpdatable
 };
 var kro13_kk_KKGame = function() {
-	haxe_Log.trace("v 0.13.2",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
+	haxe_Log.trace("v 0.13.3",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
 	kro13_hxp_HxpEngine.call(this,0,0,60,false);
 	var vk = kro13_vk_VK.get_instance();
 	vk.addVisibilityHandler();
@@ -39557,7 +39557,7 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		logo.set_position(this3);
 		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,false);
 		version.build();
-		version.setText("v 0.13.2");
+		version.setText("v 0.13.3");
 		var tmp = logo.get_position().x + logoMaterialConf.size.x;
 		version.transform.get_position().x = tmp - kro13_kk_utils_TextUtils.getTextRect(version).x;
 		var tmp1 = logo.get_position().y + logoMaterialConf.size.y;
@@ -42750,8 +42750,7 @@ kro13_vk_VK.prototype = {
 		callback("" + this.firstName + " " + this.lastName);
 	}
 	,onGetScore: function(callback,response) {
-		haxe_Log.trace(response,{ fileName : "VK.hx", lineNumber : 167, className : "kro13.vk.VK", methodName : "onGetScore"});
-		callback(response);
+		callback(response.response);
 	}
 	,onVisibilityChange: function(e) {
 		var hidden = window.document.hidden;
@@ -67370,7 +67369,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 55473;
+	this.version = 189057;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -111966,7 +111965,7 @@ while(_g11 < _g2) {
 }
 lime_system_CFFI.available = false;
 lime_system_CFFI.enabled = false;
-lime_utils_Log.level = 3;
+lime_utils_Log.level = 5;
 if(typeof console == "undefined") {
 	console = {}
 }
@@ -112484,7 +112483,7 @@ kro13_kk_Constants.SOCIAL_URL = "https://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.SOCIAL_URL_MOBILE = "vk://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.PROFILE_VER = "0.0";
 kro13_kk_Constants.FREE_RESTARTS_COUNT = 3;
-kro13_kk_Constants.VERSION = "v 0.13.2";
+kro13_kk_Constants.VERSION = "v 0.13.3";
 kro13_kk_Constants.BUTTON_HEIGHT = 120;
 kro13_kk_Constants.POPUP_WIDTH = 900;
 kro13_kk_Constants.UI_GAP = 50;
