@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "118", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1400, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 2100, x : null, y : null}]};
+	var config = { build : "119", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1400, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 2100, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -36511,7 +36511,7 @@ kro13_kk_IUpdatable.prototype = {
 	,__class__: kro13_kk_IUpdatable
 };
 var kro13_kk_KKGame = function() {
-	haxe_Log.trace("v 0.1.13",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
+	haxe_Log.trace("v 0.13.1",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
 	kro13_hxp_HxpEngine.call(this,0,0,60,false);
 	var vk = kro13_vk_VK.get_instance();
 	vk.addVisibilityHandler();
@@ -39557,7 +39557,7 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		logo.set_position(this3);
 		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,false);
 		version.build();
-		version.setText("v 0.1.13");
+		version.setText("v 0.13.1");
 		var tmp = logo.get_position().x + logoMaterialConf.size.x;
 		version.transform.get_position().x = tmp - kro13_kk_utils_TextUtils.getTextRect(version).x;
 		var tmp1 = logo.get_position().y + logoMaterialConf.size.y;
@@ -42750,6 +42750,7 @@ kro13_vk_VK.prototype = {
 		callback("" + this.firstName + " " + this.lastName);
 	}
 	,onGetScore: function(callback,response) {
+		haxe_Log.trace(response,{ fileName : "VK.hx", lineNumber : 167, className : "kro13.vk.VK", methodName : "onGetScore"});
 		callback(response);
 	}
 	,onVisibilityChange: function(e) {
@@ -67369,7 +67370,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 51648;
+	this.version = 656562;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -112483,7 +112484,7 @@ kro13_kk_Constants.SOCIAL_URL = "https://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.SOCIAL_URL_MOBILE = "vk://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.PROFILE_VER = "0.0";
 kro13_kk_Constants.FREE_RESTARTS_COUNT = 3;
-kro13_kk_Constants.VERSION = "v 0.1.13";
+kro13_kk_Constants.VERSION = "v 0.13.1";
 kro13_kk_Constants.BUTTON_HEIGHT = 120;
 kro13_kk_Constants.POPUP_WIDTH = 900;
 kro13_kk_Constants.UI_GAP = 50;
