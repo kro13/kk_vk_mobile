@@ -1048,7 +1048,7 @@ $hxClasses["ApplicationMain"] = ApplicationMain;
 ApplicationMain.__name__ = ["ApplicationMain"];
 ApplicationMain.main = function() {
 	var projectName = "KK";
-	var config = { build : "114", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
+	var config = { build : "120", company : "Kro13", file : "KK", fps : 60, name : "KK", orientation : "", packageName : "kro13.kk", version : "1.0.0", windows : [{ allowHighDPI : false, alwaysOnTop : false, antialiasing : 0, background : 16777215, borderless : false, colorDepth : 16, depthBuffer : false, display : 0, fullscreen : false, hardware : true, height : 1920, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, stencilBuffer : true, title : "KK", vsync : false, width : 1080, x : null, y : null}]};
 	lime_system_System.__registerEntryPoint(projectName,ApplicationMain.create,config);
 };
 ApplicationMain.create = function(config) {
@@ -1435,7 +1435,7 @@ ManifestResources.init = function(config) {
 	var data;
 	var manifest;
 	var library;
-	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y17:images%2Fback.pngR2i32750R3R4R5R25R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R26R6tgoR0y17:images%2Fkk.atlasR2i2886R3R23R5R27R6tgoR0y15:images%2Fkk.pngR2i25021R3R4R5R28R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R29R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R30R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR32hR6tgh\",\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	data = "{\"name\":null,\"assets\":\"aoy4:pathy29:graphics%2Fdebug%2Fbutton.pngy4:sizei248y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y36:graphics%2Fdebug%2Fconsole_debug.pngR2i242R3R4R5R7R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_add.pngR2i183R3R4R5R8R6tgoR0y43:graphics%2Fdebug%2Fconsole_drawcall_all.pngR2i189R3R4R5R9R6tgoR0y37:graphics%2Fdebug%2Fconsole_hidden.pngR2i1216R3R4R5R10R6tgoR0y35:graphics%2Fdebug%2Fconsole_logo.pngR2i21764R3R4R5R11R6tgoR0y37:graphics%2Fdebug%2Fconsole_output.pngR2i186R3R4R5R12R6tgoR0y36:graphics%2Fdebug%2Fconsole_pause.pngR2i213R3R4R5R13R6tgoR0y35:graphics%2Fdebug%2Fconsole_play.pngR2i242R3R4R5R14R6tgoR0y35:graphics%2Fdebug%2Fconsole_step.pngR2i251R3R4R5R15R6tgoR0y38:graphics%2Fdebug%2Fconsole_visible.pngR2i1275R3R4R5R16R6tgoR0y35:graphics%2Fpreloader%2Fhaxepunk.pngR2i21044R3R4R5R17R6tgoR2i58088R3y4:FONTy9:classNamey27:__ASSET__font_monofonto_ttfR5y20:font%2Fmonofonto.ttfR6tgoR0y20:font%2Fmonofonto.fntR2i11598R3y4:TEXTR5R22R6tgoR0y20:font%2Fmonofonto.pngR2i19822R3R4R5R24R6tgoR0y17:images%2Fback.pngR2i32750R3R4R5R25R6tgoR0y18:images%2Fboard.pngR2i2914R3R4R5R26R6tgoR0y17:images%2Fkk.atlasR2i2886R3R23R5R27R6tgoR0y15:images%2Fkk.pngR2i25021R3R4R5R28R6tgoR0y24:fonts%2Fupheaval_pro.fntR2i52594R3R23R5R29R6tgoR0y26:fonts%2Fupheaval_pro_0.pngR2i12695R3R4R5R30R6tgoR2i1707480R3y5:MUSICR5y16:audio%2Fmain.oggy9:pathGroupaR32hR6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	manifest = lime_utils_AssetManifest.parse(data,rootPath);
 	library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -5999,6 +5999,9 @@ openfl_display_DisplayObject.prototype = $extend(openfl_events_EventDispatcher.p
 					this.__renderTransformCache.copyFrom(this.__renderTransform);
 				}
 			}
+			if(this.__objectTransform != null) {
+				this.__worldColorTransform.__copyFrom(this.__objectTransform.get_colorTransform());
+			}
 			if(renderParent != null) {
 				if(openfl_display_DisplayObject.__supportDOM) {
 					var worldVisible = renderParent.__worldVisible && this.get_visible();
@@ -6010,12 +6013,7 @@ openfl_display_DisplayObject.prototype = $extend(openfl_events_EventDispatcher.p
 				} else {
 					this.__worldAlpha = this.get_alpha() * renderParent.__worldAlpha;
 				}
-				if(this.__objectTransform != null) {
-					this.__worldColorTransform.__copyFrom(this.__objectTransform.get_colorTransform());
-					this.__worldColorTransform.__combine(renderParent.__worldColorTransform);
-				} else {
-					this.__worldColorTransform.__copyFrom(renderParent.__worldColorTransform);
-				}
+				this.__worldColorTransform.__combine(renderParent.__worldColorTransform);
 				if(this.__blendMode == null || this.__blendMode == 10) {
 					this.__worldBlendMode = renderParent.__blendMode;
 				} else {
@@ -6032,11 +6030,6 @@ openfl_display_DisplayObject.prototype = $extend(openfl_events_EventDispatcher.p
 					this.__worldVisibleChanged = this.__worldVisible != this.get_visible();
 					this.__worldVisible = this.get_visible();
 					this.__worldAlphaChanged = this.__worldAlpha != this.get_alpha();
-				}
-				if(this.__objectTransform != null) {
-					this.__worldColorTransform.__copyFrom(this.__objectTransform.get_colorTransform());
-				} else {
-					this.__worldColorTransform.__identity();
 				}
 			}
 		}
@@ -6727,13 +6720,7 @@ openfl_display_DisplayObject.prototype = $extend(openfl_events_EventDispatcher.p
 		}
 		this.__setTransformDirty();
 		this.__objectTransform.set_matrix(value.get_matrix());
-		if(!this.__objectTransform.get_colorTransform().__equals(value.get_colorTransform())) {
-			this.__objectTransform.get_colorTransform().__copyFrom(value.get_colorTransform());
-			if(!this.__renderDirty) {
-				this.__renderDirty = true;
-				this.__setParentRenderDirty();
-			}
-		}
+		this.__objectTransform.set_colorTransform(value.get_colorTransform().__clone());
 		return this.__objectTransform;
 	}
 	,get_visible: function() {
@@ -15660,7 +15647,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this3 = otherCache.textures;
 					var cached = __map_reserved[id] != null ? _this3.getReserved(id) : _this3.h[id];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:60: characters 68-70) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:60: characters 68-70) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:60: characters 68-70) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:60: characters 68-70) }";
 						var _this4 = this.textures;
 						if(__map_reserved[id] != null) {
 							_this4.setReserved(id,cached);
@@ -15749,7 +15736,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this3 = otherCache.text;
 					var cached = __map_reserved[id] != null ? _this3.getReserved(id) : _this3.h[id];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:103: characters 60-62) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:103: characters 60-62) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:103: characters 60-62) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:103: characters 60-62) }";
 						var _this4 = this.text;
 						if(__map_reserved[id] != null) {
 							_this4.setReserved(id,cached);
@@ -15811,7 +15798,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this3 = otherCache.sounds;
 					var cached = __map_reserved[id] != null ? _this3.getReserved(id) : _this3.h[id];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:118: characters 64-66) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:118: characters 64-66) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:118: characters 64-66) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:118: characters 64-66) }";
 						var v = cached;
 						var _this4 = this.sounds;
 						var value = v;
@@ -15874,7 +15861,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this3 = otherCache.tileAtlases;
 					var cached = __map_reserved[id] != null ? _this3.getReserved(id) : _this3.h[id];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:133: characters 74-76) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:133: characters 74-76) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:133: characters 74-76) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:133: characters 74-76) }";
 						var _this4 = this.tileAtlases;
 						if(__map_reserved[id] != null) {
 							_this4.setReserved(id,cached);
@@ -15937,7 +15924,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this3 = otherCache.atlasData;
 					var cached = __map_reserved[id] != null ? _this3.getReserved(id) : _this3.h[id];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:152: characters 70-72) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:152: characters 70-72) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:152: characters 70-72) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:152: characters 70-72) }";
 						var _this4 = this.atlasData;
 						if(__map_reserved[id] != null) {
 							_this4.setReserved(id,cached);
@@ -16004,7 +15991,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this3 = otherCache.regions;
 					var cached = __map_reserved[id] != null ? _this3.getReserved(id) : _this3.h[id];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:178: characters 66-68) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:178: characters 66-68) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:178: characters 66-68) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:178: characters 66-68) }";
 						var _this4 = this.regions;
 						if(__map_reserved[id] != null) {
 							_this4.setReserved(id,cached);
@@ -16067,7 +16054,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this3 = otherCache.bitmapFonts;
 					var cached = __map_reserved[fontName] != null ? _this3.getReserved(fontName) : _this3.h[fontName];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(fontName)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:200: characters 74-82) } -> " + otherCache.name + ":{ expr => EConst(CIdent(fontName)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:200: characters 74-82) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(fontName)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:200: characters 74-82) } -> " + otherCache.name + ":{ expr => EConst(CIdent(fontName)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:200: characters 74-82) }";
 						var _this4 = this.bitmapFonts;
 						if(__map_reserved[fontName] != null) {
 							_this4.setReserved(fontName,cached);
@@ -16235,7 +16222,7 @@ haxepunk_assets_AssetCache.prototype = {
 					var _this9 = __map_reserved[loader] != null ? _this8.getReserved(loader) : _this8.h[loader];
 					var cached = __map_reserved[id] != null ? _this9.getReserved(id) : _this9.h[id];
 					if(addRef && cached != null) {
-						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:283: characters 80-82) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/haxelibs/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:283: characters 80-82) }";
+						var s = "adding asset cache reference: " + Std.string(this) + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:283: characters 80-82) } -> " + otherCache.name + ":{ expr => EConst(CIdent(id)), pos => #pos(D:/projects/HaxeToolkit/haxe/my_lib/haxepunk/git/haxepunk/assets/AssetCache.hx:283: characters 80-82) }";
 						var _this10 = this.custom;
 						var v1 = cached;
 						var _this11 = __map_reserved[loader] != null ? _this10.getReserved(loader) : _this10.h[loader];
@@ -36523,7 +36510,7 @@ kro13_kk_IUpdatable.prototype = {
 	,__class__: kro13_kk_IUpdatable
 };
 var kro13_kk_KKGame = function() {
-	haxe_Log.trace("v 0.1.3",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
+	haxe_Log.trace("v 0.13.3",{ fileName : "KKGame.hx", lineNumber : 46, className : "kro13.kk.KKGame", methodName : "new"});
 	kro13_hxp_HxpEngine.call(this,0,0,60,false);
 	var vk = kro13_vk_VK.get_instance();
 	vk.addVisibilityHandler();
@@ -39571,7 +39558,7 @@ kro13_kk_guiObjects_MainMenu.prototype = $extend(kro13_kk_gameObjects_Transforma
 		logo.set_position(this3);
 		var version = new kro13_kk_guiObjects_TextField(10066380,null,false,false);
 		version.build();
-		version.setText("v 0.1.3");
+		version.setText("v 0.13.3");
 		var tmp = logo.get_position().x + logoMaterialConf.size.x;
 		version.transform.get_position().x = tmp - kro13_kk_utils_TextUtils.getTextRect(version).x;
 		var tmp1 = logo.get_position().y + logoMaterialConf.size.y;
@@ -40194,7 +40181,7 @@ kro13_kk_guiObjects_TextField.prototype = $extend(kro13_kk_guiObjects_Layable.pr
 	,__class__: kro13_kk_guiObjects_TextField
 });
 var kro13_kk_guiObjects_anims_ButtonBlink = function(button) {
-	this.scaleSize = 0.25;
+	this.scaleSize = 0.18;
 	kro13_kk_components_animation_AbstractAnimation.call(this);
 	this.button = button;
 	var this1 = { x : button.get_position().x, y : button.get_position().y};
@@ -42714,6 +42701,14 @@ kro13_vk_VK.prototype = {
 		};
 		VK.api("apps.getLeaderboard",{ type : "score", global : global, extended : 1, test_mode : 0, v : "5.95"},tmp);
 	}
+	,getScore: function(userId,onSuccess) {
+		var f = $bind(this,this.onGetScore);
+		var a1 = onSuccess;
+		var tmp = function(a2) {
+			f(a1,a2);
+		};
+		VK.api("apps.getScore",{ user_id : userId, test_mode : 0, v : "5.95"},tmp);
+	}
 	,onSDKInitSuccess: function(callback) {
 		if(callback != null) {
 			callback();
@@ -42756,6 +42751,9 @@ kro13_vk_VK.prototype = {
 		this.lastName = response.response[0].last_name;
 		callback("" + this.firstName + " " + this.lastName);
 	}
+	,onGetScore: function(callback,response) {
+		callback(response.response);
+	}
 	,onVisibilityChange: function(e) {
 		var hidden = window.document.hidden;
 		if(hidden) {
@@ -42788,7 +42786,6 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	,getTopScores: function(count,global,onSuccess,onError) {
 		var _gthis = this;
 		kro13_vk_VK.get_instance().getLeaderboard(global ? 1 : 0,function(result) {
-			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 34, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
 			result.sort($bind(_gthis,_gthis.sortByScore));
 			haxe_Log.trace(result,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 36, className : "kro13.vk.VKRemoteDataProvider", methodName : "getTopScores"});
 			if(onSuccess != null) {
@@ -42816,7 +42813,19 @@ kro13_vk_VKRemoteDataProvider.prototype = {
 	}
 	,onUserNameGot: function(onSuccess,onError,userName) {
 		var userId = kro13_vk_VK.get_instance().getUserId();
-		this.parse.getRemoteProfileVK(userId,userName,onSuccess,onError);
+		var f = $bind(this,this.onScoreGot);
+		var a1 = onSuccess;
+		var a2 = onError;
+		var a3 = userName;
+		var tmp = function(a4) {
+			f(a1,a2,a3,a4);
+		};
+		kro13_vk_VK.get_instance().getScore(userId,tmp);
+	}
+	,onScoreGot: function(onSuccess,onError,userName,score) {
+		var profile = { remoteId : "", userName : userName, totalScore : score};
+		haxe_Log.trace(profile,{ fileName : "VKRemoteDataProvider.hx", lineNumber : 75, className : "kro13.vk.VKRemoteDataProvider", methodName : "onScoreGot"});
+		onSuccess(profile);
 	}
 	,__class__: kro13_vk_VKRemoteDataProvider
 };
@@ -67362,7 +67371,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 719600;
+	this.version = 155184;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = ["lime","utils","AssetCache"];
@@ -68296,8 +68305,15 @@ lime_utils_AssetManifest.parse = function(data,rootPath) {
 	manifest.libraryType = manifestData.libraryType;
 	manifest.libraryArgs = manifestData.libraryArgs;
 	manifest.assets = haxe_Unserializer.run(manifestData.assets);
-	if(rootPath != null) {
-		manifest.rootPath = rootPath;
+	if(Object.prototype.hasOwnProperty.call(manifestData,"rootPath")) {
+		manifest.rootPath = manifestData.rootPath;
+	}
+	if(rootPath != null && rootPath != "") {
+		if(manifest.rootPath == null || manifest.rootPath == "") {
+			manifest.rootPath = rootPath;
+		} else {
+			manifest.rootPath = rootPath + "/" + manifest.rootPath;
+		}
 	}
 	return manifest;
 };
@@ -68361,6 +68377,7 @@ lime_utils_AssetManifest.prototype = {
 		manifestData.libraryArgs = this.libraryArgs;
 		manifestData.name = this.name;
 		manifestData.assets = haxe_Serializer.run(this.assets);
+		manifestData.rootPath = this.rootPath;
 		return JSON.stringify(manifestData);
 	}
 	,__class__: lime_utils_AssetManifest
@@ -77824,6 +77841,9 @@ openfl__$internal_renderer_canvas_CanvasGraphics.playCommands = function(command
 				openfl__$internal_renderer_canvas_CanvasGraphics.context.bezierCurveTo(xm - ox,ye,x,ym + oy,x,ym);
 				break;
 			case 8:
+				if(openfl__$internal_renderer_canvas_CanvasGraphics.bitmapFill == null) {
+					continue;
+				}
 				var _g10 = data.prev;
 				switch(_g10[1]) {
 				case 0:
@@ -77924,7 +77944,7 @@ openfl__$internal_renderer_canvas_CanvasGraphics.playCommands = function(command
 				}
 				var tileRect = openfl_geom_Rectangle.__pool.get();
 				var tileTransform = openfl_geom_Matrix.__pool.get();
-				var sourceRect = openfl__$internal_renderer_canvas_CanvasGraphics.bitmapFill != null ? openfl__$internal_renderer_canvas_CanvasGraphics.bitmapFill.rect : null;
+				var sourceRect = openfl__$internal_renderer_canvas_CanvasGraphics.bitmapFill.rect;
 				var transform = openfl__$internal_renderer_canvas_CanvasGraphics.graphics.__renderTransform;
 				var alpha = openfl__$internal_renderer_canvas_CanvasGraphics.graphics.__owner.__worldAlpha;
 				var ri;
@@ -77964,11 +77984,7 @@ openfl__$internal_renderer_canvas_CanvasGraphics.playCommands = function(command
 					tileTransform.ty += positionY - offsetY;
 					tileTransform.concat(transform);
 					openfl__$internal_renderer_canvas_CanvasGraphics.context.setTransform(tileTransform.a,tileTransform.b,tileTransform.c,tileTransform.d,tileTransform.tx,tileTransform.ty);
-					if(openfl__$internal_renderer_canvas_CanvasGraphics.bitmapFill != null) {
-						openfl__$internal_renderer_canvas_CanvasGraphics.context.drawImage(openfl__$internal_renderer_canvas_CanvasGraphics.bitmapFill.image.get_src(),tileRect.x,tileRect.y,tileRect.width,tileRect.height,0,0,tileRect.width,tileRect.height);
-					} else {
-						openfl__$internal_renderer_canvas_CanvasGraphics.context.fillRect(0,0,tileRect.width,tileRect.height);
-					}
+					openfl__$internal_renderer_canvas_CanvasGraphics.context.drawImage(openfl__$internal_renderer_canvas_CanvasGraphics.bitmapFill.image.get_src(),tileRect.x,tileRect.y,tileRect.width,tileRect.height,0,0,tileRect.width,tileRect.height);
 				}
 				openfl_geom_Rectangle.__pool.release(tileRect);
 				openfl_geom_Matrix.__pool.release(tileTransform);
@@ -89819,10 +89835,9 @@ openfl__$internal_stage3D_opengl_GLContext3D.__updateScissorRectangle = function
 			height = rectTexture.__height;
 		}
 	} else {
-		var $window = openfl__$internal_stage3D_opengl_GLContext3D.context.__stage3D.__stage.window;
 		height = openfl__$internal_stage3D_opengl_GLContext3D.context.backBufferHeight;
 		offsetX = openfl__$internal_stage3D_opengl_GLContext3D.context.__stage3D.get_x() | 0;
-		offsetY = ($window.__height * $window.__scale | 0) - height - (openfl__$internal_stage3D_opengl_GLContext3D.context.__stage3D.get_y() | 0);
+		offsetY = openfl__$internal_stage3D_opengl_GLContext3D.context.__stage3D.get_y() | 0;
 	}
 	openfl__$internal_stage3D_opengl_GLContext3D.gl.__context.scissor((openfl__$internal_stage3D_opengl_GLContext3D.context.__scissorRectangle.x | 0) + offsetX,height - (openfl__$internal_stage3D_opengl_GLContext3D.context.__scissorRectangle.y | 0) - (openfl__$internal_stage3D_opengl_GLContext3D.context.__scissorRectangle.height | 0) + offsetY,openfl__$internal_stage3D_opengl_GLContext3D.context.__scissorRectangle.width | 0,openfl__$internal_stage3D_opengl_GLContext3D.context.__scissorRectangle.height | 0);
 	openfl__$internal_stage3D_GLUtils.CheckGLError();
@@ -91004,10 +91019,9 @@ openfl_utils_AssetLibrary.prototype = $extend(lime_utils_AssetLibrary.prototype,
 	}
 	,__class__: openfl_utils_AssetLibrary
 });
-var openfl__$internal_swf_SWFLiteLibrary = function(id,uuid) {
+var openfl__$internal_swf_SWFLiteLibrary = function(id) {
 	openfl_utils_AssetLibrary.call(this);
 	this.id = id;
-	this.instanceID = uuid != null ? uuid : id;
 	this.alphaCheck = new haxe_ds_StringMap();
 	this.imageClassNames = new haxe_ds_StringMap();
 	this.rootPath = "";
@@ -91019,7 +91033,6 @@ openfl__$internal_swf_SWFLiteLibrary.prototype = $extend(openfl_utils_AssetLibra
 	alphaCheck: null
 	,id: null
 	,imageClassNames: null
-	,instanceID: null
 	,preloading: null
 	,rootPath: null
 	,swf: null
@@ -91131,7 +91144,7 @@ openfl__$internal_swf_SWFLiteLibrary.prototype = $extend(openfl_utils_AssetLibra
 					}
 				}
 			}
-			var key3 = _gthis.instanceID;
+			var key3 = _gthis.id;
 			var value1 = _gthis.swf;
 			var _this3 = openfl__$internal_swf_SWFLite.instances;
 			if(__map_reserved[key3] != null) {
@@ -91167,22 +91180,7 @@ openfl__$internal_swf_SWFLiteLibrary.prototype = $extend(openfl_utils_AssetLibra
 					_this5.h[id3] = true;
 				}
 			}
-			var path = null;
-			var key4 = this.id;
-			var _this6 = this.paths;
-			if(__map_reserved[key4] != null ? _this6.existsReserved(key4) : _this6.h.hasOwnProperty(key4)) {
-				var key5 = this.id;
-				var _this7 = this.paths;
-				if(__map_reserved[key5] != null) {
-					path = _this7.getReserved(key5);
-				} else {
-					path = _this7.h[key5];
-				}
-			} else if(this.rootPath != null && this.rootPath != "") {
-				path = this.rootPath + "/" + this.id;
-			} else {
-				path = this.id;
-			}
+			var path = this.rootPath != null && this.rootPath != "" ? this.rootPath + "/" + this.id : this.id;
 			var loader = new openfl_net_URLLoader();
 			loader.addEventListener("complete",function(_1) {
 				onComplete(loader.data);
@@ -91253,19 +91251,6 @@ openfl__$internal_swf_SWFLiteLibrary.prototype = $extend(openfl_utils_AssetLibra
 	,unload: function() {
 		if(this.swf == null) {
 			return;
-		}
-		var tmp;
-		var key = this.instanceID;
-		var _this = openfl__$internal_swf_SWFLite.instances;
-		if(__map_reserved[key] != null ? _this.existsReserved(key) : _this.h.hasOwnProperty(key)) {
-			var key1 = this.instanceID;
-			var _this1 = openfl__$internal_swf_SWFLite.instances;
-			tmp = (__map_reserved[key1] != null ? _this1.getReserved(key1) : _this1.h[key1]) == this.swf;
-		} else {
-			tmp = false;
-		}
-		if(tmp) {
-			openfl__$internal_swf_SWFLite.instances.remove(this.instanceID);
 		}
 		var bitmap;
 		var symbol = this.swf.symbols.iterator();
@@ -93890,7 +93875,7 @@ openfl_display_Bitmap.prototype = $extend(openfl_display_DisplayObject.prototype
 		openfl__$internal_renderer_opengl_GLBitmap.renderMask(this,renderer);
 	}
 	,__updateCacheBitmap: function(renderer,force) {
-		if(this.__filters == null && renderer.__type == lime_graphics_RendererType.OPENGL && this.__cacheBitmap == null) {
+		if(this.__filters == null && renderer.__type == lime_graphics_RendererType.OPENGL) {
 			return false;
 		}
 		return openfl_display_DisplayObject.prototype.__updateCacheBitmap.call(this,renderer,force);
@@ -95388,12 +95373,6 @@ openfl_text_TextField.prototype = $extend(openfl_display_InteractiveObject.proto
 			}
 			if(group.lineIndex == lineIndex) {
 				y = group.offsetY + group.height / 2;
-				var _g31 = 0;
-				var _g21 = this.get_scrollV() - 1;
-				while(_g31 < _g21) {
-					var i1 = _g31++;
-					y -= this.__textEngine.lineHeights.get(i1);
-				}
 				if(x != null) {
 					return this.__getPosition(x,y);
 				}
@@ -96084,9 +96063,6 @@ openfl_text_TextField.prototype = $extend(openfl_display_InteractiveObject.proto
 		if(restrict == null) {
 			restrict = true;
 		}
-		if(value == null) {
-			value = "";
-		}
 		if(value == "" && this.__selectionIndex == this.__caretIndex) {
 			return;
 		}
@@ -96216,7 +96192,7 @@ openfl_text_TextField.prototype = $extend(openfl_display_InteractiveObject.proto
 		}
 	}
 	,__updateCacheBitmap: function(renderer,force) {
-		if(this.__filters == null && renderer.__type == lime_graphics_RendererType.OPENGL && this.__cacheBitmap == null && !this.__domRender) {
+		if(this.__filters == null && renderer.__type == lime_graphics_RendererType.OPENGL && !this.__domRender) {
 			return false;
 		}
 		if(openfl_display_InteractiveObject.prototype.__updateCacheBitmap.call(this,renderer,force || this.__dirty)) {
@@ -97004,7 +96980,7 @@ openfl_text_TextField.prototype = $extend(openfl_display_InteractiveObject.proto
 			break;
 		case 13:case 1073741912:
 			if(this.__textEngine.multiline) {
-				this.__replaceSelectedText("\n",true);
+				this.__replaceSelectedText(this.get_text(),true);
 				this.dispatchEvent(new openfl_events_Event("change",true));
 			}
 			break;
@@ -108280,6 +108256,9 @@ openfl_geom_Transform.prototype = {
 	,set_colorTransform: function(value) {
 		if(!this.__colorTransform.__equals(value)) {
 			this.__colorTransform.__copyFrom(value);
+			if(value != null) {
+				this.__displayObject.set_alpha(value.alphaMultiplier);
+			}
 			var _this = this.__displayObject;
 			if(!_this.__renderDirty) {
 				_this.__renderDirty = true;
@@ -111210,19 +111189,8 @@ openfl_utils_Assets.loadFont = function(id,useCache) {
 	return promise.future;
 };
 openfl_utils_Assets.loadLibrary = function(name) {
-	return lime_utils_Assets.loadLibrary(name).then(function(library) {
-		var _library = null;
-		if(library != null) {
-			if(js_Boot.__instanceof(library,openfl_utils_AssetLibrary)) {
-				_library = library;
-			} else {
-				_library = new openfl_utils_AssetLibrary();
-				_library.__proxy = library;
-				lime_utils_Assets.registerLibrary(name,_library);
-			}
-		}
-		return lime_app_Future.withValue(_library);
-	});
+	var future = lime_utils_Assets.loadLibrary(name);
+	return future;
 };
 openfl_utils_Assets.loadMusic = function(id,useCache) {
 	if(useCache == null) {
@@ -111999,7 +111967,7 @@ while(_g11 < _g2) {
 }
 lime_system_CFFI.available = false;
 lime_system_CFFI.enabled = false;
-lime_utils_Log.level = 3;
+lime_utils_Log.level = 5;
 if(typeof console == "undefined") {
 	console = {}
 }
@@ -112517,7 +112485,7 @@ kro13_kk_Constants.SOCIAL_URL = "https://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.SOCIAL_URL_MOBILE = "vk://vk.com/kanyonkarvergroup";
 kro13_kk_Constants.PROFILE_VER = "0.0";
 kro13_kk_Constants.FREE_RESTARTS_COUNT = 3;
-kro13_kk_Constants.VERSION = "v 0.1.3";
+kro13_kk_Constants.VERSION = "v 0.13.3";
 kro13_kk_Constants.BUTTON_HEIGHT = 120;
 kro13_kk_Constants.POPUP_WIDTH = 900;
 kro13_kk_Constants.UI_GAP = 50;
