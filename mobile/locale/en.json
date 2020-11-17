@@ -3,7 +3,7 @@
     "FINISH_GOOD": "Wow, new record: <green>::score::</green> points! Good job!\nFinish?",
     "FINISH_BAD": "Only <red>::score::</red> points. Last time was better...\nFinish?",
     "RESTART": "Roll back?",
-    "NO_RESTART": "Looks lire it's time to finish...",
+    "NO_RESTART": "No more rollbacks... Watch ads to continue?",
     "TOTAL_SCORE": "Total score",
     "SERVER_ERROR": "Server not available",
     "SPEED_BONUS": "Bonus",
