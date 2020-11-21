@@ -13,15 +13,24 @@
     <link rel="shortcut icon" type="image/png" href="./favicon.png">
 
     
+
     <script type="text/javascript" src="./lib/howler.min.js"></script>
+
     <script type="text/javascript" src="./lib/pako.min.js"></script>
+
     <script type="text/javascript" src="./lib/FileSaver.min.js"></script>
+
     <script type="text/javascript" src="./lib/GameAnalytics-4.1.2.min.js"></script>
+
     <script type="text/javascript" src="./lib/parse.js"></script>
     <script type="text/javascript" src="./KK.js"></script>
-    <script src="https://vk.com/js/api/mobile_sdk.js"  type="text/javascript"></script>
+    <script src='./lib/GameAnalytics-4.1.2.min.js'></script>
+    <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
     <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js" type="text/javascript"></script>
+    <script type='text/javascript' src='https://ad.mail.ru/static/admanhtml/rbadman-html5.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='https://vk.com/js/api/adman_init.js' charset='utf-8'></script>
 
+   <!-- <script type='text/javascript' src='./lib/adman_init.js' charset='utf-8'></script>-->
    <!-- <script>
         window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, false);
         if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
@@ -35,7 +44,10 @@
         #content { background: #000000; width: 100%; height: 100%; }
         		@font-face {
 			font-family: 'Monofonto-Regular';
-			src: url('font/monofonto.ttf') format('truetype');
+			src: url('font/monofonto.eot?#iefix') format('embedded-opentype'),
+			url('font/monofonto.woff') format('woff'),
+			url('font/monofonto.ttf') format('truetype'),
+			url('font/monofonto.svg#Monofonto-Regular') format('svg');
 			font-weight: normal;
 			font-style: normal;
 		}
@@ -50,52 +62,7 @@
 <div id="content"></div>
 
 <script type="text/javascript">
-
-    var width = getWidth();
-    var height = getHeight();
-    if (width > 0)
-    {
-        lime.embed ("KK", "content", 1920, 1920 * height / width);
-    }
-    else
-    {
-        window.addEventListener('resize', onResize);
-    }
-
-    function  onResize() {
-        width = getWidth();
-        height = getHeight();
-        lime.embed ("KK", "content", 1920, 1920 * height / width);
-        window.removeEventListener('resize', onResize);
-    }
-
-    function getWidth() {
-        if (self.innerWidth) {
-            return self.innerWidth;
-        }
-
-        if (document.documentElement && document.documentElement.clientWidth) {
-            return document.documentElement.clientWidth;
-        }
-
-        if (document.body) {
-            return document.body.clientWidth;
-        }
-    }
-
-    function getHeight() {
-        if (self.innerHeight) {
-            return self.innerHeight;
-        }
-
-        if (document.documentElement && document.documentElement.clientHeight) {
-            return document.documentElement.clientHeight;
-        }
-
-        if (document.body) {
-            return document.body.clientHeight;
-        }
-    }
+        lime.embed ("KK", "content", 2100, 1400);
 </script>
 
 </body>
