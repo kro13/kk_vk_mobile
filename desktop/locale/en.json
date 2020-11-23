@@ -28,5 +28,7 @@
     "HELP1_D": "Hold left mouse button and move cursor left and right for turns and speed control .",
     "HELP2": "Keeping speed above average makes your bonus grow. Bonus multiplies your score. It is very useful.",
     "HELP3": "Jumping on trampolines and rotations are the main sources of points and fun!",
-    "HELP4": "If you got stuck or tired, use the roll back button or the finish button.\nNow ride!"
+    "HELP4": "If you got stuck or tired, use the roll back button or the finish button.\nNow ride!",
+    "ERROR_DEFAULT": "Hmm.. Something went wrong.",
+    "ERROR_ADS": "No ads available. Please, try later."
 }
