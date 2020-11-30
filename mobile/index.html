@@ -33,11 +33,11 @@
     <script>
         window.addEventListener ("touchmove",
             function (event) {
-                alert(openfl_Lib.get_current().stage);
-                alert(openfl_Lib.get_current());
-                //openfl_Lib.get_current().dispatchEvent(new openfl_events_Event("activate"));
-                openfl_Lib.get_current().stage.__broadcastEvent(new openfl_events_Event("activate"));
                 alert("!");
+                //alert(openfl_Lib.get_current().stage);
+                alert(openfl_Lib.get_current());
+                //openfl_Lib.get_current().stage.__broadcastEvent(new openfl_events_Event("activate"));
+                //alert("!");
             }, false);
 
     </script>
