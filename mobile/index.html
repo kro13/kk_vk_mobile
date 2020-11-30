@@ -33,8 +33,7 @@
     <script>
         window.addEventListener ("touchmove",
             function (event) {
-                //event.preventDefault ();
-                //alert("!");
+                openfl_Lib.get_current().dispatchEvent(new openfl_events_Event("activate"));
             }, false);
 
     </script>
