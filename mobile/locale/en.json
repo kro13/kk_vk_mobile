@@ -5,7 +5,7 @@
     "RESTART": "Roll back?",
     "NO_RESTART": "No more rollbacks... Watch ads to continue?",
     "TOTAL_SCORE": "Total score",
-    "SERVER_ERROR": "Server not available",
+    "ERROR_SERVER": "Server not available",
     "SPEED_BONUS": "Bonus",
     "LOADING": "Loading...",
     "TOP_SCORE": "Top score",
