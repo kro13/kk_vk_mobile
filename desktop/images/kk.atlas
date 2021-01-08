@@ -1,95 +1,95 @@
 kk.png
-size: 494, 318
+size: 512, 318
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 board
   rotate: false
-  xy: 208, 104
+  xy: 156, 104
   size: 40, 80
   orig: 40, 80
   offset: 0, 0
   index: -1
 btn_add_evac
   rotate: false
-  xy: 208, 52
+  xy: 156, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_cancel
   rotate: false
-  xy: 260, 52
+  xy: 208, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_evac
   rotate: false
-  xy: 156, 52
+  xy: 104, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_evac_contour
   rotate: false
-  xy: 52, 52
+  xy: 0, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_finish
   rotate: false
-  xy: 312, 52
+  xy: 260, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_gear
   rotate: false
-  xy: 416, 52
+  xy: 364, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_help
   rotate: false
-  xy: 104, 104
+  xy: 52, 104
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_invite
   rotate: false
-  xy: 52, 104
+  xy: 0, 104
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_menu
   rotate: false
-  xy: 156, 104
+  xy: 104, 104
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_minus
   rotate: false
-  xy: 0, 104
+  xy: 416, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_music
   rotate: false
-  xy: 364, 52
+  xy: 312, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_mute
   rotate: false
-  xy: 0, 52
+  xy: 462, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -110,7 +110,7 @@ btn_play
   index: -1
 btn_plus
   rotate: false
-  xy: 104, 52
+  xy: 52, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -145,14 +145,14 @@ logo
   index: -1
 pine0
   rotate: false
-  xy: 414, 104
+  xy: 328, 104
   size: 80, 180
   orig: 80, 180
   offset: 0, 0
   index: -1
 pine1
   rotate: false
-  xy: 332, 104
+  xy: 410, 104
   size: 80, 180
   orig: 80, 180
   offset: 0, 0
@@ -199,6 +199,13 @@ player_head_front
   orig: 40, 40
   offset: 0, 0
   index: -1
+snowman
+  rotate: false
+  xy: 198, 104
+  size: 46, 75
+  orig: 46, 75
+  offset: 0, 0
+  index: -1
 star
   rotate: false
   xy: 20, 0
@@ -208,7 +215,7 @@ star
   index: -1
 tramp
   rotate: false
-  xy: 250, 104
+  xy: 246, 104
   size: 80, 120
   orig: 80, 120
   offset: 0, 0
