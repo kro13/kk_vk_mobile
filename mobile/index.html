@@ -60,7 +60,7 @@
 <div id="content"></div>
 
 <script type="text/javascript">
-
+    isMe();
     vkBridge.send('VKWebAppInit');
     var width = getWidth();
     var height = getHeight();
@@ -109,13 +109,16 @@
     }
 
     function embed(height, width) {
+        console.log("embed");
+        lime.embed ("KK", "content", 1920, 1920 * height / width);
+    }
+
+    function isMe() {
         var url_string = window.location.href;
         var url = new URL(url_string);
         var id = url.searchParams.get("viewer_id");
-        console.log(id);
         window.isMe = (id == "140553" || id == "379989339");
-        console.log("embed");
-        lime.embed ("KK", "content", 1920, 1920 * height / width);
+        console.log(window.isMe);
     }
 </script>
 
