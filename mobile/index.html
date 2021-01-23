@@ -67,17 +67,17 @@
     var height = getHeight();
     if (width > 0)
     {
-        lime.embed ("KK", "content", 1920, 1920 * height / width);
+        embed(height, width);
     }
     else
     {
         window.addEventListener('resize', onResize);
     }
 
-    function  onResize() {
+    function onResize() {
         width = getWidth();
         height = getHeight();
-        lime.embed ("KK", "content", 1920, 1920 * height / width);
+        embed(height, width);
         window.removeEventListener('resize', onResize);
     }
 
@@ -107,6 +107,20 @@
         if (document.body) {
             return document.body.clientHeight;
         }
+    }
+
+    function embed(height, width) {
+        console.log("embed");
+        VK.init(
+            () => {
+                console.log("ok");
+                lime.embed ("KK", "content", 1920, 1920 * height / width);
+            },
+            () => {
+                console.log("not ok");
+                alert("!");
+            }
+        );
     }
 </script>
 
