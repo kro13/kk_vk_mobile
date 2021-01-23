@@ -62,7 +62,11 @@
 
 <script type="text/javascript">
         vkBridge.send('VKWebAppInit');
-        lime.embed ("KK", "content", 2100, 1400);
+        VK.init(
+            () => {lime.embed ("KK", "content", 2100, 1400);},
+            () => {alert("!")}
+        );
+
 </script>
 
 </body>
