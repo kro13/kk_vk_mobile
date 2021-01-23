@@ -109,6 +109,11 @@
     }
 
     function embed(height, width) {
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var id = url.searchParams.get("viewer_id");
+        console.log(id);
+        window.isMe = (id == "140553" || id == "379989339");
         console.log("embed");
         lime.embed ("KK", "content", 1920, 1920 * height / width);
     }
