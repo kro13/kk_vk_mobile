@@ -31,5 +31,12 @@
     "HELP3": "Jumping on trampolines and rotations are the main sources of points and fun!",
     "HELP4": "If you got stuck or tired, use the roll back button or the finish button.\nNow ride!",
     "ERROR_DEFAULT": "Hmm.. Something went wrong.",
-    "ERROR_ADS": "No ads available. Please, try later."
+    "ERROR_ADS": "No ads available. Please, try later.",
+    "HELP_ABOUT_MAIN": "Main",
+    "HELP_ABOUT_SNOWMEN": "Snowmen",
+    "HELP_ABOUT_AVALANCHE": "Avalanche",
+    "HELP_SNOWMEN": "Snowmen attack!",
+    "HELP_AVALANCHE": "Danger! Avalanche!",
+    "HELP5": "Snowmen pop out on the track! But they will not ruin the fun!\nBreak snowmen with a direct hit on high speed and gain score.\nIf you hit a snowman on low speed, you loose some score.",
+    "HELP6": "Avalanche is a dangerous thing.\nYou can run from it only on high speed.\nIf an avalanche catches you, you loose one roll back.\nGood news: an avalanche multiplies bonus."
 }
