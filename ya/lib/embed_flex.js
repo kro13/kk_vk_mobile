@@ -30,8 +30,8 @@
     }
 
     function embed() {
-        //lime.embed(file, "content", minWidth, 0);
-        lime.embed(file, "content", minWidth, minWidth * height / width);
+        lime.embed(file, "content", minWidth, 0);
+        //lime.embed(file, "content", minWidth, minWidth * height / width);
     }
 
     function getWidth() {
