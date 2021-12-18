@@ -1,221 +1,403 @@
 kk.png
-size: 512, 318
+size: 964, 1429
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+big_fill
+  rotate: false
+  xy: 196, 0
+  size: 35, 34
+  orig: 35, 34
+  offset: 0, 0
+  index: -1
 board
   rotate: false
-  xy: 156, 104
+  xy: 510, 52
   size: 40, 80
   orig: 40, 80
   offset: 0, 0
   index: -1
+btn_add_eagle
+  rotate: false
+  xy: 844, 139
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
 btn_add_evac
   rotate: false
-  xy: 156, 52
+  xy: 362, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_cancel
   rotate: false
-  xy: 208, 52
+  xy: 414, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
+btn_eagle
+  rotate: false
+  xy: 0, 261
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+btn_eagle_contour
+  rotate: false
+  xy: 122, 261
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
 btn_evac
   rotate: false
-  xy: 104, 52
+  xy: 466, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_evac_contour
   rotate: false
-  xy: 0, 52
+  xy: 518, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_finish
   rotate: false
-  xy: 260, 52
+  xy: 570, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_gear
   rotate: false
-  xy: 364, 52
+  xy: 622, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_help
   rotate: false
-  xy: 52, 104
+  xy: 674, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_invite
   rotate: false
-  xy: 0, 104
+  xy: 726, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_menu
   rotate: false
-  xy: 104, 104
+  xy: 778, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_minus
   rotate: false
-  xy: 416, 52
+  xy: 830, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_music
   rotate: false
-  xy: 312, 52
+  xy: 882, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_mute
   rotate: false
-  xy: 462, 0
+  xy: 0, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_ok
   rotate: false
-  xy: 358, 0
+  xy: 52, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_play
   rotate: false
-  xy: 202, 0
+  xy: 104, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_plus
   rotate: false
-  xy: 52, 52
+  xy: 156, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_quit
   rotate: false
-  xy: 410, 0
+  xy: 208, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_social
   rotate: false
-  xy: 306, 0
+  xy: 260, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 btn_stats
   rotate: false
-  xy: 254, 0
+  xy: 312, 52
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-logo
+eagle
   rotate: false
-  xy: 0, 286
-  size: 449, 32
-  orig: 449, 32
+  xy: 326, 261
+  size: 210, 144
+  orig: 210, 144
   offset: 0, 0
   index: -1
-pine0
+eagle1
   rotate: false
-  xy: 328, 104
-  size: 80, 180
-  orig: 80, 180
+  xy: 538, 261
+  size: 210, 144
+  orig: 210, 144
   offset: 0, 0
   index: -1
-pine1
+finger
   rotate: false
-  xy: 410, 104
-  size: 80, 180
-  orig: 80, 180
+  xy: 88, 0
+  size: 20, 25
+  orig: 20, 25
+  offset: 0, 0
+  index: -1
+fog
+  rotate: false
+  xy: 82, 463
+  size: 40, 360
+  orig: 40, 360
+  offset: 0, 0
+  index: -1
+hare_jump
+  rotate: false
+  xy: 552, 52
+  size: 40, 80
+  orig: 40, 80
+  offset: 0, 0
+  index: -1
+hare_sit
+  rotate: false
+  xy: 594, 52
+  size: 40, 80
+  orig: 40, 80
+  offset: 0, 0
+  index: -1
+light
+  rotate: false
+  xy: 124, 463
+  size: 40, 360
+  orig: 40, 360
+  offset: 0, 0
+  index: -1
+logo2
+  rotate: false
+  xy: 120, 139
+  size: 600, 100
+  orig: 600, 100
+  offset: 0, 0
+  index: -1
+mandala1
+  rotate: false
+  xy: 166, 463
+  size: 364, 364
+  orig: 364, 364
+  offset: 0, 0
+  index: -1
+mandala2
+  rotate: false
+  xy: 532, 463
+  size: 364, 364
+  orig: 364, 364
+  offset: 0, 0
+  index: -1
+mandala3
+  rotate: false
+  xy: 0, 829
+  size: 364, 364
+  orig: 364, 364
+  offset: 0, 0
+  index: -1
+pile
+  rotate: false
+  xy: 364, 52
+  size: 48, 70
+  orig: 48, 70
+  offset: 0, 0
+  index: -1
+pine2
+  rotate: false
+  xy: 750, 261
+  size: 120, 160
+  orig: 120, 160
+  offset: 0, 0
+  index: -1
+pine3
+  rotate: false
+  xy: 872, 261
+  size: 80, 200
+  orig: 80, 200
+  offset: 0, 0
+  index: -1
+pine4
+  rotate: false
+  xy: 0, 463
+  size: 80, 200
+  orig: 80, 200
+  offset: 0, 0
+  index: -1
+pine_big
+  rotate: false
+  xy: 366, 829
+  size: 240, 600
+  orig: 240, 600
   offset: 0, 0
   index: -1
 player_body
   rotate: false
-  xy: 46, 0
+  xy: 28, 0
   size: 32, 18
   orig: 32, 18
   offset: 0, 0
   index: -1
 player_body_back
   rotate: false
-  xy: 80, 0
+  xy: 110, 0
   size: 28, 28
   orig: 28, 28
   offset: 0, 0
   index: -1
 player_body_front
   rotate: false
-  xy: 0, 0
+  xy: 22, 0
   size: 4, 12
   orig: 4, 12
   offset: 0, 0
   index: -1
 player_head
   rotate: false
-  xy: 152, 0
+  xy: 312, 0
   size: 48, 44
   orig: 48, 44
   offset: 0, 0
   index: -1
 player_head_back
   rotate: false
-  xy: 6, 0
+  xy: 140, 0
   size: 12, 30
   orig: 12, 30
   offset: 0, 0
   index: -1
 player_head_front
   rotate: false
-  xy: 110, 0
+  xy: 270, 0
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
+shaman
+  rotate: false
+  xy: 722, 139
+  size: 120, 106
+  orig: 120, 106
+  offset: 0, 0
+  index: -1
+shaman_head
+  rotate: false
+  xy: 0, 139
+  size: 118, 90
+  orig: 118, 90
+  offset: 0, 0
+  index: -1
+small_fill
+  rotate: false
+  xy: 233, 0
+  size: 35, 34
+  orig: 35, 34
+  offset: 0, 0
+  index: -1
 snowman
   rotate: false
-  xy: 198, 104
+  xy: 414, 52
   size: 46, 75
   orig: 46, 75
   offset: 0, 0
   index: -1
+snowman_blank
+  rotate: false
+  xy: 462, 52
+  size: 46, 75
+  orig: 46, 75
+  offset: 0, 0
+  index: -1
+snowman_nose
+  rotate: false
+  xy: 0, 0
+  size: 20, 8
+  orig: 20, 8
+  offset: 0, 0
+  index: -1
 star
   rotate: false
-  xy: 20, 0
+  xy: 62, 0
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
+stone
+  rotate: false
+  xy: 154, 0
+  size: 40, 30
+  orig: 40, 30
+  offset: 0, 0
+  index: -1
+t1
+  rotate: false
+  xy: 636, 52
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+t2
+  rotate: false
+  xy: 718, 52
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+t3
+  rotate: false
+  xy: 800, 52
+  size: 80, 85
+  orig: 80, 85
+  offset: 0, 0
+  index: -1
 tramp
   rotate: false
-  xy: 246, 104
+  xy: 244, 261
   size: 80, 120
   orig: 80, 120
   offset: 0, 0
